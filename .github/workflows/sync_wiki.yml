@@ -1,0 +1,28 @@
+name: Update GitBook Spawns
+on:
+  push:
+    paths:
+      - 'data/cobblemon/spawn_pool_world/**' 
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.9'
+
+      - name: Generate Spawn Table
+        run: python update_spawns.py
+
+      - name: Commit and Push
+        run: |
+          git config --global user.name "Wiki-Bot"
+          git config --global user.email "bot@homestead.com"
+          git add wiki/spawns.md
+          git commit -m "chore: updated spawn table via GitHub Actions" || echo "No changes to commit"
+          git push
