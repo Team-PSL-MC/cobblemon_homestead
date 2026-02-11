@@ -1,30 +1,46 @@
-name: Update GitBook Spawns
+name: Homestead Tools
+
 on:
   push:
-    paths:
-      - 'data/cobblemon/spawn_pool_world/**'
-permissions:
-  contents: write
+    branches: [ main ]
+  workflow_dispatch: # Allows you to trigger the Data Pack build manually
 
 jobs:
   build:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout Repository
-        uses: actions/checkout@v3
+      - uses: actions/checkout@v4
 
       - name: Set up Python
-        uses: actions/setup-python@v4
+        uses: actions/setup-python@v5
         with:
-          python-version: '3.9'
+          python-version: '3.x'
 
-      - name: Generate Spawn Table
+      - name: 🔍 Validate JSON
+        run: python scripts/validate_json.py
+
+      - name: 📝 Update Wiki Pages
         run: python scripts/update_spawns.py
 
-      - name: Commit and Push
+      - name: 🚀 Commit Wiki Changes
         run: |
-          git config --global user.name "Wiki-Bot"
+          git config --global user.name "Homestead-Bot"
           git config --global user.email "bot@homestead.com"
+          # Using wildcard to ensure all generated wiki files are caught
           git add wiki/cobblemon-gameplay/legendaries.md wiki/cobblemon-gameplay/spawns.md
-          git commit -m "chore: updated spawn table via GitHub Actions" || echo "No changes to commit"
+          git commit -m "docs: sync spawn tables" || echo "No changes to commit"
           git push
+
+      - name: 📦 Build Data Pack (Manual Only)
+        if: github.event_name == 'workflow_dispatch'
+        run: |
+          # Generates a version string like 2026-02-11
+          VERSION=$(date +'%Y-%m-%d')
+          zip -r "Homestead-DataPack-$VERSION.zip" data/ pack.mcmeta pack.png
+          
+      - name: 💾 Upload Data Pack Artifact
+        if: github.event_name == 'workflow_dispatch'
+        uses: actions/upload-artifact@v4
+        with:
+          name: Homestead-DataPack
+          path: "*.zip"
