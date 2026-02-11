@@ -8,25 +8,25 @@ OUTPUT_FILE = 'wiki/spawns.md'
 
 def format_name(raw_id):
     """ Cleans IDs like 'mythsandlegends-articuno-1' or 'articuno' into 'Articuno' """
-    # Remove namespace if present
     name = raw_id.split(':')[-1]
-    # Split by hyphens/underscores and remove purely numeric parts
     parts = re.split(r'[-_]', name)
     clean_parts = [p.capitalize() for p in parts if not p.isdigit() and p.lower() != 'mythsandlegends']
-    
-    # If we filtered everything out, return the original raw ID, otherwise the joined parts
     final_name = " ".join(clean_parts)
     return final_name if final_name else name.capitalize()
 
 def get_conditions(spawn_obj):
-    """ Extracts item, time, season, and weather from condition blocks """
-    cond = spawn_obj.get('condition', {})
+    """ Extracts item, time, season, and weather from the spawn object """
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear"}
     
+    # 1. Check for the "key_item" at the top level (The fix for Myths & Legends)
+    top_item = spawn_obj.get('key_item')
+    if top_item:
+        res["item"] = top_item.split(':')[-1].replace('_', ' ').title()
+
     def scan_dict(d):
-        # Item Logic (Looking for M&L specific keys)
+        # 2. Check for items inside condition blocks (standard/other mods)
         found_item = d.get('custom_absent_required_item') or d.get('needed_item') or d.get('item')
-        if found_item: 
+        if found_item and res["item"] == "None": 
             res["item"] = found_item.split(':')[-1].replace('_', ' ').title()
         
         # Time / Season / Weather
@@ -34,12 +34,13 @@ def get_conditions(spawn_obj):
         if 'season' in d: res["season"] = d['season'].capitalize()
         if 'weather' in d: res["weather"] = d['weather'].split(':')[-1].capitalize()
 
-    # Scan top level and nested 'and'/'or' blocks
+    cond = spawn_obj.get('condition', {})
     scan_dict(cond)
-    if 'and' in cond:
-        for sub in cond['and']: scan_dict(sub)
-    if 'or' in cond:
-        for sub in cond['or']: scan_dict(sub)
+    if isinstance(cond, dict):
+        if 'and' in cond:
+            for sub in cond['and']: scan_dict(sub)
+        if 'or' in cond:
+            for sub in cond['or']: scan_dict(sub)
             
     return res
 
@@ -80,6 +81,7 @@ def generate_table():
 
     with open(OUTPUT_FILE, 'w') as f:
         f.write("# 🐾 World Spawn List\n\n")
+        f.write("> This list is automatically updated from the server's data packs.\n\n")
         
         f.write("## 💎 Legendary & Mythic Spawns\n")
         f.write("| Pokémon | Key Item | Biomes | Time | Season | Weather | Weight |\n")
