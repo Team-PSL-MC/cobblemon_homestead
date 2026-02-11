@@ -1,6 +1,0 @@
----
-icon: computer-classic
----
-
-# Mekanism
-

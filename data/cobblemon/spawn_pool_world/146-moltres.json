@@ -1,0 +1,30 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "146-moltres",
+      "pokemon": "moltres",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_volcanic",
+          "#cobblemon:is_sky"
+        ],
+        "season": "summer",
+        "key_item": "mythsandlegends:tidal_bell",
+        "item_requirement": [
+
+        ]
+      }
+    }
+  ]
+}

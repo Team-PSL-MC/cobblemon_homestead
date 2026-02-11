@@ -3,7 +3,7 @@
   "neededInstalledMods": [],
   "spawns": [
     {
-      "id": "mythsandlegends-celebi-starlight",
+      "id": "251-celebi",
       "pokemon": "celebi",
       "presets": [ "natural" ],
       "type": "pokemon",
@@ -23,7 +23,7 @@
       }
     },
     {
-      "id": "mythsandlegends-celebi-2",
+      "id": "251-celebi-1",
       "pokemon": "celebi",
       "presets": [ "natural" ],
       "type": "pokemon",

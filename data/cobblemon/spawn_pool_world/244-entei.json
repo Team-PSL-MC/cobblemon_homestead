@@ -4,41 +4,40 @@
   "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "ironmoth-1",
-      "pokemon": "ironmoth",
-      "presets": [
-        "natural"
-      ],
-      "type": "pokemon",
-      "spawnablePositionType": "grounded",
-      "bucket": "ultra-rare",
-      "level": "40-65",
-      "weight": 3.0,
-      "condition": {
-        "biomes": [
-          "#cobblemon:is_swamp"
-        ],
-        "timeRange": "day"
-      }
-    },
-    {
-      "id": "aether_iron_moth_1",
-      "pokemon": "ironmoth",
+      "id": "244-entei",
+      "pokemon": "entei",
       "presets": [
         "natural"
       ],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
-      "level": "50-100",
-      "weight": 5.0,
+      "level": "50-60",
+      "weight": 0.1,
       "condition": {
         "biomes": [
-          "aether:skyroot_grove"
+          "byg:brimstone_caverns"
         ],
-        "dimensions": [
-          "aether:the_aether"
-        ]
+        "season": "summer",
+        "key_item": "mythsandlegends:clear_bell"
+      }
+    },
+    {
+      "id": "244-entei-1",
+      "pokemon": "entei",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "minecraft:nether_wastes"
+        ],
+        "key_item": "mythsandlegends:clear_bell"
       }
     }
   ]

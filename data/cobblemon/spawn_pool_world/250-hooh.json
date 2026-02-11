@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "spawns": [
+    {
+      "id": "250-hooh",
+      "pokemon": "hooh",
+      "presets": [ "natural" ],
+      "type": "pokemon",
+      "context": "ground",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [ "eternal_starlight:scarlet_forest" ],
+        "times_of_day": [ "day" ],
+        "season": "summer",
+        "weather": "clear",
+        "key_item": "mythsandlegends:clear_bell"
+      }
+    }
+  ]
+}
