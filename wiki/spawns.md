@@ -1,5 +1,7 @@
 # 🐾 World Spawn List
 
+> This list is automatically updated from the server's data packs.
+
 ## 💎 Legendary & Mythic Spawns
 | Pokémon | Key Item | Biomes | Time | Season | Weather | Weight |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
@@ -17,6 +19,8 @@
 | **Registeel** | `None` | deep_dark, is_deep_dark | Any | Any | Clear | 0.1 |
 | **Registeel** | `None` | village | Any | Any | Clear | 0.1 |
 | **Registeel** | `None` | village | Any | Any | Clear | 0.1 |
+| **Shaymin** | `None` | sunflower_plains, flower_forest, flower_forest, meadow, terralith:blooming_plateau, terralith:blooming_valley, terralith:lavender_valley, terralith:sakura_grove, terralith:sakura_valley, is_floral, is_grassland | Any | Any | Clear | 0.1 |
+| **Shaymin** | `None` | is_lush | Any | Any | Clear | 0.1 |
 | **Suicune Starlight** | `None` | twilightforest:twilight_lake, eternal_starlight:starlit_sea | Any | Autumn | Rain | 0.1 |
 | **Tinglu** | `None` | is_hill | Any | Any | Clear | 0.5 |
 | **Tinglu** | `None` | is_mountain | Any | Any | Clear | 0.4 |
