@@ -116,3 +116,18 @@ def generate_tables():
 
 if __name__ == "__main__":
     generate_tables()
+
+def generate_summary():
+    """Generates a simple text summary of all current spawns for the Release body."""
+    summary = []
+    if os.path.exists(SPAWN_DATA_PATH):
+        for filename in os.listdir(SPAWN_DATA_PATH):
+            if filename.endswith('.json'):
+                with open(os.path.join(SPAWN_DATA_PATH, filename), 'r') as f:
+                    data = json.load(f)
+                    for s in data.get('spawns', []):
+                        _, name = parse_spawn_id(s)
+                        summary.append(f"- {name}")
+    
+    with open('version_summary.txt', 'w') as f:
+        f.write("\n".join(sorted(set(summary))))
