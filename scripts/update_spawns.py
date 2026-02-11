@@ -100,3 +100,21 @@ def generate_table():
 
 if __name__ == "__main__":
     generate_table()
+
+
+# --- Auto-Sync to GitBook Summary ---
+summary_path = 'SUMMARY.md'
+spawn_link = "* [🐾 World Spawn List](wiki/spawns.md)"
+
+if os.path.exists(summary_path):
+    with open(summary_path, 'r') as f:
+        content = f.read()
+    
+    if "wiki/spawns.md" not in content:
+        with open(summary_path, 'a') as f:
+            f.write(f"\n{spawn_link}")
+        print("Added spawns.md to SUMMARY.md")
+else:
+    # Create SUMMARY.md if it doesn't exist
+    with open(summary_path, 'w') as f:
+        f.write(f"# Table of contents\n\n{spawn_link}")
