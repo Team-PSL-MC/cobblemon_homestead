@@ -8,38 +8,39 @@ SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
 LEGENDARY_FILE = 'wiki/legendaries.md'
 STANDARD_FILE = 'wiki/spawns.md'
 
-def parse_spawn_id(raw_id):
+def parse_spawn_id(spawn_obj):
     """ 
-    Extracts (DexNumber, Name) from ID. 
-    Handles: "251-celebi", "mythsandlegends-251-celebi", or "celebi"
+    Extracts Dex Number and Name. 
     """
-    name_part = raw_id.split(':')[-1]
-    parts = re.split(r'[-_]', name_part)
+    raw_id = spawn_obj.get('id', '')
+    pokemon_name = spawn_obj.get('pokemon', 'Unknown')
     
-    dex_num = 9999  # Fallback for IDs without a number
-    clean_name = []
-
-    for p in parts:
-        if p.isdigit():
-            dex_num = int(p)
-        elif p.lower() != 'mythsandlegends':
-            clean_name.append(p.capitalize())
-
-    final_name = " ".join(clean_name) if clean_name else name_part.capitalize()
-    return dex_num, final_name
+    # Try to find a number in the ID (e.g., "144-articuno")
+    dex_num = 9999
+    match = re.search(r'(\d+)', raw_id)
+    if match:
+        dex_num = int(match.group(1))
+    
+    # Simple clean name from the pokemon field
+    name = pokemon_name.replace('_', ' ').title()
+    
+    return dex_num, name
 
 def get_conditions(spawn_obj):
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear"}
     cond = spawn_obj.get('condition', {})
     if not isinstance(cond, dict): return res
 
+    # Check for Key Items
     found_item = cond.get('key_item') or cond.get('custom_absent_required_item') or cond.get('needed_item')
     if found_item:
         res["item"] = found_item.split(':')[-1].replace('_', ' ').title()
 
+    # Check for Time
     times = cond.get('times_of_day')
     if times: res["time"] = ", ".join([t.capitalize() for t in times])
 
+    # Check for Weather/Season
     if 'weather' in cond: res["weather"] = cond['weather'].split(':')[-1].capitalize()
     if 'season' in cond: res["season"] = cond['season'].capitalize()
     return res
@@ -49,7 +50,9 @@ def generate_tables():
     standard_entries = []
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
 
-    if not os.path.exists(SPAWN_DATA_PATH): return
+    if not os.path.exists(SPAWN_DATA_PATH):
+        print("Path not found!")
+        return
 
     for filename in os.listdir(SPAWN_DATA_PATH):
         if not filename.endswith('.json'): continue
@@ -57,8 +60,7 @@ def generate_tables():
             try:
                 data = json.load(f)
                 for s in data.get('spawns', []):
-                    raw_id = s.get('id', s.get('pokemon', 'Unknown'))
-                    dex_num, name = parse_spawn_id(raw_id)
+                    dex_num, name = parse_spawn_id(s)
                     weight = s.get('weight', 0)
                     stats = get_conditions(s)
                     
@@ -72,6 +74,7 @@ def generate_tables():
                         "season": stats["season"], "weather": stats["weather"]
                     }
 
+                    # Legendaries are weight <= 1 OR in a file with "myth" in the name
                     if weight <= 1 or "myth" in filename.lower():
                         legend_entries.append(entry)
                     else:
@@ -84,25 +87,24 @@ def generate_tables():
 
     os.makedirs('wiki', exist_ok=True)
 
-    # 1. Legendaries File (Using <small> and wrapping to help with the "shrunk" table)
+    # 1. Write Legendaries File
     with open(LEGENDARY_FILE, 'w') as f:
         f.write("# 💎 Legendary Spawns\n\n<small>\n\n")
-        f.write("| # | Pokémon | Key Item | Biomes | Time | Season | Wt. |\n")
-        f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
+        f.write("| # | Pokémon | Key Item | Biomes | Time | Season | Weather | Wt. |\n")
+        f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
         for e in legend_entries:
-            dex_display = f"#{e['dex']}" if e['dex'] != 9999 else "???"
-            f.write(f"| {dex_display} | **{e['name']}** | `{e['item']}` | {e['biomes']} | {e['time']} | {e['season']} | {e['weight']} |\n")
+            dex_str = f"#{e['dex']}" if e['dex'] != 9999 else "???"
+            f.write(f"| {dex_str} | **{e['name']}** | {e['item']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
         f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
 
-    # 2. Standard Spawns File
+    # 2. Write Standard Spawns File
     with open(STANDARD_FILE, 'w') as f:
         f.write("# 🌲 Standard Spawns\n\n<small>\n\n")
-        f.write("> 💡 Looking for default spawns? [Official Spreadsheet](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)\n\n")
         f.write("| # | Pokémon | Biomes | Time | Season | Weather | Rarity |\n")
         f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
         for e in standard_entries:
-            dex_display = f"#{e['dex']}" if e['dex'] != 9999 else "???"
-            f.write(f"| {dex_display} | {e['name']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
+            dex_str = f"#{e['dex']}" if e['dex'] != 9999 else "???"
+            f.write(f"| {dex_str} | {e['name']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
         f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
 
 if __name__ == "__main__":
