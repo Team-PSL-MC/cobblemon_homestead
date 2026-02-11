@@ -1,0 +1,44 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "mythsandlegends-entei-1",
+      "pokemon": "entei",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "byg:brimstone_caverns"
+        ],
+        "season": "summer",
+        "key_item": "mythsandlegends:clear_bell"
+      }
+    },
+    {
+      "id": "mythsandlegends-entei-2",
+      "pokemon": "entei",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "minecraft:nether_wastes"
+        ],
+        "key_item": "mythsandlegends:clear_bell"
+      }
+    }
+  ]
+}
