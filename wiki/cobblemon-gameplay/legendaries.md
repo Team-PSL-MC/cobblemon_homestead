@@ -18,11 +18,11 @@
 | 379 | **Registeel** | Steel Tablet | deep_dark, is_deep_dark | Any | Any | Clear | 0.1 |
 | 382 | **Kyogre** | Blue Orb | is_ocean, deep_cold_ocean, deep_frozen_ocean, deep_ocean, ocean | Any | Any | Clear | 0.1 |
 | 494 | **Victini** | Liberty Pass | the_bumblezone:honey_peaks | Any | Any | Clear | 0.1 |
-| 807 | **Zeraora** | None | Near Induction Port | Any | Any | Clear | 0.1 |
-| 905 | **Enamourus** | None | Global | Any | Any | Clear | 0.1 |
+| 807 | **Zeraora** | Zeraoras Thunderclaw | Near Induction Port | Any | Any | Clear | 0.1 |
+| 905 | **Enamourus** | Reveal Glass | Near Mechanical Harvester | Any | Spring | Clear | 0.1 |
 
 
 </small>
 
 ---
-*Last Updated: 2026-02-11 17:36:01 UTC*
+*Last Updated: 2026-02-11 17:38:42 UTC*
