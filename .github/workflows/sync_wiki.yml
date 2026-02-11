@@ -35,13 +35,23 @@ jobs:
       - name: 📦 Build Data Pack (Manual Only)
         if: github.event_name == 'workflow_dispatch'
         run: |
-          # Generates a version string like 2026-02-11
-          VERSION=$(date +'%Y-%m-%d')
-          zip -r "Homestead-DataPack-$VERSION.zip" data/ pack.mcmeta pack.png
-          
-      - name: 💾 Upload Data Pack Artifact
+          VERSION=$(date +'%Y-%m-%d-%H%M')
+          echo "DP_VERSION=$VERSION" >> $GITHUB_ENV
+          zip -r "Homestead-DP-$VERSION.zip" data/ pack.mcmeta pack.png
+
+      - name: 🚀 Create GitHub Release
         if: github.event_name == 'workflow_dispatch'
-        uses: actions/upload-artifact@v4
+        uses: softprops/action-gh-release@v2
         with:
-          name: Homestead-DataPack
-          path: "*.zip"
+          tag_name: v${{ env.DP_VERSION }}
+          name: Homestead Data Pack ${{ env.DP_VERSION }}
+          body: |
+            ## 🛠️ Automated Data Pack Build
+            This release contains the latest spawn logic and legendary updates.
+            **Included Files:**
+            - Updated Legendaries
+            - Updated Standard Spawns
+            - Modded Machine Spawns
+          files: Homestead-DP-*.zip
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
