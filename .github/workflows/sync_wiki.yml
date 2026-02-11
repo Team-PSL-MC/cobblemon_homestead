@@ -25,6 +25,6 @@ jobs:
         run: |
           git config --global user.name "Wiki-Bot"
           git config --global user.email "bot@homestead.com"
-          git add wiki/legendaries.md wiki/spawns.md
+          git add wiki/cobblemon-gameplay/legendaries.md wiki/cobblemon-gameplay/spawns.md
           git commit -m "chore: updated spawn table via GitHub Actions" || echo "No changes to commit"
           git push
