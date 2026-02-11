@@ -1,0 +1,46 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "spawns": [
+    {
+      "id": "mythsandlegends-celebi-starlight",
+      "pokemon": "celebi",
+      "presets": [ "natural" ],
+      "type": "pokemon",
+      "context": "ground",
+      "bucket": "ultra-rare",
+      "level": "30",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [ 
+          "eternal_starlight:starlight_forest",
+          "twilightforest:enchanted_forest"
+        ],
+        "times_of_day": [ "midnight" ],
+        "weather": "clear",
+        "season": "spring",
+        "key_item": "mythsandlegends:gs_ball"
+      }
+    },
+    {
+      "id": "mythsandlegends-celebi-2",
+      "pokemon": "celebi",
+      "presets": [ "natural" ],
+      "type": "pokemon",
+      "context": "ground",
+      "bucket": "ultra-rare",
+      "level": "30",
+      "weight": 0.05,
+      "condition": {
+        "biomes": [ 
+          "minecraft:flower_forest"
+        ],
+        "structures": [ "#minecraft:village" ],
+        "times_of_day": [ "midnight" ],
+        "weather": "clear",
+        "season": "spring",
+        "key_item": "mythsandlegends:gs_ball"
+      }
+    }
+  ]
+}
