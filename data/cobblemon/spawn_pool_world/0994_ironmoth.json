@@ -1,0 +1,45 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "ironmoth-1",
+      "pokemon": "ironmoth",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "40-65",
+      "weight": 3.0,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_swamp"
+        ],
+        "timeRange": "day"
+      }
+    },
+    {
+      "id": "aether_iron_moth_1",
+      "pokemon": "ironmoth",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-100",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "aether:skyroot_grove"
+        ],
+        "dimensions": [
+          "aether:the_aether"
+        ]
+      }
+    }
+  ]
+}
