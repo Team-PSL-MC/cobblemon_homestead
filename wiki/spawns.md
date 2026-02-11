@@ -23,6 +23,7 @@
 | **Roaringmoon 1t** | `None` | deeperdarker:deeplands, is_dripstone | Any | Any | Clear | 0.3 |
 | **Shaymin** | `Oaks Letter` | sunflower_plains, flower_forest, flower_forest, meadow, terralith:blooming_plateau, terralith:blooming_valley, terralith:lavender_valley, terralith:sakura_grove, terralith:sakura_valley, is_floral, is_grassland | Any | Any | Clear | 0.1 |
 | **Shaymin** | `Oaks Letter` | is_lush | Any | Any | Clear | 0.1 |
+| **Solgaleo** | `Sun Flute` | is_plateau, desert, wythers:badlands_desert | Any | Any | Clear | 0.1 |
 | **Suicune Starlight** | `Clear Bell` | twilightforest:twilight_lake, eternal_starlight:starlit_sea | Any | Autumn | Rain | 0.1 |
 | **Tinglu** | `None` | is_hill | Any | Any | Clear | 0.5 |
 | **Tinglu** | `None` | is_mountain | Any | Any | Clear | 0.4 |
