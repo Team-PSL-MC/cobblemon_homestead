@@ -1,12 +1,25 @@
-# 🌲 Standard Spawns
+---
+layout:
+  width: wide
+  title:
+    visible: true
+  description:
+    visible: true
+  tableOfContents:
+    visible: true
+  outline:
+    visible: true
+  pagination:
+    visible: true
+  metadata:
+    visible: true
+---
 
-<small>
+# 🌲 Spawns
 
 | # | Pokémon | Biomes | Time | Season | Weather | Rarity |
-| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| - | ------- | ------ | ---- | ------ | ------- | ------ |
 
+***
 
-</small>
-
----
-*Last Updated: 2026-02-11 05:52:06 UTC*
+_Last Updated: 2026-02-11 05:52:06 UTC_
