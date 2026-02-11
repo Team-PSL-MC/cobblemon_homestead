@@ -12,6 +12,7 @@
 ## Cobblemon Gameplay
 
 * [Spawns](cobblemon-gameplay/spawns.md)
+* [Legendaries](cobblemon-gameplay/legendaries.md)
 * [Cobbleworkers](cobblemon-gameplay/cobbleworkers/README.md)
   * [Intergrations](cobblemon-gameplay/cobbleworkers/intergrations.md)
 * [CobbleBreeding](cobblemon-gameplay/cobblebreeding.md)
