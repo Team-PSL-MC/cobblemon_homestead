@@ -3,7 +3,8 @@ on:
   push:
     paths:
       - 'data/cobblemon/spawn_pool_world/**' 
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
