@@ -39,7 +39,14 @@ def get_conditions(spawn_obj):
     # Check for Time
     times = cond.get('times_of_day')
     if times: res["time"] = ", ".join([t.capitalize() for t in times])
-
+    
+    # Check for Nearby Blocks (Modded Machines)
+    if 'location' in cond:
+        loc = cond['location']
+        if 'block' in loc:
+            block_name = loc['block'].split(':')[-1].replace('_', ' ').title()
+            res["biomes"] = f"Near {block_name}" # Overwrites biome with the machine name
+    
     # Check for Weather/Season
     if 'weather' in cond: res["weather"] = cond['weather'].split(':')[-1].capitalize()
     if 'season' in cond: res["season"] = cond['season'].capitalize()
@@ -109,3 +116,18 @@ def generate_tables():
 
 if __name__ == "__main__":
     generate_tables()
+
+def generate_summary():
+    """Generates a simple text summary of all current spawns for the Release body."""
+    summary = []
+    if os.path.exists(SPAWN_DATA_PATH):
+        for filename in os.listdir(SPAWN_DATA_PATH):
+            if filename.endswith('.json'):
+                with open(os.path.join(SPAWN_DATA_PATH, filename), 'r') as f:
+                    data = json.load(f)
+                    for s in data.get('spawns', []):
+                        _, name = parse_spawn_id(s)
+                        summary.append(f"- {name}")
+    
+    with open('version_summary.txt', 'w') as f:
+        f.write("\n".join(sorted(set(summary))))
