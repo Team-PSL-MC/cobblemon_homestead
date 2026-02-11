@@ -17,7 +17,9 @@
         "biomes": [
           "byg:blue_abyss"
         ],
+        "times_of_day": [ "night" ],
         "weather": "rain",
+        "season": "winter",
         "key_item": "mythsandlegends:tidal_bell"
       }
     }

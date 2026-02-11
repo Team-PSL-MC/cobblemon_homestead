@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "807-zeraora",
+      "pokemon": "zeraora",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 0.1,
+      "condition": {
+      "location": {
+        "block": "mekanism:induction_port",
+        "horizontal_radius": 5,
+        "vertical_radius": 3
+            }
+        },
+        "key_item": "mythsandlegends:zeraoras_thunderclaw"
+      
+    }
+    ]
+} 
