@@ -5,8 +5,8 @@ from datetime import datetime
 
 # Configuration
 SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
-LEGENDARY_FILE = 'wiki/legendaries.md'
-STANDARD_FILE = 'wiki/spawns.md'
+LEGENDARY_FILE = 'wiki/cobblemon-gameplay/legendaries.md'
+STANDARD_FILE = 'wiki/cobblemon-gameplay/spawns.md'
 
 def parse_spawn_id(spawn_obj):
     """ 
