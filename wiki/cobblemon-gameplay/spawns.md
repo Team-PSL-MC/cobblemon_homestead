@@ -2,11 +2,11 @@
 
 <small>
 
-| # | Pokémon | Biomes | Time | Season | Weather | Rarity |
+| # | Pokémon | Location | Time | Season | Weather | Rarity |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 
 
 </small>
 
 ---
-*Last Updated: 2026-02-11 17:28:39 UTC*
+*Last Updated: 2026-02-11 17:38:42 UTC*
