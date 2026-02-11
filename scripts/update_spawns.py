@@ -39,7 +39,14 @@ def get_conditions(spawn_obj):
     # Check for Time
     times = cond.get('times_of_day')
     if times: res["time"] = ", ".join([t.capitalize() for t in times])
-
+    
+    # Check for Nearby Blocks (Modded Machines)
+    if 'location' in cond:
+        loc = cond['location']
+        if 'block' in loc:
+            block_name = loc['block'].split(':')[-1].replace('_', ' ').title()
+            res["biomes"] = f"Near {block_name}" # Overwrites biome with the machine name
+    
     # Check for Weather/Season
     if 'weather' in cond: res["weather"] = cond['weather'].split(':')[-1].capitalize()
     if 'season' in cond: res["season"] = cond['season'].capitalize()
