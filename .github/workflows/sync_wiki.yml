@@ -4,7 +4,8 @@ on:
   push:
     branches: [ main ]
   workflow_dispatch: # Allows you to trigger the Data Pack build manually
-
+permissions:
+  contents: write
 jobs:
   build:
     runs-on: ubuntu-latest
