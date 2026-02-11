@@ -21,27 +21,53 @@ def parse_spawn_id(spawn_obj):
 def get_conditions(spawn_obj):
     # Initialize with defaults
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None}
+    
+    # 1. Look for Key Item (Checks BOTH the main spawn object AND the condition block)
+    # This fixes your Enamorus Key Item issue
+    found_item = (spawn_obj.get('key_item') or 
+                  spawn_obj.get('needed_item') or 
+                  spawn_obj.get('custom_absent_required_item'))
+    
     cond = spawn_obj.get('condition', {})
-    if not isinstance(cond, dict): return res
+    if isinstance(cond, dict):
+        # Also check inside condition if not found yet
+        if not found_item:
+            found_item = cond.get('key_item') or cond.get('needed_item')
 
-    # 1. Check for Key Items (Looks in the 'condition' block)
-    found_item = cond.get('key_item') or cond.get('custom_absent_required_item') or cond.get('needed_item')
     if found_item:
-        res["item"] = found_item.split(':')[-1].replace('_', ' ').title()
+        res["item"] = str(found_item).split(':')[-1].replace('_', ' ').title()
 
-    # 2. Check for Time
-    times = cond.get('times_of_day')
-    if times: res["time"] = ", ".join([t.capitalize() for t in times])
+    # 2. Helper to scan nested conditions (for "and", "or" blocks)
+    def scan_cond(c):
+        if not isinstance(c, dict): return
+        
+        # Check for Time
+        if 'times_of_day' in c:
+            res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
+        
+        # Check for Season
+        if 'season' in c:
+            res["season"] = c['season'].capitalize()
+            
+        # Check for Weather
+        if 'weather' in c:
+            res["weather"] = c['weather'].split(':')[-1].capitalize()
+
+        # Check for Location/Blocks
+        if 'location' in c and isinstance(c['location'], dict):
+            loc = c['location']
+            if 'block' in loc:
+                res["location"] = "Near " + loc['block'].split(':')[-1].replace('_', ' ').title()
+
+        # Recurse into 'and' or 'or' lists (Fixes your Enamorus block issue)
+        for logical_key in ['and', 'or']:
+            if logical_key in c and isinstance(c[logical_key], list):
+                for sub_c in c[logical_key]:
+                    scan_cond(sub_c)
+
+    # Start scanning from the root condition
+    scan_cond(cond)
     
-    # 3. Check for Nearby Blocks (Modded Machines)
-    if 'location' in cond:
-        loc = cond['location']
-        if 'block' in loc:
-            res["location"] = "Near " + loc['block'].split(':')[-1].replace('_', ' ').title()
-    
-    # 4. Check for Weather/Season
-    if 'weather' in cond: res["weather"] = cond['weather'].split(':')[-1].capitalize()
-    if 'season' in cond: res["season"] = cond['season'].capitalize()
     return res
 
 def generate_tables():
