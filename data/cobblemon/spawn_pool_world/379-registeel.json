@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "379-registeel",
+      "pokemon": "registeel",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "40",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "minecraft:deep_dark",
+          "#cobblemon:is_deep_dark"
+        ],
+
+        "key_item": "mythsandlegends:steel_tablet"
+      }
+    }
+  ]
+}
