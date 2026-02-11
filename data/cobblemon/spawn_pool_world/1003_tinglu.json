@@ -1,0 +1,33 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "tinglu-1",
+      "pokemon": "tinglu",
+      "presets": ["natural"],
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60",
+      "weight": 0.5,
+      "condition": {
+        "biomes": ["#minecraft:is_hill"]
+      }
+    },
+    {
+      "id": "tinglu-2",
+      "pokemon": "tinglu",
+      "presets": ["natural"],
+      "type": "pokemon",
+      "spawnablePositionType": "grounded",
+      "bucket": "ultra-rare",
+      "level": "60",
+      "weight": 0.4,
+      "condition": {
+        "biomes": ["#minecraft:is_mountain"]
+      }
+    }
+  ]
+}
