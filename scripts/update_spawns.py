@@ -8,12 +8,25 @@ SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
 LEGENDARY_FILE = 'wiki/legendaries.md'
 STANDARD_FILE = 'wiki/spawns.md'
 
-def format_name(raw_id):
-    name = raw_id.split(':')[-1]
-    parts = re.split(r'[-_]', name)
-    clean_parts = [p.capitalize() for p in parts if not p.isdigit() and p.lower() != 'mythsandlegends']
-    final_name = " ".join(clean_parts)
-    return final_name if final_name else name.capitalize()
+def parse_spawn_id(raw_id):
+    """ 
+    Extracts (DexNumber, Name) from ID. 
+    Handles: "251-celebi", "mythsandlegends-251-celebi", or "celebi"
+    """
+    name_part = raw_id.split(':')[-1]
+    parts = re.split(r'[-_]', name_part)
+    
+    dex_num = 9999  # Fallback for IDs without a number
+    clean_name = []
+
+    for p in parts:
+        if p.isdigit():
+            dex_num = int(p)
+        elif p.lower() != 'mythsandlegends':
+            clean_name.append(p.capitalize())
+
+    final_name = " ".join(clean_name) if clean_name else name_part.capitalize()
+    return dex_num, final_name
 
 def get_conditions(spawn_obj):
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear"}
@@ -44,17 +57,17 @@ def generate_tables():
             try:
                 data = json.load(f)
                 for s in data.get('spawns', []):
-                    name = format_name(s.get('id', s.get('pokemon', 'Unknown')))
+                    raw_id = s.get('id', s.get('pokemon', 'Unknown'))
+                    dex_num, name = parse_spawn_id(raw_id)
                     weight = s.get('weight', 0)
                     stats = get_conditions(s)
                     
                     cond = s.get('condition', {})
                     biomes_list = cond.get('biomes', ["Global"])
-                    biomes = ", ".join(biomes_list) if isinstance(biomes_list, list) else str(biomes_list)
-                    biomes = biomes.replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
+                    biomes = ", ".join(biomes_list).replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
 
                     entry = {
-                        "name": name, "biomes": biomes, "weight": weight,
+                        "dex": dex_num, "name": name, "biomes": biomes, "weight": weight,
                         "item": stats["item"], "time": stats["time"], 
                         "season": stats["season"], "weather": stats["weather"]
                     }
@@ -65,30 +78,32 @@ def generate_tables():
                         standard_entries.append(entry)
             except: continue
 
-    # Sort Alphabetically
-    legend_entries.sort(key=lambda x: x['name'])
-    standard_entries.sort(key=lambda x: x['name'])
+    # Numerical Sort by Dex Number
+    legend_entries.sort(key=lambda x: x['dex'])
+    standard_entries.sort(key=lambda x: x['dex'])
 
     os.makedirs('wiki', exist_ok=True)
 
-    # 1. Write Legendaries File
+    # 1. Legendaries File (Using <small> and wrapping to help with the "shrunk" table)
     with open(LEGENDARY_FILE, 'w') as f:
-        f.write("# 💎 Legendary Spawns\n\n")
-        f.write("| Pokémon | Key Item | Biomes | Time | Season | Weather | Weight |\n")
+        f.write("# 💎 Legendary Spawns\n\n<small>\n\n")
+        f.write("| # | Pokémon | Key Item | Biomes | Time | Season | Wt. |\n")
         f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
         for e in legend_entries:
-            f.write(f"| **{e['name']}** | `{e['item']}` | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
-        f.write(f"\n\n---\n*Last Updated: {timestamp}*")
+            dex_display = f"#{e['dex']}" if e['dex'] != 9999 else "???"
+            f.write(f"| {dex_display} | **{e['name']}** | `{e['item']}` | {e['biomes']} | {e['time']} | {e['season']} | {e['weight']} |\n")
+        f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
 
-    # 2. Write Standard Spawns File
+    # 2. Standard Spawns File
     with open(STANDARD_FILE, 'w') as f:
-        f.write("# 🌲 Standard Spawns\n\n")
-        f.write("> 💡 Looking for default Cobblemon spawns? Check the [Official Spawn Spreadsheet](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0).\n\n")
-        f.write("| Pokémon | Biomes | Time | Season | Weather | Rarity |\n")
-        f.write("| :--- | :--- | :--- | :--- | :--- | :--- |\n")
+        f.write("# 🌲 Standard Spawns\n\n<small>\n\n")
+        f.write("> 💡 Looking for default spawns? [Official Spreadsheet](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)\n\n")
+        f.write("| # | Pokémon | Biomes | Time | Season | Weather | Rarity |\n")
+        f.write("| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
         for e in standard_entries:
-            f.write(f"| {e['name']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
-        f.write(f"\n\n---\n*Last Updated: {timestamp}*")
+            dex_display = f"#{e['dex']}" if e['dex'] != 9999 else "???"
+            f.write(f"| {dex_display} | {e['name']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
+        f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
 
 if __name__ == "__main__":
     generate_tables()
