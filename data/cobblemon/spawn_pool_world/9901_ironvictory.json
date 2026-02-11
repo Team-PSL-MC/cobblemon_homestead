@@ -1,0 +1,58 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "ironvictory-1",
+            "pokemon": "ironvictory",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "58-62",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_magical"
+                ]
+            }
+        },
+        {
+            "id": "ironvictory-2",
+            "pokemon": "ironvictory",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "58-62",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_desert"
+                ]
+            }
+        },
+        {
+            "id": "ironvictory-1",
+            "pokemon": "ironvictory",
+            "presets": [
+                "natural"
+            ],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "ultra-rare",
+            "level": "58-62",
+            "weight": 3.0,
+            "condition": {
+                "biomes": [
+                    "#cobblemon:is_end"
+                ]
+            }
+        }
+    ]
+}
