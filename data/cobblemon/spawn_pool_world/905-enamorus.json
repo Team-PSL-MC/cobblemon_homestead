@@ -12,17 +12,17 @@
       "bucket": "ultra-rare",
       "level": "50-70",
       "weight": 0.1,
-"condition": {
-    "and": [
-      { "season": "spring" },
-      {
-        "location": {
-          "block": "create:mechanical_harvester",
-          "horizontal_radius": 10
-        }
-      }
-    ]
-  },
+      "condition": {
+        "and": [
+          { "season": "spring" },
+          {
+            "location": {
+              "block": "create:mechanical_harvester",
+              "horizontal_radius": 10
+            }
+          }
+        ]
+      },
         "key_item": "mythsandlegends:reveal_glass"
       }
 
