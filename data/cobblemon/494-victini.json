@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [
+  ],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "494-victini",
+      "pokemon": "victini",
+      "presets": [
+        "natural"
+      ],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70-100",
+      "weight": 0.1,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:honey_peaks"
+        ],
+        "key_item": "mythsandlegends:liberty_pass"
+      }
+    }
+
+  ]
+}
