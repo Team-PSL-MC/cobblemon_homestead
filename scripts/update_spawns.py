@@ -7,46 +7,46 @@ SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
 OUTPUT_FILE = 'wiki/spawns.md'
 
 def format_name(raw_id):
-    """ Cleans IDs like 'mythsandlegends-articuno-1' or 'articuno' into 'Articuno' """
+    """ Cleans IDs like 'mythsandlegends-celebi-starlight' into 'Celebi Starlight' """
     name = raw_id.split(':')[-1]
     parts = re.split(r'[-_]', name)
+    # Remove digits and the mod name prefix
     clean_parts = [p.capitalize() for p in parts if not p.isdigit() and p.lower() != 'mythsandlegends']
     final_name = " ".join(clean_parts)
     return final_name if final_name else name.capitalize()
 
 def get_conditions(spawn_obj):
-    """ Extracts item, time, season, and weather from the spawn object """
+    """ Extracts item, time, season, and weather from the spawn object based on your JSON syntax """
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear"}
     
-    # 1. Check for the "key_item" at the top level (The fix for Myths & Legends)
-    top_item = spawn_obj.get('key_item')
-    if top_item:
-        res["item"] = top_item.split(':')[-1].replace('_', ' ').title()
-
-    def scan_dict(d):
-        # 2. Check for items inside condition blocks (standard/other mods)
-        found_item = d.get('custom_absent_required_item') or d.get('needed_item') or d.get('item')
-        if found_item and res["item"] == "None": 
-            res["item"] = found_item.split(':')[-1].replace('_', ' ').title()
-        
-        # Time / Season / Weather
-        if 'timeRange' in d: res["time"] = d['timeRange'].capitalize()
-        if 'season' in d: res["season"] = d['season'].capitalize()
-        if 'weather' in d: res["weather"] = d['weather'].split(':')[-1].capitalize()
-
+    # Grab the condition block
     cond = spawn_obj.get('condition', {})
-    scan_dict(cond)
-    if isinstance(cond, dict):
-        if 'and' in cond:
-            for sub in cond['and']: scan_dict(sub)
-        if 'or' in cond:
-            for sub in cond['or']: scan_dict(sub)
-            
+    if not isinstance(cond, dict):
+        return res
+
+    # 1. Key Item (nested inside condition)
+    found_item = cond.get('key_item') or cond.get('custom_absent_required_item') or cond.get('needed_item')
+    if found_item:
+        res["item"] = found_item.split(':')[-1].replace('_', ' ').title()
+
+    # 2. Times of Day (handling list format)
+    times = cond.get('times_of_day')
+    if times:
+        res["time"] = ", ".join([t.capitalize() for t in times])
+
+    # 3. Weather & Season
+    if 'weather' in cond:
+        res["weather"] = cond['weather'].split(':')[-1].capitalize()
+    if 'season' in cond:
+        res["season"] = cond['season'].capitalize()
+
     return res
 
 def generate_table():
     entries = []
-    if not os.path.exists(SPAWN_DATA_PATH): return
+    if not os.path.exists(SPAWN_DATA_PATH):
+        print(f"Directory not found: {SPAWN_DATA_PATH}")
+        return
 
     for filename in os.listdir(SPAWN_DATA_PATH):
         if not filename.endswith('.json'): continue
@@ -66,6 +66,7 @@ def generate_table():
                     biomes = ", ".join(biomes_list) if isinstance(biomes_list, list) else str(biomes_list)
                     biomes = biomes.replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
 
+                    # Weight check for Legendary status
                     is_legend = weight <= 1 or "myth" in filename.lower()
                     
                     entries.append({
@@ -74,11 +75,13 @@ def generate_table():
                         "season": stats["season"], "weather": stats["weather"],
                         "legend": is_legend
                     })
-            except: continue
+            except Exception as e:
+                print(f"Error parsing {filename}: {e}")
 
-    # Sort alphabetically
+    # Alphabetical sort
     entries.sort(key=lambda x: x['name'])
 
+    os.makedirs(os.path.dirname(OUTPUT_FILE), exist_ok=True)
     with open(OUTPUT_FILE, 'w') as f:
         f.write("# 🐾 World Spawn List\n\n")
         f.write("> This list is automatically updated from the server's data packs.\n\n")
