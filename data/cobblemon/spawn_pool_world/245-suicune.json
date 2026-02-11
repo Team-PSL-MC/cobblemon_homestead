@@ -6,11 +6,11 @@
       "id": "245-suicune",
       "pokemon": "suicune",
       "presets": [
-        "water_surface"
+        "river"
       ],
       "type": "pokemon",
       "bucket": "ultra-rare",
-      "level": "50",
+      "level": "50-60",
       "weight": 0.1,
       "condition": {
         "biomes": [
