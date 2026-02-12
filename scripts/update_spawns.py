@@ -1,143 +1,152 @@
 import os
 import json
 import re
+import csv
 from datetime import datetime
 
 # Configuration
+GITHUB_REPO = "Team-PSL-MC/cobblemon_homestead" 
 SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
-LEGENDARY_FILE = 'wiki/cobblemon-gameplay/legendaries.md'
-STANDARD_FILE = 'wiki/cobblemon-gameplay/spawns.md'
+WIKI_DIR = 'wiki/cobblemon-gameplay/'
+LEGENDARY_FILE = os.path.join(WIKI_DIR, 'legendaries.md')
+CSV_FILE = 'full_spawn_list.csv'
+
+GEN_RANGES = [
+    (1, 151, "kanto"), (152, 251, "johto"), (252, 386, "hoenn"),
+    (387, 493, "sinnoh"), (494, 649, "unova"), (650, 721, "kalos"),
+    (722, 809, "alola"), (810, 905, "galar"), (906, 1025, "paldea")
+]
+
+def get_nav_bar(current_label):
+    nav = "### 🗺️ National Pokédex Navigation\n\n"
+    links = []
+    for start, end, label in GEN_RANGES:
+        if label == current_label:
+            links.append(f"**{start}-{end}**")
+        else:
+            links.append(f"[{start}-{end}]({label}_spawns.md)")
+    return nav + " | ".join(links) + "\n\n"
+
+def get_resource_links():
+    csv_url = f"https://github.com/{GITHUB_REPO}/blob/main/full_spawn_list.csv"
+    return (
+        "### 📑 Resources & Downloads\n\n"
+        f"* [📥 **Download Homestead Custom Spawns (CSV)**]({csv_url})\n"
+        "* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)\n"
+        "* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)\n\n"
+    )
 
 def parse_spawn_id(spawn_obj):
     raw_id = spawn_obj.get('id', '')
     pokemon_name = spawn_obj.get('pokemon', 'Unknown')
     dex_num = 9999
     match = re.search(r'(\d+)', raw_id)
-    if match:
-        dex_num = int(match.group(1))
+    if match: dex_num = int(match.group(1))
     name = pokemon_name.replace('_', ' ').title()
     return dex_num, name
 
 def get_conditions(spawn_obj):
-    # Initialize with defaults
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None}
-    
-    # 1. Look for Key Item (Checks BOTH the main spawn object AND the condition block)
-    # This fixes your Enamorus Key Item issue
-    found_item = (spawn_obj.get('key_item') or 
-                  spawn_obj.get('needed_item') or 
-                  spawn_obj.get('custom_absent_required_item'))
-    
+    found_item = (spawn_obj.get('key_item') or spawn_obj.get('needed_item') or spawn_obj.get('custom_absent_required_item'))
     cond = spawn_obj.get('condition', {})
-    if isinstance(cond, dict):
-        # Also check inside condition if not found yet
-        if not found_item:
-            found_item = cond.get('key_item') or cond.get('needed_item')
+    if isinstance(cond, dict) and not found_item:
+        found_item = cond.get('key_item') or cond.get('needed_item')
+    if found_item: res["item"] = str(found_item).split(':')[-1].replace('_', ' ').title()
 
-    if found_item:
-        res["item"] = str(found_item).split(':')[-1].replace('_', ' ').title()
-
-    # 2. Helper to scan nested conditions (for "and", "or" blocks)
     def scan_cond(c):
         if not isinstance(c, dict): return
-        
-        # Check for Time
-        if 'times_of_day' in c:
-            res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
-        
-        # Check for Season
-        if 'season' in c:
-            res["season"] = c['season'].capitalize()
-            
-        # Check for Weather
-        if 'weather' in c:
-            res["weather"] = c['weather'].split(':')[-1].capitalize()
-
-        # Check for Location/Blocks
+        if 'times_of_day' in c: res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
+        if 'season' in c: res["season"] = c['season'].capitalize()
+        if 'weather' in c: res["weather"] = c['weather'].split(':')[-1].capitalize()
         if 'location' in c and isinstance(c['location'], dict):
             loc = c['location']
-            if 'block' in loc:
-                res["location"] = "Near " + loc['block'].split(':')[-1].replace('_', ' ').title()
-
-        # Recurse into 'and' or 'or' lists (Fixes your Enamorus block issue)
+            if 'block' in loc: res["location"] = "Near " + loc['block'].split(':')[-1].replace('_', ' ').title()
         for logical_key in ['and', 'or']:
             if logical_key in c and isinstance(c[logical_key], list):
-                for sub_c in c[logical_key]:
-                    scan_cond(sub_c)
-
-    # Start scanning from the root condition
+                for sub_c in c[logical_key]: scan_cond(sub_c)
     scan_cond(cond)
-    
     return res
 
 def generate_tables():
-    legend_entries = []
-    standard_entries = []
-    summary_list = []
+    grouped_data = {}
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
 
-    if not os.path.exists(SPAWN_DATA_PATH):
-        print("Path not found!")
-        return
+    if not os.path.exists(SPAWN_DATA_PATH): return
 
     for filename in os.listdir(SPAWN_DATA_PATH):
         if not filename.endswith('.json'): continue
-        with open(os.path.join(SPAWN_DATA_PATH, filename), 'r') as f:
+        with open(os.path.join(SPAWN_DATA_PATH, filename), 'r', encoding='utf-8') as f:
             try:
                 data = json.load(f)
                 for s in data.get('spawns', []):
                     dex_num, name = parse_spawn_id(s)
-                    weight = s.get('weight', 0)
                     stats = get_conditions(s)
+                    bucket = s.get('bucket', 'common').replace('_', '-').title()
                     
-                    # Logic Fix: If we found a specific block location, use that. 
-                    # Otherwise, use the Biomes list.
-                    if stats["location"]:
-                        display_location = stats["location"]
+                    if stats["location"]: display_loc = stats["location"]
                     else:
-                        cond = s.get('condition', {})
-                        biomes_list = cond.get('biomes', ["Global"])
-                        display_location = ", ".join(biomes_list).replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
+                        biomes_list = s.get('condition', {}).get('biomes', ["Global"])
+                        display_loc = ", ".join(biomes_list).replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
 
-                    entry = {
-                        "dex": dex_num, "name": name, "biomes": display_location, "weight": weight,
-                        "item": stats["item"], "time": stats["time"], 
-                        "season": stats["season"], "weather": stats["weather"]
-                    }
+                    req_line = f"• {display_loc} ({stats['time']}) — **{bucket}**"
+                    if stats["season"] != "Any": req_line = req_line.replace(")", f", {stats['season']})")
 
-                    summary_list.append(f"- {name}")
-
-                    if weight <= 1 or "myth" in filename.lower():
-                        legend_entries.append(entry)
+                    if name not in grouped_data:
+                        grouped_data[name] = {
+                            "dex": dex_num, "name": name, "item": stats["item"],
+                            "requirements": [req_line], "is_legendary": (s.get('weight', 0) <= 1 or "myth" in filename.lower())
+                        }
                     else:
-                        standard_entries.append(entry)
-            except Exception as e: 
-                print(f"Error parsing {filename}: {e}")
-                continue
+                        if req_line not in grouped_data[name]["requirements"]:
+                            grouped_data[name]["requirements"].append(req_line)
+            except: continue
 
-    # Numerical Sort
-    legend_entries.sort(key=lambda x: x['dex'])
-    standard_entries.sort(key=lambda x: x['dex'])
+    os.makedirs(WIKI_DIR, exist_ok=True)
+    resource_links = get_resource_links()
 
-    # Write Files
-    os.makedirs(os.path.dirname(LEGENDARY_FILE), exist_ok=True)
+    def write_safe_md(filepath, content):
+        clean_content = "\n".join([line.rstrip() for line in content.splitlines()])
+        with open(filepath, 'w', encoding='utf-8', newline='\n') as f:
+            f.write(clean_content + "\n")
 
-    with open(LEGENDARY_FILE, 'w') as f:
-        f.write("# 💎 Legendary Spawns\n\n<small>\n\n| # | Pokémon | Key Item | Location | Time | Season | Weather | Wt. |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
-        for e in legend_entries:
-            f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
-        f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
+    # 1. Legendary
+    legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
+    leg_content = f"# 💎 Legendary Spawns\n\n"
+    leg_content += get_nav_bar("legendaries") + "\n---\n\n"
+    if not legend_list:
+        leg_content += "No legendary spawns recorded yet.\n"
+    else:
+        leg_content += "| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n"
+        for e in legend_list:
+            safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
+            leg_content += f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n"
+    leg_content += f"\n---\n*Last Updated: {timestamp}*"
+    write_safe_md(LEGENDARY_FILE, leg_content)
 
-    with open(STANDARD_FILE, 'w') as f:
-        f.write("# 🌲 Standard Spawns\n\n<small>\n\n| # | Pokémon | Location | Time | Season | Weather | Rarity |\n| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n")
-        for e in standard_entries:
-            f.write(f"| {e['dex']} | {e['name']} | {e['biomes']} | {e['time']} | {e['season']} | {e['weather']} | {e['weight']} |\n")
-        f.write(f"\n\n</small>\n\n---\n*Last Updated: {timestamp}*")
+    # 2. Regional
+    for start, end, label in GEN_RANGES:
+        gen_list = sorted([v for v in grouped_data.values() if not v["is_legendary"] and start <= v["dex"] <= end], key=lambda x: x['dex'])
+        reg_content = f"# 🌲 {label.title()} Spawns ({start}-{end})\n\n"
+        reg_content += get_nav_bar(label)
+        reg_content += resource_links
+        reg_content += "\n---\n\n"
+        if not gen_list:
+            reg_content += f"No custom spawns recorded for the {label.title()} region yet.\n"
+        else:
+            reg_content += "| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n"
+            for e in gen_list:
+                safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
+                reg_content += f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n"
+        reg_content += f"\n---\n*Last Updated: {timestamp}*"
+        write_safe_md(os.path.join(WIKI_DIR, f"{label}_spawns.md"), reg_content)
 
-    # Generate the version summary for GitHub Releases
-    with open('version_summary.txt', 'w') as f:
-        f.write("## 🐾 Featured Pokémon in this build:\n")
-        f.write("\n".join(sorted(set(summary_list))))
+    # 3. CSV
+    with open(CSV_FILE, 'w', newline='', encoding='utf-8') as f:
+        writer = csv.writer(f)
+        writer.writerow(['Dex #', 'Name', 'Type', 'Requirements', 'Key Item'])
+        for name in sorted(grouped_data.keys(), key=lambda x: grouped_data[x]['dex']):
+            d = grouped_data[name]
+            writer.writerow([d['dex'], d['name'], 'Legendary' if d['is_legendary'] else 'Standard', " | ".join(d['requirements']), d['item']])
 
 if __name__ == "__main__":
     generate_tables()
