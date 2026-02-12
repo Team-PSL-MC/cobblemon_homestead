@@ -100,23 +100,42 @@ def generate_tables():
     os.makedirs(WIKI_DIR, exist_ok=True)
     nav_bar = get_nav_bar()
 
-    # 1. Write Legendary File
+# 1. Write Legendary File
     legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
-    with open(LEGENDARY_FILE, 'w') as f:
-        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar)
-        f.write("| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n")
+    with open(LEGENDARY_FILE, 'w', encoding='utf-8') as f:
+        # Standard YAML Frontmatter
+        f.write("---\nlayout:\n  width: full\n---\n\n") 
+        f.write("# 💎 Legendary Spawns\n\n")
+        f.write(nav_bar)
+        f.write("\n---\n\n") # Clear separation
+        
+        # Plain Markdown Table (No HTML wrappers to avoid parsing errors)
+        f.write("| # | Pokémon | Key Item | Location & Rarity |\n")
+        f.write("| :--- | :--- | :--- | :--- |\n")
         for e in legend_list:
-            f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {'<br>'.join(e['requirements'])} |\n")
+            # Escape any pipe characters in requirements just in case
+            safe_reqs = "<br>".join(e['requirements']).replace('|', '\|')
+            f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n")
+        
+        f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
-    # 2. Write Generation Files
+    # 2. Write Regional Files
     for start, end, label in GEN_RANGES:
         gen_list = sorted([v for v in grouped_data.values() if not v["is_legendary"] and start <= v["dex"] <= end], key=lambda x: x['dex'])
         file_path = os.path.join(WIKI_DIR, f"{label}_spawns.md")
-        with open(file_path, 'w') as f:
-            f.write(f"---\nlayout:\n  width: full\n---\n\n# 🌲 {label.title()} Spawns ({start}-{end})\n\n" + nav_bar)
-            f.write("| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
+        with open(file_path, 'w', encoding='utf-8') as f:
+            f.write("---\nlayout:\n  width: full\n---\n\n")
+            f.write(f"# 🌲 {label.title()} Spawns ({start}-{end})\n\n")
+            f.write(nav_bar)
+            f.write(resource_links)
+            f.write("\n") # Ensure a blank line before the table
+            
+            f.write("| # | Pokémon | Location, Time & Rarity |\n")
+            f.write("| :--- | :--- | :--- |\n")
             for e in gen_list:
-                f.write(f"| {e['dex']} | **{e['name']}** | {'<br>'.join(e['requirements'])} |\n")
+                safe_reqs = "<br>".join(e['requirements']).replace('|', '\|')
+                f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
+            
             f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
     # 3. Export CSV
