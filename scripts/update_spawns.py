@@ -23,13 +23,22 @@ GEN_RANGES = [
     (906, 1025, "paldea")
 ]
 
-# Navigation Bar Generator
 def get_nav_bar():
-    nav = "### National Pokédex Navigation\n"
+    nav = "### 🗺️ National Pokédex Navigation\n"
     links = []
     for start, end, label in GEN_RANGES:
         links.append(f"[{start}-{end}]({label}_spawns.md)")
-    return nav + " | ".join(links) + "\n\n---\n"
+    return nav + " | ".join(links) + "\n\n"
+
+def get_resource_links():
+    links = [
+        "### 📑 Resources & Downloads\n",
+        "* [📥 **Download Homestead Custom Spawns (CSV)**](../../full_spawn_list.csv)",
+        "* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)",
+        "* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)\n",
+        "---\n"
+    ]
+    return "\n".join(links)
 
 def parse_spawn_id(spawn_obj):
     raw_id = spawn_obj.get('id', '')
@@ -98,25 +107,20 @@ def generate_tables():
             except: continue
 
     os.makedirs(WIKI_DIR, exist_ok=True)
+    
+    # --- CRITICAL FIX: Call the functions to define the variables ---
     nav_bar = get_nav_bar()
+    resource_links = get_resource_links()
 
-# 1. Write Legendary File
+    # 1. Write Legendaries
     legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
     with open(LEGENDARY_FILE, 'w', encoding='utf-8') as f:
-        # Standard YAML Frontmatter
-        f.write("---\nlayout:\n  width: full\n---\n\n") 
-        f.write("# 💎 Legendary Spawns\n\n")
-        f.write(nav_bar)
-        f.write("\n---\n\n") # Clear separation
-        
-        # Plain Markdown Table (No HTML wrappers to avoid parsing errors)
-        f.write("| # | Pokémon | Key Item | Location & Rarity |\n")
-        f.write("| :--- | :--- | :--- | :--- |\n")
+        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar + "---\n\n")
+        f.write("| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n")
         for e in legend_list:
-            # Escape any pipe characters in requirements just in case
-            safe_reqs = "<br>".join(e['requirements']).replace('|', '\|')
+            # FIX: Use raw string r'\|' for the pipe escape
+            safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
             f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n")
-        
         f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
     # 2. Write Regional Files
@@ -124,22 +128,16 @@ def generate_tables():
         gen_list = sorted([v for v in grouped_data.values() if not v["is_legendary"] and start <= v["dex"] <= end], key=lambda x: x['dex'])
         file_path = os.path.join(WIKI_DIR, f"{label}_spawns.md")
         with open(file_path, 'w', encoding='utf-8') as f:
-            f.write("---\nlayout:\n  width: full\n---\n\n")
-            f.write(f"# 🌲 {label.title()} Spawns ({start}-{end})\n\n")
-            f.write(nav_bar)
-            f.write(resource_links)
-            f.write("\n") # Ensure a blank line before the table
-            
-            f.write("| # | Pokémon | Location, Time & Rarity |\n")
-            f.write("| :--- | :--- | :--- |\n")
+            f.write(f"---\nlayout:\n  width: full\n---\n\n# 🌲 {label.title()} Spawns ({start}-{end})\n\n" + nav_bar + resource_links)
+            f.write("\n| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
             for e in gen_list:
-                safe_reqs = "<br>".join(e['requirements']).replace('|', '\|')
+                # FIX: Use raw string r'\|' for the pipe escape
+                safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
                 f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
-            
             f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
     # 3. Export CSV
-    with open(CSV_FILE, 'w', newline='') as f:
+    with open(CSV_FILE, 'w', newline='', encoding='utf-8') as f:
         writer = csv.writer(f)
         writer.writerow(['Dex #', 'Name', 'Type', 'Requirements', 'Key Item'])
         for name in sorted(grouped_data.keys(), key=lambda x: grouped_data[x]['dex']):
