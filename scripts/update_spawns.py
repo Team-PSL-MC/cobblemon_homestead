@@ -10,7 +10,6 @@ WIKI_DIR = 'wiki/cobblemon-gameplay/'
 LEGENDARY_FILE = os.path.join(WIKI_DIR, 'legendaries.md')
 CSV_FILE = 'full_spawn_list.csv'
 
-# Generation Ranges (Start, End, Filename Label)
 GEN_RANGES = [
     (1, 151, "kanto"),
     (152, 251, "johto"),
@@ -24,21 +23,20 @@ GEN_RANGES = [
 ]
 
 def get_nav_bar():
-    nav = "### 🗺️ National Pokédex Navigation\n"
+    nav = "### 🗺️ National Pokédex Navigation\n\n"
     links = []
     for start, end, label in GEN_RANGES:
         links.append(f"[{start}-{end}]({label}_spawns.md)")
     return nav + " | ".join(links) + "\n\n"
 
 def get_resource_links():
-    links = [
-        "### 📑 Resources & Downloads\n",
-        "* [📥 **Download Homestead Custom Spawns (CSV)**](../../full_spawn_list.csv)",
-        "* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)",
-        "* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)\n",
-        "---\n"
-    ]
-    return "\n".join(links)
+    return (
+        "### 📑 Resources & Downloads\n\n"
+        "* [📥 **Download Homestead Custom Spawns (CSV)**](../../full_spawn_list.csv)\n"
+        "* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)\n"
+        "* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)\n\n"
+        "---\n\n"
+    )
 
 def parse_spawn_id(spawn_obj):
     raw_id = spawn_obj.get('id', '')
@@ -107,20 +105,20 @@ def generate_tables():
             except: continue
 
     os.makedirs(WIKI_DIR, exist_ok=True)
-    
-    # --- CRITICAL FIX: Call the functions to define the variables ---
     nav_bar = get_nav_bar()
     resource_links = get_resource_links()
 
     # 1. Write Legendaries
     legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
     with open(LEGENDARY_FILE, 'w', encoding='utf-8') as f:
-        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar + "---\n\n")
-        f.write("| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n")
-        for e in legend_list:
-            # FIX: Use raw string r'\|' for the pipe escape
-            safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
-            f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n")
+        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar)
+        if not legend_list:
+            f.write("\n*No legendary spawns recorded yet.*\n")
+        else:
+            f.write("| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n")
+            for e in legend_list:
+                safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
+                f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n")
         f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
     # 2. Write Regional Files
@@ -129,11 +127,13 @@ def generate_tables():
         file_path = os.path.join(WIKI_DIR, f"{label}_spawns.md")
         with open(file_path, 'w', encoding='utf-8') as f:
             f.write(f"---\nlayout:\n  width: full\n---\n\n# 🌲 {label.title()} Spawns ({start}-{end})\n\n" + nav_bar + resource_links)
-            f.write("\n| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
-            for e in gen_list:
-                # FIX: Use raw string r'\|' for the pipe escape
-                safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
-                f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
+            if not gen_list:
+                f.write(f"\n*No custom spawns recorded for the {label.title()} region yet.*\n")
+            else:
+                f.write("| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
+                for e in gen_list:
+                    safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
+                    f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
             f.write(f"\n\n---\n*Last Updated: {timestamp}*")
 
     # 3. Export CSV
