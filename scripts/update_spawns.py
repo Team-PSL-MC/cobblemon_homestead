@@ -23,6 +23,7 @@ GEN_RANGES = [
 ]
 
 def get_nav_bar():
+    # Adding extra newlines for GitBook safety
     nav = "### 🗺️ National Pokédex Navigation\n\n"
     links = []
     for start, end, label in GEN_RANGES:
@@ -78,7 +79,7 @@ def generate_tables():
 
     for filename in os.listdir(SPAWN_DATA_PATH):
         if not filename.endswith('.json'): continue
-        with open(os.path.join(SPAWN_DATA_PATH, filename), 'r') as f:
+        with open(os.path.join(SPAWN_DATA_PATH, filename), 'r', encoding='utf-8') as f:
             try:
                 data = json.load(f)
                 for s in data.get('spawns', []):
@@ -111,11 +112,15 @@ def generate_tables():
     # 1. Write Legendaries
     legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
     with open(LEGENDARY_FILE, 'w', encoding='utf-8') as f:
-        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar)
+        # Frontmatter MUST have a blank line after it
+        f.write("---\nlayout:\n  width: full\n---\n\n")
+        f.write("# 💎 Legendary Spawns\n\n")
+        f.write(nav_bar)
         if not legend_list:
             f.write("\n*No legendary spawns recorded yet.*\n")
         else:
-            f.write("| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n")
+            f.write("| # | Pokémon | Key Item | Location & Rarity |\n")
+            f.write("| :--- | :--- | :--- | :--- |\n")
             for e in legend_list:
                 safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
                 f.write(f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n")
@@ -126,11 +131,17 @@ def generate_tables():
         gen_list = sorted([v for v in grouped_data.values() if not v["is_legendary"] and start <= v["dex"] <= end], key=lambda x: x['dex'])
         file_path = os.path.join(WIKI_DIR, f"{label}_spawns.md")
         with open(file_path, 'w', encoding='utf-8') as f:
-            f.write(f"---\nlayout:\n  width: full\n---\n\n# 🌲 {label.title()} Spawns ({start}-{end})\n\n" + nav_bar + resource_links)
+            f.write("---\nlayout:\n  width: full\n---\n\n")
+            f.write(f"# 🌲 {label.title()} Spawns ({start}-{end})\n\n")
+            f.write(nav_bar)
+            f.write(resource_links)
+            f.write("\n") # Explicit gap before table
+            
             if not gen_list:
-                f.write(f"\n*No custom spawns recorded for the {label.title()} region yet.*\n")
+                f.write(f"*No custom spawns recorded for the {label.title()} region yet.*\n")
             else:
-                f.write("| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
+                f.write("| # | Pokémon | Location, Time & Rarity |\n")
+                f.write("| :--- | :--- | :--- |\n")
                 for e in gen_list:
                     safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
                     f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
