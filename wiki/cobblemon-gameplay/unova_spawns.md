@@ -20,6 +20,5 @@ layout:
 
 No custom spawns recorded for the Unova region yet.
 
-
 ---
-*Last Updated: 2026-02-12 16:42:54 UTC*
+*Last Updated: 2026-02-12 16:45:24 UTC*
