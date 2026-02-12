@@ -1,0 +1,38 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "708-phantump-es",
+            "pokemon": "phantump",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:torreya_forest"]
+            }
+        },
+        {
+            "id": "708-phantump-tf",
+            "pokemon": "phantump",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["twilight_forest:dark_forest"],
+                "times_of_day": ["night", "midnight"]
+            }
+        }  
+    ]
+}

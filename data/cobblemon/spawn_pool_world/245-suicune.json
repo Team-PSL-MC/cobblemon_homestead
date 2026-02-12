@@ -5,16 +5,14 @@
     {
       "id": "245-suicune",
       "pokemon": "suicune",
-      "presets": [
-        "river"
-      ],
+      "presets": ["natural"],
       "type": "pokemon",
       "bucket": "ultra-rare",
       "level": "50-60",
       "weight": 0.1,
       "condition": {
         "biomes": [
-          "twilightforest:twilight_lake",
+          "twilightforest:lake",
           "eternal_starlight:starlit_sea"
         ],
         "season": "autumn",

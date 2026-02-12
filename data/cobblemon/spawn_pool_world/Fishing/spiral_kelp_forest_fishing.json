@@ -1,0 +1,119 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-spiral-kelp-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 8.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "remoraid-spiral-kelp-fishing-1",
+            "pokemon": "remoraid",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "shellder-spiral-kelp-fishing-1",
+            "pokemon": "shellder",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "krabby-spiral-kelp-fishing-1",
+            "pokemon": "krabby",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "staryu-spiral-kelp-fishing-1",
+            "pokemon": "staryu",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "10-25",
+            "weight": 5.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "feebas-spiral-kelp-fishing-1",
+            "pokemon": "feebas",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "horsea-spiral-kelp-fishing-1",
+            "pokemon": "horsea",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "8-25",
+            "weight": 5.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        },
+        {
+            "id": "goomy-spiral-kelp-fishing-1",
+            "pokemon": "goomy",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-30",
+            "weight": 3.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:spiral_kelp_forest"]
+            }
+        }
+    ]
+}

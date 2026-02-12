@@ -1,0 +1,91 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-shimmer-river-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 9.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "barboach-shimmer-river-fishing-1",
+            "pokemon": "barboach",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "basculin-shimmer-river-fishing-1",
+            "pokemon": "basculin",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "corphish-shimmer-river-fishing-1",
+            "pokemon": "corphish",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "8-25",
+            "weight": 5.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "dratini-shimmer-river-fishing-1",
+            "pokemon": "dratini",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "gyarados-shimmer-river-fishing-1",
+            "pokemon": "gyarados",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "ultra-rare",
+            "level": "25-40",
+            "weight": 1.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        }
+    ]
+}

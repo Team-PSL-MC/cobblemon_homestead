@@ -1,0 +1,77 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-ether-river-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 9.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:ether_river"]
+            }
+        },
+        {
+            "id": "goldeen-ether-river-fishing-1",
+            "pokemon": "goldeen",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:ether_river"]
+            }
+        },
+        {
+            "id": "barboach-ether-river-fishing-1",
+            "pokemon": "barboach",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:ether_river"]
+            }
+        },
+        {
+            "id": "wishiwashi-ether-river-fishing-1",
+            "pokemon": "wishiwashi",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "15-30",
+            "weight": 5.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:ether_river"]
+            }
+        },
+        {
+            "id": "dratini-ether-river-fishing-1",
+            "pokemon": "dratini",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:ether_river"]
+            }
+        }
+    ]
+}

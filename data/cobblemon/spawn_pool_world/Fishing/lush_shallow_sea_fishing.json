@@ -1,0 +1,119 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-lush-shallow-sea-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 8.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "remoraid-lush-shallow-sea-fishing-1",
+            "pokemon": "remoraid",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "shellder-lush-shallow-sea-fishing-1",
+            "pokemon": "shellder",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "krabby-lush-shallow-sea-fishing-1",
+            "pokemon": "krabby",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "staryu-lush-shallow-sea-fishing-1",
+            "pokemon": "staryu",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "10-25",
+            "weight": 5.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "clamperl-lush-shallow-sea-fishing-1",
+            "pokemon": "clamperl",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "15-30",
+            "weight": 5.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "feebas-lush-shallow-sea-fishing-1",
+            "pokemon": "feebas",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "dratini-lush-shallow-sea-fishing-1",
+            "pokemon": "dratini",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 2.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        }
+    ]
+}

@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "neededInstalledMods": ["aether"],
+  "spawns": [
+    {
+      "pokemon": "vulpix",
+      "presets": ["natural"],
+      "aspects": ["alolan"], 
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "common",
+      "level": "5-25",
+      "weight": 10,
+      "condition": {
+        "dimensions": ["aether:the_aether"]
+      }
+    }
+  ]
+}

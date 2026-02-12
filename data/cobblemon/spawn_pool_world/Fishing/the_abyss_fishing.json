@@ -1,0 +1,133 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-abyss-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 8.50,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "remoraid-abyss-fishing-1",
+            "pokemon": "remoraid",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "barboach-abyss-fishing-1",
+            "pokemon": "barboach",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "carvanha-abyss-fishing-1",
+            "pokemon": "carvanha",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "10-25",
+            "weight": 6.50,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "shellder-abyss-fishing-1",
+            "pokemon": "shellder",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 6.50,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "feebas-abyss-fishing-1",
+            "pokemon": "feebas",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 4.00,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "dratini-abyss-fishing-1",
+            "pokemon": "dratini",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.50,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "wailmer-abyss-fishing-1",
+            "pokemon": "wailmer",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "15-30",
+            "weight": 5.00,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        },
+        {
+            "id": "gyarados-abyss-fishing-1",
+            "pokemon": "gyarados",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "ultra-rare",
+            "level": "25-40",
+            "weight": 2.00,
+            "condition": {
+                "canSeeSky": false,
+                "biomes": ["eternal_starlight:the_abyss"]
+            }
+        }
+    ]
+}

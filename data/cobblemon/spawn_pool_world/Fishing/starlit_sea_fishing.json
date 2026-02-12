@@ -1,0 +1,175 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "magikarp-starlit-sea-fishing-1",
+            "pokemon": "magikarp",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "5-15",
+            "weight": 9.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "remoraid-starlit-sea-fishing-1",
+            "pokemon": "remoraid",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-20",
+            "weight": 7.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "shellder-starlit-sea-fishing-1",
+            "pokemon": "shellder",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "krabby-starlit-sea-fishing-1",
+            "pokemon": "krabby",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 7.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "corphish-starlit-sea-fishing-1",
+            "pokemon": "corphish",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "common",
+            "level": "8-25",
+            "weight": 6.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "carvanha-starlit-sea-fishing-1",
+            "pokemon": "carvanha",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "10-25",
+            "weight": 5.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "horsea-starlit-sea-fishing-1",
+            "pokemon": "horsea",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "8-25",
+            "weight": 5.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "barboach-starlit-sea-fishing-1",
+            "pokemon": "barboach",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "8-20",
+            "weight": 5.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "feebas-starlit-sea-fishing-1",
+            "pokemon": "feebas",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "dratini-starlit-sea-fishing-1",
+            "pokemon": "dratini",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "rare",
+            "level": "10-25",
+            "weight": 3.00,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "wailmer-starlit-sea-fishing-1",
+            "pokemon": "wailmer",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "uncommon",
+            "level": "15-30",
+            "weight": 4.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        },
+        {
+            "id": "gyarados-starlit-sea-fishing-1",
+            "pokemon": "gyarados",
+            "presets": [],
+            "type": "pokemon",
+            "context": "fishing",
+            "bucket": "ultra-rare",
+            "level": "25-40",
+            "weight": 1.50,
+            "condition": {
+                "canSeeSky": true,
+                "biomes": ["eternal_starlight:starlit_sea"]
+            }
+        }
+    ]
+}
