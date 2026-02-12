@@ -27,17 +27,21 @@ jobs:
         run: |
           git config --global user.name "Homestead-Bot"
           git config --global user.email "bot@homestead.com"
-          # Using wildcard to ensure all generated wiki files are caught
-          git add wiki/cobblemon-gameplay/legendaries.md wiki/cobblemon-gameplay/spawns.md
-          git commit -m "docs: sync spawn tables" || echo "No changes to commit"
+          # Adds all new gen_spawns.md files and the CSV
+          git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
+          git commit -m "docs: sync regional spawn tables" || echo "No changes"
           git push
 
-      - name: 📦 Build Data Pack (Manual Only)
+      - name: 🚀 Create GitHub Release
         if: github.event_name == 'workflow_dispatch'
-        run: |
-          VERSION=$(date +'%Y-%m-%d-%H%M')
-          echo "DP_VERSION=$VERSION" >> $GITHUB_ENV
-          zip -r "Homestead-DP-$VERSION.zip" data/ pack.mcmeta pack.png
+        uses: softprops/action-gh-release@v2
+        with:
+          tag_name: v${{ env.DP_VERSION }}
+          name: Homestead Data Pack ${{ env.DP_VERSION }}
+          body_path: version_summary.txt
+          files: |
+            Homestead-DP-*.zip
+            full_spawn_list.csv
 
       - name: 🚀 Create GitHub Release
         if: github.event_name == 'workflow_dispatch'
