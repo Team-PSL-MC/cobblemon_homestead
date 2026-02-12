@@ -9,6 +9,9 @@ layout:
 
 [1-151](kanto_spawns.md) | [152-251](johto_spawns.md) | [252-386](hoenn_spawns.md) | [387-493](sinnoh_spawns.md) | [494-649](unova_spawns.md) | [650-721](kalos_spawns.md) | [722-809](alola_spawns.md) | [810-905](galar_spawns.md) | [906-1025](paldea_spawns.md)
 
+
+---
+
 | # | Pokémon | Key Item | Location & Rarity |
 | :--- | :--- | :--- | :--- |
 | 144 | **Articuno** | Tidal Bell | • twilightforest:snowy_forest (Any, Winter) — **Ultra-Rare** |
@@ -28,4 +31,4 @@ layout:
 
 
 ---
-*Last Updated: 2026-02-12 16:39:23 UTC*
+*Last Updated: 2026-02-12 16:42:54 UTC*
