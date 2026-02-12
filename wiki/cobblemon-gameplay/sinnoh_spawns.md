@@ -1,8 +1,3 @@
----
-layout:
-  width: full
----
-
 # 🌲 Sinnoh Spawns (387-493)
 
 ### 🗺️ National Pokédex Navigation
@@ -21,4 +16,4 @@ layout:
 No custom spawns recorded for the Sinnoh region yet.
 
 ---
-*Last Updated: 2026-02-12 16:47:37 UTC*
+*Last Updated: 2026-02-12 16:54:07 UTC*

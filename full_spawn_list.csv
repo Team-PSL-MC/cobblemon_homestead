@@ -1,1 +1,15 @@
 Dex #,Name,Type,Requirements,Key Item
+144,Articuno,Legendary,"• twilightforest:snowy_forest (Any, Winter) — **Ultra-Rare**",Tidal Bell
+145,Zapdos,Legendary,"• is_sky, terralith:howling_peaks (Any, Spring) — **Ultra-Rare**",Tidal Bell
+146,Moltres,Legendary,"• is_volcanic, is_sky (Any, Summer) — **Ultra-Rare**",Tidal Bell
+243,Raikou,Legendary,"• twilightforest:firefly_forest (Any, Spring) — **Ultra-Rare**",Clear Bell
+244,Entei,Legendary,"• byg:brimstone_caverns (Any, Summer) — **Ultra-Rare** | • nether_wastes (Any) — **Ultra-Rare**",Clear Bell
+245,Suicune,Legendary,"• twilightforest:twilight_lake, eternal_starlight:starlit_sea (Any, Autumn) — **Ultra-Rare**",Clear Bell
+249,Lugia,Legendary,"• byg:blue_abyss (Night, Winter) — **Ultra-Rare**",Tidal Bell
+250,Hooh,Legendary,"• eternal_starlight:scarlet_forest (Day, Summer) — **Ultra-Rare**",Rainbow Wing
+251,Celebi,Legendary,"• eternal_starlight:starlight_forest, twilightforest:enchanted_forest (Midnight, Spring) — **Ultra-Rare** | • flower_forest (Midnight, Spring) — **Ultra-Rare**",Gs Ball
+379,Registeel,Legendary,"• deep_dark, is_deep_dark (Any) — **Ultra-Rare**",Steel Tablet
+382,Kyogre,Legendary,"• is_ocean, deep_cold_ocean, deep_frozen_ocean, deep_ocean, ocean (Any) — **Ultra-Rare**",Blue Orb
+494,Victini,Legendary,• the_bumblezone:honey_peaks (Any) — **Ultra-Rare**,Liberty Pass
+807,Zeraora,Legendary,• Near Induction Port (Any) — **Ultra-Rare**,Zeraoras Thunderclaw
+905,Enamourus,Legendary,"• Near Mechanical Harvester (Any, Spring) — **Ultra-Rare**",Reveal Glass
