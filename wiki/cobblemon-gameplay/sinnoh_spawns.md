@@ -11,15 +11,14 @@ layout:
 
 ### 📑 Resources & Downloads
 
-* [📥 **Download Homestead Custom Spawns (CSV)**](../../full_spawn_list.csv)
+* [📥 **Download Homestead Custom Spawns (CSV)**](https://github.com/Team-PSL-MC/cobblemon_homestead/blob/main/full_spawn_list.csv)
 * [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)
 * [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)
 
 ---
 
-
 *No custom spawns recorded for the Sinnoh region yet.*
 
 
 ---
-*Last Updated: 2026-02-12 16:35:09 UTC*
+*Last Updated: 2026-02-12 16:39:23 UTC*
