@@ -4,7 +4,7 @@ import re
 import csv
 from datetime import datetime
 
-# Configuration - Update GITHUB_REPO with your actual repo name (e.g., 'YourName/cobblemon_homestead')
+# Configuration
 GITHUB_REPO = "Team-PSL-MC/cobblemon_homestead" 
 SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
 WIKI_DIR = 'wiki/cobblemon-gameplay/'
@@ -17,22 +17,24 @@ GEN_RANGES = [
     (722, 809, "alola"), (810, 905, "galar"), (906, 1025, "paldea")
 ]
 
-def get_nav_bar():
+def get_nav_bar(current_label):
     nav = "### 🗺️ National Pokédex Navigation\n\n"
     links = []
     for start, end, label in GEN_RANGES:
-        links.append(f"[{start}-{end}]({label}_spawns.md)")
+        if label == current_label:
+            # Bold the current page instead of linking to it to avoid recursion errors
+            links.append(f"**{start}-{end}**")
+        else:
+            links.append(f"[{start}-{end}]({label}_spawns.md)")
     return nav + " | ".join(links) + "\n\n"
 
 def get_resource_links():
-    # Using the 'main' branch link ensures GitBook doesn't try to find it locally
     csv_url = f"https://github.com/{GITHUB_REPO}/blob/main/full_spawn_list.csv"
     return (
         "### 📑 Resources & Downloads\n\n"
         f"* [📥 **Download Homestead Custom Spawns (CSV)**]({csv_url})\n"
         "* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)\n"
         "* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)\n\n"
-        "---\n\n"
     )
 
 def parse_spawn_id(spawn_obj):
@@ -102,13 +104,15 @@ def generate_tables():
             except: continue
 
     os.makedirs(WIKI_DIR, exist_ok=True)
-    nav_bar = get_nav_bar()
     resource_links = get_resource_links()
 
     # 1. Write Legendaries
     legend_list = sorted([v for v in grouped_data.values() if v["is_legendary"]], key=lambda x: x['dex'])
     with open(LEGENDARY_FILE, 'w', encoding='utf-8') as f:
-        f.write("---\nlayout:\n  width: full\n---\n\n# 💎 Legendary Spawns\n\n" + nav_bar)
+        f.write("---\nlayout:\n  width: full\n---\n\n")
+        f.write("# 💎 Legendary Spawns\n\n")
+        f.write(get_nav_bar("legendaries"))
+        f.write("\n---\n\n")
         if not legend_list:
             f.write("No legendary spawns recorded yet.\n")
         else:
@@ -123,20 +127,21 @@ def generate_tables():
         gen_list = sorted([v for v in grouped_data.values() if not v["is_legendary"] and start <= v["dex"] <= end], key=lambda x: x['dex'])
         file_path = os.path.join(WIKI_DIR, f"{label}_spawns.md")
         with open(file_path, 'w', encoding='utf-8') as f:
-            # Added double newlines for strict GitBook parsing
-            f.write(f"---\nlayout:\n  width: full\n---\n\n# 🌲 {label.title()} Spawns ({start}-{end})\n\n")
-            f.write(nav_bar)
+            f.write("---\nlayout:\n  width: full\n---\n\n")
+            f.write(f"# 🌲 {label.title()} Spawns ({start}-{end})\n\n")
+            f.write(get_nav_bar(label))
             f.write(resource_links)
+            f.write("\n---\n\n") # Distinct rule with blank lines
             
             if not gen_list:
-                f.write(f"*No custom spawns recorded for the {label.title()} region yet.*\n")
+                f.write(f"No custom spawns recorded for the {label.title()} region yet.\n\n")
             else:
                 f.write("| # | Pokémon | Location, Time & Rarity |\n| :--- | :--- | :--- |\n")
                 for e in gen_list:
                     safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
                     f.write(f"| {e['dex']} | **{e['name']}** | {safe_reqs} |\n")
             
-            f.write(f"\n\n---\n*Last Updated: {timestamp}*")
+            f.write(f"\n---\n*Last Updated: {timestamp}*")
 
     # 3. Write CSV
     with open(CSV_FILE, 'w', newline='', encoding='utf-8') as f:
