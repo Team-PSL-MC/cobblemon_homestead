@@ -14,7 +14,7 @@
 | 146 | **Moltres** | Tidal Bell | • is_volcanic, is_sky (Any, Summer) — **Ultra-Rare** |
 | 243 | **Raikou** | Clear Bell | • twilightforest:firefly_forest (Any, Spring) — **Ultra-Rare** |
 | 244 | **Entei** | Clear Bell | • byg:brimstone_caverns (Any, Summer) — **Ultra-Rare**<br>• nether_wastes (Any) — **Ultra-Rare** |
-| 245 | **Suicune** | Clear Bell | • twilightforest:twilight_lake, eternal_starlight:starlit_sea (Any, Autumn) — **Ultra-Rare** |
+| 245 | **Suicune** | Clear Bell | • twilightforest:lake, eternal_starlight:starlit_sea (Any, Autumn) — **Ultra-Rare** |
 | 249 | **Lugia** | Tidal Bell | • byg:blue_abyss (Night, Winter) — **Ultra-Rare** |
 | 250 | **Hooh** | Rainbow Wing | • eternal_starlight:scarlet_forest (Day, Summer) — **Ultra-Rare** |
 | 251 | **Celebi** | Gs Ball | • eternal_starlight:starlight_forest, twilightforest:enchanted_forest (Midnight, Spring) — **Ultra-Rare**<br>• flower_forest (Midnight, Spring) — **Ultra-Rare** |
@@ -25,4 +25,4 @@
 | 905 | **Enamourus** | Reveal Glass | • Near Mechanical Harvester (Any, Spring) — **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-02-12 16:56:29 UTC*
+*Last Updated: 2026-02-12 17:31:02 UTC*

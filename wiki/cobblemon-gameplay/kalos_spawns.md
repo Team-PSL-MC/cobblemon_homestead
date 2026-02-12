@@ -13,7 +13,9 @@
 
 ---
 
-No custom spawns recorded for the Kalos region yet.
+| # | Pokémon | Location, Time & Rarity |
+| :--- | :--- | :--- |
+| 708 | **Phantump** | • eternal_starlight:torreya_forest (Any) — **Common**<br>• twilight_forest:dark_forest (Night, Midnight) — **Common** |
 
 ---
-*Last Updated: 2026-02-12 16:56:29 UTC*
+*Last Updated: 2026-02-12 17:31:02 UTC*
