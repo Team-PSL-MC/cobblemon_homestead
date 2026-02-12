@@ -11,7 +11,7 @@
 
 ## Cobblemon Gameplay
 
-* [🌲 Spawns](cobblemon-gameplay/kanto_spawns.md)
+* [🌲 Spawns](cobblemon-gameplay/spawns.md)
   * [Kanto (001-151)](cobblemon-gameplay/kanto_spawns.md)
   * [Johto (152-251)](cobblemon-gameplay/johto_spawns.md)
   * [Hoenn (252-386)](cobblemon-gameplay/hoenn_spawns.md)
