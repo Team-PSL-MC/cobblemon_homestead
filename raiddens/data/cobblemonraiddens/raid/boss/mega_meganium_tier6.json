@@ -1,0 +1,24 @@
+{
+    "pokemon": {
+        "species": "meganium",
+        "level": 75,
+        "nature": "bold",
+        "moves": ["gigadrain", "dragonpulse", "synthesis", "aromatherapy"]
+    },
+    "boss": {
+        "level": 90,
+        "min_perfect_ivs": 4,
+        "form": "mega",
+        "held_item": "zamega:meganiumite",
+        "custom_properties": [
+            {
+                "name": "mega_evolution",
+                "value": "mega"
+            }
+        ]
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "GRASS",
+    "raid_feature": "MEGA",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+}

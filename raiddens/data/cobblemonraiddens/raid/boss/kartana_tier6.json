@@ -1,0 +1,16 @@
+{
+    "pokemon": {
+        "species": "kartana",
+        "ability": "beastboost",
+        "level": 90,
+        "moves": ["leafblade", "smartstrike", "sacredsword", "knockoff"]
+    },
+    "boss": {
+        "min_perfect_ivs": 4,
+        "level": 100,
+        "health_multi": 12
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "GRASS",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+}

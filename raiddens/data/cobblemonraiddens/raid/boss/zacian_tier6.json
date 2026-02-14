@@ -1,0 +1,16 @@
+{
+    "pokemon": {
+        "species": "zacian",
+        "form": "crowned_sword",
+        "ability": "intrepidsword",
+        "moves": ["behemothblade", "playrough", "closecombat", "wildcharge"]
+    },
+    "boss": {
+        "level": 90,
+        "min_perfect_ivs": 4,
+        "held_item": "mythsandlegends:rusted_sword"
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "FAIRY",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+}

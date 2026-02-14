@@ -1,0 +1,32 @@
+{
+    "pokemon": {
+        "species": "zygarde",
+        "level": 90,
+        "nature": "adamant",
+        "ability": "aurabreak",
+        "moves": [
+            "thousandarrows",
+            "outrage",
+            "extremespeed",
+            "dragondance"
+        ]
+    },
+    "boss": {
+        "min_perfect_ivs": 4,
+        "level": 90,
+        "held_item": "minecraft:leftovers"
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "DRAGON",
+    "raid_feature": "DEFAULT",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot",
+    "weight": 5.0,
+    "den": [
+        "#cobblemonraiddens:default"
+    ],
+    "max_players": 4,
+    "ha_rate": 0.5,
+    "health_multi": 15,
+    "multiplayer_health_multi": 2.0,
+    "raid_ai": "STRONG"
+}

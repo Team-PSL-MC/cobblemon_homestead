@@ -1,0 +1,18 @@
+{
+    "pokemon": {
+        "species": "zamazenta",
+        "form": "crowned_shield",
+        "ability": "dauntlessshield",
+        "nature": "sassy",
+        "moves": ["howl", "bodypress", "crunch", "ironhead"]
+    },
+    "boss": {
+        "level": 90,
+        "min_perfect_ivs": 4,
+        "held_item": "mythsandlegends:rusted_shield"
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "STEEL",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+
+}

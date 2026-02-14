@@ -1,0 +1,16 @@
+{
+    "pokemon": {
+        "species": "koraidon",
+        "ability": "orichalcumpulse",
+        "level": 90,
+        "moves": ["collisioncourse", "flareblitz", "outrage", "drainpunch"]
+    },
+    "boss": {
+        "min_perfect_ivs": 4,
+        "level": 100,
+        "health_multi": 15
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "FIGHTING",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+}

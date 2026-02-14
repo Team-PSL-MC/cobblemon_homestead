@@ -1,0 +1,26 @@
+{
+    "pokemon": {
+        "species": "terapagos",
+        "form": "stellar",
+        "ability": "teraformzero",
+        "level": 90,
+        "moves": [
+            "terastarstorm",
+            "earthpower",
+            "ancientpower",
+            "triattack"
+        ]
+    },
+    "boss": {
+        "min_perfect_ivs": 4,
+        "level": 100,
+        "health_multi": 18,
+        "held_item": "minecraft:shell_side_up"
+    },
+    "raid_tier": "TIER_SIX",
+    "raid_type": "STELLAR",
+    "raid_feature": "TERA",
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot",
+    "key": "minecraft:nether_star",
+    "weight": 10.0
+}
