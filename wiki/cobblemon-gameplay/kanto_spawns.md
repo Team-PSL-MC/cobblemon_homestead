@@ -16,4 +16,4 @@
 No custom spawns recorded for the Kanto region yet.
 
 ---
-*Last Updated: 2026-02-12 17:31:02 UTC*
+*Last Updated: 2026-02-14 21:37:14 UTC*
