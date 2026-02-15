@@ -16,4 +16,4 @@
 No custom spawns recorded for the Paldea region yet.
 
 ---
-*Last Updated: 2026-02-14 21:37:14 UTC*
+*Last Updated: 2026-02-15 20:42:07 UTC*
