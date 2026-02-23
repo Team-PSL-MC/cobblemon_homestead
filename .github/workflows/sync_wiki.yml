@@ -38,8 +38,10 @@ jobs:
 
       - name: 🚀 Create/Update Release Assets
         uses: softprops/action-gh-release@v2
+        if: github.event_name == 'release' || github.ref_type == 'tag'
         with:
-          # This uses the tag from the release that triggered the workflow
+          # Use the tag from the release event, or the tag that was pushed
+          tag_name: ${{ github.event.release.tag_name || github.ref_name }}
           files: |
             Homestead-DP-*.zip
             full_spawn_list.csv
