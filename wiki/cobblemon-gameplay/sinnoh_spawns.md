@@ -7,8 +7,34 @@
 
 ---
 
-| # | Pokémon | Location | Time | Season | Key Item | Rarity |
+| # | Pokémon | World | Location | Time | Season | Rarity |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 398 | **Staraptor** | Eternal Starlight | Starlight Dense Forest | Any | Any | **Uncommon** |
+| 422 | **Shellos** | Eternal Starlight | Lush Shallow Sea | Any | Any | **Common** |
+| 423 | **Gastrodon** | Eternal Starlight | Lush Shallow Sea<br>Dark Swamp | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
+| 426 | **Drifblim** | Eternal Starlight | Torreya Forest<br>Dark Swamp | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
+| 429 | **Mismagius** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
+| 430 | **Honchkrow** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
+| 434 | **Stunky** | Eternal Starlight | Dark Swamp | Any | Any | **Common** |
+| 435 | **Skuntank** | Eternal Starlight | Dark Swamp | Any | Any | **Uncommon** |
+| 442 | **Spiritomb** | Eternal Starlight | Starlight Forest<br>The Abyss<br>Starlight Dense Forest | Any<br>Any<br>Any | Any<br>Any<br>Any | **Ultra-Rare**<br>**Ultra-Rare**<br>**Ultra-Rare** |
+| 449 | **Hippopotas** | Eternal Starlight | Crystallized Desert | Any | Any | **Common** |
+| 450 | **Hippowdon** | Eternal Starlight | Crystallized Desert | Any | Any | **Uncommon** |
+| 452 | **Drapion** | Eternal Starlight | Dark Swamp | Any | Any | **Rare** |
+| 453 | **Croagunk** | Eternal Starlight | Dark Swamp | Any | Any | **Common** |
+| 454 | **Toxicroak** | Eternal Starlight | Dark Swamp | Any | Any | **Uncommon** |
+| 456 | **Finneon** | Eternal Starlight | Lush Shallow Sea<br>Starlit Sea<br>Shimmer River | Any<br>Any<br>Any | Any<br>Any<br>Any | **Common**<br>**Common**<br>**Common** |
+| 457 | **Lumineon** | Eternal Starlight | Lush Shallow Sea<br>Starlit Sea<br>Shimmer River | Any<br>Any<br>Any | Any<br>Any<br>Any | **Uncommon**<br>**Uncommon**<br>**Uncommon** |
+| 459 | **Snover** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Common** |
+| 460 | **Abomasnow** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Uncommon** |
+| 461 | **Weavile** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
+| 464 | **Rhyperior** | Eternal Starlight | Warm Shore | Any | Any | **Rare** |
+| 467 | **Magmortar** | Eternal Starlight | Scarlet Forest | Any | Any | **Rare** |
+| 468 | **Togekiss** | Eternal Starlight | Ether River | Any | Any | **Rare** |
+| 471 | **Glaceon** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Rare** |
+| 472 | **Gliscor** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
+| 475 | **Gallade** | Eternal Starlight | Ether River | Any | Any | **Rare** |
+| 478 | **Froslass** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Rare** |
 
 ---
-*Last Updated: 2026-02-23 21:26:03 UTC*
+*Last Updated: 2026-02-23 21:37:31 UTC*
