@@ -44,3 +44,7 @@ def generate_legendary_wiki():
     
     content += f"\n---\n*Last Updated: {timestamp}*"
     write_safe_md(os.path.join(WIKI_DIR, 'legendaries.md'), content)
+
+if __name__ == "__main__":
+    generate_legendary_wiki()
+    print("✅ Legendary Wiki updated successfully.")
