@@ -2,42 +2,45 @@ import os
 import json
 from spawn_utils import *
 
-LEGENDARY_FILE = os.path.join(WIKI_DIR, 'legendaries.md')
-
 def generate_legendary_wiki():
     grouped_data = {}
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
 
     for filename in os.listdir(SPAWN_DATA_PATH):
-        # Only process files that start with a number (Legendary pattern)
         if filename.endswith('.json') and filename[0].isdigit():
             with open(os.path.join(SPAWN_DATA_PATH, filename), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 for s in data.get('spawns', []):
                     dex_num, name = parse_spawn_id(s)
                     stats = get_conditions(s)
-                    bucket = s.get('bucket', 'ultra-rare').title()
                     
-                    biomes_list = s.get('condition', {}).get('biomes', ["Global"])
-                    display_loc = ", ".join(biomes_list).replace('minecraft:', '').replace('cobblemon:', '').replace('#', '')
-                    req_line = f"• {display_loc} ({stats['time']}) — **{bucket}**"
+                    entry = {
+                        "loc": clean_location(s, stats),
+                        "time": stats['time'],
+                        "season": stats['season'],
+                        "item": stats['item'],
+                        "rarity": s.get('bucket', 'ultra-rare').replace('_', '-').title()
+                    }
 
                     if name not in grouped_data:
-                        grouped_data[name] = {"dex": dex_num, "name": name, "item": stats["item"], "requirements": [req_line]}
-                    elif req_line not in grouped_data[name]["requirements"]:
-                        grouped_data[name]["requirements"].append(req_line)
+                        grouped_data[name] = {"dex": dex_num, "name": name, "variants": [entry]}
+                    else:
+                        grouped_data[name]["variants"].append(entry)
 
-    legend_list = sorted(grouped_data.values(), key=lambda x: x['dex'])
     content = f"# 💎 Legendary Spawns\n\n{get_nav_bar('legendaries')}\n---\n\n"
-    content += "| # | Pokémon | Key Item | Location & Rarity |\n| :--- | :--- | :--- | :--- |\n"
+    content += "| # | Pokémon | Location | Time | Season | Key Item | Rarity |\n"
+    content += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
     
-    for e in legend_list:
-        safe_reqs = "<br>".join(e['requirements']).replace('|', r'\|')
-        content += f"| {e['dex']} | **{e['name']}** | {e['item']} | {safe_reqs} |\n"
+    for name in sorted(grouped_data.keys(), key=lambda x: grouped_data[x]['dex']):
+        d = grouped_data[name]
+        # Join variants with <br> if there are multiple spawn conditions
+        locs = "<br>".join([v['loc'] for v in d['variants']])
+        times = "<br>".join([v['time'] for v in d['variants']])
+        seasons = "<br>".join([v['season'] for v in d['variants']])
+        items = d['variants'][0]['item'] # Key item is usually the same for all variants
+        rarities = "<br>".join([f"**{v['rarity']}**" for v in d['variants']])
+        
+        content += f"| {d['dex']} | **{d['name']}** | {locs} | {times} | {seasons} | {items} | {rarities} |\n"
     
     content += f"\n---\n*Last Updated: {timestamp}*"
-    write_safe_md(LEGENDARY_FILE, content)
-    print("✅ Legendary Wiki Updated.")
-
-if __name__ == "__main__":
-    generate_legendary_wiki()
+    write_safe_md(os.path.join(WIKI_DIR, 'legendaries.md'), content)
