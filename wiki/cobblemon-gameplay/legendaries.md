@@ -2,27 +2,30 @@
 
 ### 🗺️ National Pokédex Navigation
 
-[1-151](kanto_spawns.md) | [152-251](johto_spawns.md) | [252-386](hoenn_spawns.md) | [387-493](sinnoh_spawns.md) | [494-649](unova_spawns.md) | [650-721](kalos_spawns.md) | [722-809](alola_spawns.md) | [810-905](galar_spawns.md) | [906-1025](paldea_spawns.md)
+**Legendaries** | [1-151](kanto_spawns.md) | [152-251](johto_spawns.md) | [252-386](hoenn_spawns.md) | [387-493](sinnoh_spawns.md) | [494-649](unova_spawns.md) | [650-721](kalos_spawns.md) | [722-809](alola_spawns.md) | [810-905](galar_spawns.md) | [906-1025](paldea_spawns.md)
 
 
 ---
 
-| # | Pokémon | Key Item | Location & Rarity |
-| :--- | :--- | :--- | :--- |
-| 144 | **Articuno** | Tidal Bell | • twilightforest:snowy_forest (Any, Winter) — **Ultra-Rare** |
-| 145 | **Zapdos** | Tidal Bell | • is_sky, terralith:howling_peaks (Any, Spring) — **Ultra-Rare** |
-| 146 | **Moltres** | Tidal Bell | • is_volcanic, is_sky (Any, Summer) — **Ultra-Rare** |
-| 243 | **Raikou** | Clear Bell | • twilightforest:firefly_forest (Any, Spring) — **Ultra-Rare** |
-| 244 | **Entei** | Clear Bell | • byg:brimstone_caverns (Any, Summer) — **Ultra-Rare**<br>• nether_wastes (Any) — **Ultra-Rare** |
-| 245 | **Suicune** | Clear Bell | • twilightforest:lake, eternal_starlight:starlit_sea (Any, Autumn) — **Ultra-Rare** |
-| 249 | **Lugia** | Tidal Bell | • byg:blue_abyss (Night, Winter) — **Ultra-Rare** |
-| 250 | **Hooh** | Rainbow Wing | • eternal_starlight:scarlet_forest (Day, Summer) — **Ultra-Rare** |
-| 251 | **Celebi** | Gs Ball | • eternal_starlight:starlight_forest, twilightforest:enchanted_forest (Midnight, Spring) — **Ultra-Rare**<br>• flower_forest (Midnight, Spring) — **Ultra-Rare** |
-| 379 | **Registeel** | Steel Tablet | • deep_dark, is_deep_dark (Any) — **Ultra-Rare** |
-| 382 | **Kyogre** | Blue Orb | • is_ocean, deep_cold_ocean, deep_frozen_ocean, deep_ocean, ocean (Any) — **Ultra-Rare** |
-| 494 | **Victini** | Liberty Pass | • the_bumblezone:honey_peaks (Any) — **Ultra-Rare** |
-| 807 | **Zeraora** | Zeraoras Thunderclaw | • Near Induction Port (Any) — **Ultra-Rare** |
-| 905 | **Enamourus** | Reveal Glass | • Near Mechanical Harvester (Any, Spring) — **Ultra-Rare** |
+| # | Pokémon | Location | Time | Season | Key Item | Rarity |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 144 | **Articuno** | Snowy Forest | Any | Winter | Tidal Bell | **Ultra-Rare** |
+| 145 | **Zapdos** | Is Sky, Howling Peaks | Any | Spring | Tidal Bell | **Ultra-Rare** |
+| 146 | **Moltres** | Is Volcanic, Is Sky | Any | Summer | Tidal Bell | **Ultra-Rare** |
+| 243 | **Raikou** | Firefly Forest | Any | Spring | Clear Bell | **Ultra-Rare** |
+| 244 | **Entei** | Brimstone Caverns<br>Nether Wastes | Any<br>Any | Summer<br>Any | Clear Bell | **Ultra-Rare**<br>**Ultra-Rare** |
+| 245 | **Suicune** | Lake, Starlit Sea | Any | Autumn | Clear Bell | **Ultra-Rare** |
+| 249 | **Lugia** | Blue Abyss | Night | Winter | Tidal Bell | **Ultra-Rare** |
+| 250 | **Hooh** | Scarlet Forest | Day | Summer | Rainbow Wing | **Ultra-Rare** |
+| 251 | **Celebi** | Starlight Forest, Enchanted Forest<br>Flower Forest | Midnight<br>Midnight | Spring<br>Spring | Gs Ball | **Ultra-Rare**<br>**Ultra-Rare** |
+| 379 | **Registeel** | Deep Dark, Is Deep Dark | Any | Any | Steel Tablet | **Ultra-Rare** |
+| 382 | **Kyogre** | Is Ocean, Deep Cold Ocean, Deep Frozen Ocean, Deep Ocean, Ocean | Any | Any | Blue Orb | **Ultra-Rare** |
+| 494 | **Victini** | Honey Peaks | Any | Any | Liberty Pass | **Ultra-Rare** |
+| 708 | **Phantump** | Torreya Forest<br>Dark Forest | Any<br>Night, Midnight | Any<br>Any | None | **Common**<br>**Common** |
+| 807 | **Zeraora** | Near Induction Port | Any | Any | Zeraoras Thunderclaw | **Ultra-Rare** |
+| 905 | **Enamourus** | Near Mechanical Harvester | Any | Spring | Reveal Glass | **Ultra-Rare** |
+| 9999 | **Vulpix** | Global | Any | Any | None | **Common** |
+| 9999 | **Trevenant** | Torreya Forest<br>Dark Forest | Any<br>Night, Midnight | Any<br>Any | None | **Rare**<br>**Common** |
 
 ---
-*Last Updated: 2026-02-23 20:40:03 UTC*
+*Last Updated: 2026-02-23 21:01:51 UTC*
