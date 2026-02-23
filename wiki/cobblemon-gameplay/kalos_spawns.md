@@ -18,4 +18,4 @@
 | 708 | **Phantump** | • eternal_starlight:torreya_forest (Any) — **Common**<br>• twilight_forest:dark_forest (Night, Midnight) — **Common** |
 
 ---
-*Last Updated: 2026-02-23 20:38:47 UTC*
+*Last Updated: 2026-02-23 20:39:41 UTC*
