@@ -14,40 +14,35 @@ GEN_RANGES = [
     (722, 809, "alola"), (810, 905, "galar"), (906, 1025, "paldea")
 ]
 
-# Updated Mapping for Tooltips
+# In spawn_utils.py
+
 DIMENSION_MAP = {
-    "twilightforest": "The Twilight Forest",
+    "twilightforest": "Twilight Forest",
     "eternal_starlight": "Eternal Starlight",
-    "the_bumblezone": "The Bumblezone",
+    "the_bumblezone": "Bumblezone",
     "minecraft": "Overworld",
-    "nether": "The Nether",
+    "nether": "Nether",
     "the_end": "The End",
-    "stellaris": "Space (Stellaris)",
-    "aether": "The Aether",
-    "deep_aether": "The Aether (Deep Aether)"
+    "stellaris": "Space",
+    "aether": "Aether",
+    "deep_aether": "Deep Aether"
 }
 
+def get_dimension(spawn_obj):
+    """Identifies the dimension based on the mod prefix of the first biome."""
+    biomes_list = spawn_obj.get('condition', {}).get('biomes', ["minecraft:global"])
+    first_biome = biomes_list[0]
+    mod_id = first_biome.split(':')[0] if ':' in first_biome else "minecraft"
+    return DIMENSION_MAP.get(mod_id, "Overworld")
+
 def clean_location(spawn_obj, stats):
-    """Returns a clean location string with HTML tooltips for dimensions."""
-    # Handle "Near Block" locations (like Mechanical Harvester)
+    """Returns a clean location string (Biomes or Block context) without HTML."""
     if stats.get("location"):
         return stats["location"] 
     
-    biomes_list = spawn_obj.get('condition', {}).get('biomes', ["minecraft:global"])
-    formatted_biomes = []
-
-    for b in biomes_list:
-        parts = b.split(':')
-        mod_id = parts[0] if len(parts) > 1 else "minecraft"
-        raw_name = parts[-1]
-        
-        clean_name = raw_name.replace('_', ' ').title()
-        dim_name = DIMENSION_MAP.get(mod_id, "Overworld")
-        
-        # Wrap in HTML abbreviation tag for the tooltip
-        formatted_biomes.append(f'<abbr title="{dim_name}">{clean_name}</abbr>')
-    
-    return ", ".join(formatted_biomes)
+    biomes_list = spawn_obj.get('condition', {}).get('biomes', ["Global"])
+    clean_biomes = [b.split(':')[-1].replace('_', ' ').title() for b in biomes_list]
+    return ", ".join(clean_biomes)
 
 def get_nav_bar(current_label):
     nav = "### 🗺️ National Pokédex Navigation\n\n"
