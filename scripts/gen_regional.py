@@ -42,3 +42,7 @@ def generate_regional_wiki():
         
         content += f"\n---\n*Last Updated: {timestamp}*"
         write_safe_md(os.path.join(WIKI_DIR, f"{label}_spawns.md"), content)
+
+if __name__ == "__main__":
+    generate_regional_wiki()
+    print("✅ Regional Wiki updated successfully.")
