@@ -1,0 +1,325 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "snorunt-permafrost-forest-1",
+            "pokemon": "snorunt",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-41",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "glalie-permafrost-forest-1",
+            "pokemon": "glalie",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "42-60",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "froslass-permafrost-forest-1",
+            "pokemon": "froslass",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "35-60",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "vanillite-permafrost-forest-1",
+            "pokemon": "vanillite",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "8-34",
+            "weight": 8.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "vanillish-permafrost-forest-1",
+            "pokemon": "vanillish",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "35-46",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "vanilluxe-permafrost-forest-1",
+            "pokemon": "vanilluxe",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "47-65",
+            "weight": 3.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "snover-permafrost-forest-1",
+            "pokemon": "snover",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-39",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "abomasnow-permafrost-forest-1",
+            "pokemon": "abomasnow",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "40-60",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "bergmite-permafrost-forest-1",
+            "pokemon": "bergmite",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-36",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "avalugg-permafrost-forest-1",
+            "pokemon": "avalugg",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-60",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "cryogonal-permafrost-forest-1",
+            "pokemon": "cryogonal",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-50",
+            "weight": 5.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "vulpix-alolan-permafrost-forest-1",
+            "pokemon": "vulpix",
+            "aspects": ["alolan"],
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "5-30",
+            "weight": 6.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "ninetales-alolan-permafrost-forest-1",
+            "pokemon": "ninetales",
+            "aspects": ["alolan"],
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "25-51",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "glaceon-permafrost-forest-1",
+            "pokemon": "glaceon",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "25-50",
+            "weight": 4.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "snom-permafrost-forest-1",
+            "pokemon": "snom",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-30",
+            "weight": 7.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "frosmoth-permafrost-forest-1",
+            "pokemon": "frosmoth",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "35-60",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "eiscue-permafrost-forest-1",
+            "pokemon": "eiscue",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-50",
+            "weight": 5.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "aurorus-permafrost-forest-1",
+            "pokemon": "aurorus",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "39-60",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "lapras-permafrost-forest-1",
+            "pokemon": "lapras",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "25-55",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "beartic-permafrost-forest-1",
+            "pokemon": "beartic",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-60",
+            "weight": 4.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        },
+        {
+            "id": "delibird-permafrost-forest-1",
+            "pokemon": "delibird",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "15-45",
+            "weight": 6.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:starlight_permafrost_forest"]
+            }
+        }
+
+    ]
+}
