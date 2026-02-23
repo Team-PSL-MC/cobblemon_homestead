@@ -7,6 +7,7 @@ def generate_regional_wiki():
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
 
     for filename in os.listdir(SPAWN_DATA_PATH):
+        # Process regional files (usually those NOT starting with numbers)
         if filename.endswith('.json') and not filename[0].isdigit():
             with open(os.path.join(SPAWN_DATA_PATH, filename), 'r', encoding='utf-8') as f:
                 data = json.load(f)
@@ -15,6 +16,7 @@ def generate_regional_wiki():
                     stats = get_conditions(s)
                     
                     entry = {
+                        "world": get_dimension(s),
                         "loc": clean_location(s, stats),
                         "time": stats['time'],
                         "season": stats['season'],
@@ -27,22 +29,25 @@ def generate_regional_wiki():
                         grouped_data[name]["variants"].append(entry)
 
     for start, end, label in GEN_RANGES:
+        # Filter Pokémon belonging to this Generation
         gen_list = sorted([v for v in grouped_data.values() if start <= v["dex"] <= end], key=lambda x: x['dex'])
+        
         content = f"# 🌲 {label.title()} Spawns\n\n{get_nav_bar(label)}\n---\n\n"
-        content += "| # | Pokémon | Location | Time | Season | Key Item | Rarity |\n"
+        content += "| # | Pokémon | World | Location | Time | Season | Rarity |\n"
         content += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
         
         for d in gen_list:
+            worlds = "<br>".join(list(set([v['world'] for v in d['variants']])))
             locs = "<br>".join([v['loc'] for v in d['variants']])
             times = "<br>".join([v['time'] for v in d['variants']])
             seasons = "<br>".join([v['season'] for v in d['variants']])
             rarities = "<br>".join([f"**{v['rarity']}**" for v in d['variants']])
             
-            content += f"| {d['dex']} | **{d['name']}** | {locs} | {times} | {seasons} | None | {rarities} |\n"
+            content += f"| {d['dex']} | **{d['name']}** | {worlds} | {locs} | {times} | {seasons} | {rarities} |\n"
         
         content += f"\n---\n*Last Updated: {timestamp}*"
         write_safe_md(os.path.join(WIKI_DIR, f"{label}_spawns.md"), content)
 
 if __name__ == "__main__":
     generate_regional_wiki()
-    print("✅ Regional Wiki updated successfully.")
+    print("✅ Regional Wiki updated with World columns and corrected Dex sorting.")
