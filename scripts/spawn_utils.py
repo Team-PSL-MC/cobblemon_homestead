@@ -7,16 +7,51 @@ from datetime import datetime
 GITHUB_REPO = "Team-PSL-MC/cobblemon_homestead" 
 SPAWN_DATA_PATH = 'data/cobblemon/spawn_pool_world/'
 WIKI_DIR = 'wiki/cobblemon-gameplay/'
+
 GEN_RANGES = [
     (1, 151, "kanto"), (152, 251, "johto"), (252, 386, "hoenn"),
     (387, 493, "sinnoh"), (494, 649, "unova"), (650, 721, "kalos"),
     (722, 809, "alola"), (810, 905, "galar"), (906, 1025, "paldea")
 ]
 
+# Updated Mapping for Tooltips
+DIMENSION_MAP = {
+    "twilightforest": "The Twilight Forest",
+    "eternal_starlight": "Eternal Starlight",
+    "the_bumblezone": "The Bumblezone",
+    "minecraft": "Overworld",
+    "nether": "The Nether",
+    "the_end": "The End",
+    "stellaris": "Space (Stellaris)",
+    "aether": "The Aether",
+    "deep_aether": "The Aether (Deep Aether)"
+}
+
+def clean_location(spawn_obj, stats):
+    """Returns a clean location string with HTML tooltips for dimensions."""
+    # Handle "Near Block" locations (like Mechanical Harvester)
+    if stats.get("location"):
+        return stats["location"] 
+    
+    biomes_list = spawn_obj.get('condition', {}).get('biomes', ["minecraft:global"])
+    formatted_biomes = []
+
+    for b in biomes_list:
+        parts = b.split(':')
+        mod_id = parts[0] if len(parts) > 1 else "minecraft"
+        raw_name = parts[-1]
+        
+        clean_name = raw_name.replace('_', ' ').title()
+        dim_name = DIMENSION_MAP.get(mod_id, "Overworld")
+        
+        # Wrap in HTML abbreviation tag for the tooltip
+        formatted_biomes.append(f'<abbr title="{dim_name}">{clean_name}</abbr>')
+    
+    return ", ".join(formatted_biomes)
+
 def get_nav_bar(current_label):
     nav = "### 🗺️ National Pokédex Navigation\n\n"
     links = []
-    # Add Legendary to Nav
     legend_link = "**Legendaries**" if current_label == "legendaries" else "[Legendaries](legendaries.md)"
     links.append(legend_link)
     
@@ -67,18 +102,8 @@ def get_conditions(spawn_obj):
     scan_cond(cond)
     return res
 
-def clean_location(spawn_obj, stats):
-    """Returns a clean location string (Biomes or Block context)."""
-    if stats.get("location"):
-        return stats["location"] 
-    
-    biomes_list = spawn_obj.get('condition', {}).get('biomes', ["Global"])
-    clean_biomes = [b.split(':')[-1].replace('_', ' ').title() for b in biomes_list]
-    return ", ".join(clean_biomes)
-
 def write_safe_md(filepath, content):
     os.makedirs(os.path.dirname(filepath), exist_ok=True)
-    # Strips trailing whitespace to keep GitBook files clean
     clean_content = "\n".join([line.rstrip() for line in content.splitlines()])
     with open(filepath, 'w', encoding='utf-8', newline='\n') as f:
         f.write(clean_content + "\n")
