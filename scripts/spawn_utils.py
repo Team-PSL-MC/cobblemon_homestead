@@ -2,6 +2,7 @@ import os
 import json
 import re
 from datetime import datetime
+from pokemon_map import POKEMON_DEX  # Ensure this file exists in the same folder
 
 # Shared Configuration
 GITHUB_REPO = "Team-PSL-MC/cobblemon_homestead" 
@@ -13,8 +14,6 @@ GEN_RANGES = [
     (387, 493, "sinnoh"), (494, 649, "unova"), (650, 721, "kalos"),
     (722, 809, "alola"), (810, 905, "galar"), (906, 1025, "paldea")
 ]
-
-# In spawn_utils.py
 
 DIMENSION_MAP = {
     "twilightforest": "Twilight Forest",
@@ -28,6 +27,23 @@ DIMENSION_MAP = {
     "deep_aether": "Deep Aether"
 }
 
+def parse_spawn_id(spawn_obj):
+    """Gets Dex ID from map first, then tries to regex the ID string."""
+    pokemon_name_raw = spawn_obj.get('pokemon', 'unknown').lower()
+    
+    # 1. Try to get Dex Number from our Map
+    dex_num = POKEMON_DEX.get(pokemon_name_raw, 9999)
+    
+    # 2. Fallback: try to find a number in the ID if not in map
+    if dex_num == 9999:
+        raw_id = spawn_obj.get('id', '')
+        match = re.search(r'(\d+)', raw_id)
+        if match: 
+            dex_num = int(match.group(1))
+            
+    name = pokemon_name_raw.replace('_', ' ').title()
+    return dex_num, name
+
 def get_dimension(spawn_obj):
     """Identifies the dimension based on the mod prefix of the first biome."""
     biomes_list = spawn_obj.get('condition', {}).get('biomes', ["minecraft:global"])
@@ -36,7 +52,7 @@ def get_dimension(spawn_obj):
     return DIMENSION_MAP.get(mod_id, "Overworld")
 
 def clean_location(spawn_obj, stats):
-    """Returns a clean location string (Biomes or Block context) without HTML."""
+    """Returns a clean location string (Biomes or Block context)."""
     if stats.get("location"):
         return stats["location"] 
     
@@ -56,15 +72,6 @@ def get_nav_bar(current_label):
         else:
             links.append(f"[{start}-{end}]({label}_spawns.md)")
     return nav + " | ".join(links) + "\n\n"
-
-def parse_spawn_id(spawn_obj):
-    raw_id = spawn_obj.get('id', '')
-    pokemon_name = spawn_obj.get('pokemon', 'Unknown')
-    dex_num = 9999
-    match = re.search(r'(\d+)', raw_id)
-    if match: dex_num = int(match.group(1))
-    name = pokemon_name.replace('_', ' ').title()
-    return dex_num, name
 
 def get_conditions(spawn_obj):
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None}
