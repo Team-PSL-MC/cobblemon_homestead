@@ -1,78 +1,61 @@
-# Cobbleworkers
+🛠️ The Ultimate Cobbleworkers Guide
 
-## 🛠️ Cobbleworkers: Automating Your Homestead
+In Cobblemon Homestead, your Pokémon are the backbone of your infrastructure. This guide covers how to set up your workforce and lists every worker species.
+🚀 Getting Started
 
-In Cobblemon Homestead, your Pokémon are more than just battle partners—they are essential workers! By using the Cobbleworkers system, you can assign your team tasks ranging from harvesting Apricorns to generating lava and scouting for rare structures.
+To begin automating your base, you will need the Pasture Block from the Cobblemon mod.
 
-#### ⚙️ Worker Mechanics
+    Place a Pasture Block: This defines the area where your Pokémon will work.
 
-* Scanning Speed: Workers scan 15 blocks per tick.
-* Search Range: Workers look for tasks within an 8-block radius and 5 blocks high.
-* Worker Types: Most tasks are assigned to specific Pokémon species or entire Elemental Types.
+    Assign Workers: Only Pokémon inside the Pasture Block will perform tasks.
 
-***
+    Storage: You don't need to collect items manually! Pokémon will automatically deposit all harvested materials into any valid inventories (chests, barrels, etc.) located nearby.
 
-### 🌾 Farming & Harvesting
+🌾 Farming & Botanical Harvesting
 
-| Task        | Required Type | Specialized Pokémon                            | Notes                                    |
-| ----------- | ------------- | ---------------------------------------------- | ---------------------------------------- |
-| Apricorns   | Bug           | Scyther, Beedrill, Kleavor, Heracross...       | Auto-harvests ripe Apricorns.            |
-| Crops       | Grass         | Venusaur, Torterra, Serperior, Roserade...     | Automatically replants after harvesting! |
-| Berries     | Grass         | Munchlax, Greedent, Tropius, Florges...        | Keeps your berry pouches full.           |
-| Irrigation  | Water         | Vaporeon, Squirtle, Marill, Politoed, Pelipper | Waters nearby crops (1-block radius).    |
-| Nether Wart | Ghost         | Mismagius, Banette, Trevenant, Spiritomb...    | Automatically replants in the Nether.    |
+These workers handle the growth and collection of natural resources.
+Role	Pokémon Workers	Key Features
+Apricorns	Scyther, Beedrill, Leavanny, Parasect, Heracross, Pinsir, Scizor, Volcarona, Ninjask, Galvantula, Trevenant, Scolipede, Golisopod, Vikavolt, Centiskorch, Kleavor, Shuckle	Auto-harvests ripe Apricorns.
+Crops	Leavanny, Parasect, Torterra, Venusaur, Victreebel, Meganium, Gogoat, Eldegoss, Sunflora, Roserade, Ludicolo, Breloom, Sceptile, Serperior, Leafeon, Scyther	Harvests and replants crops.
+Berries	Torterra, Venusaur, Scyther, Beedrill, Munchlax, Greedent, Skwovet, Cherrim, Bounsweet, Snover, Vileplume, Bellossom, Whimsicott, Tropius, Florges, Shuckle	Keeps your berry pouches full.
+Mints	Sylveon, Gardevoir, Togekiss, Mawile, Florges, Grimmsnarl, Impidimp, Morgrem, Ribombee, Hatterene, Primarina, Shiinotic, Whimsicott, Slurpuff, Aromatisse	Harvests Nature Mints (Fairy).
+Nether Wart	Misdreavus, Banette, Trevenant, Spiritomb, Mismagius, Chandelure, Cofagrigus, Runerigus, Dhelmise, Decidueye, Phantump, Gourgeist, Sableye, Dusknoir, Lampent	Replants in the Nether.
+Honey	Combee, Vespiquen, Ribombee, Beedrill, Teddiursa	Generates honey every 120s.
+⛏️ Mining & Resource Generation
 
-***
+Heavy-duty workers for mineral extraction and environmental generation.
+💎 Specialized Mining
 
-### ⛏️ Resource Gathering
+    Amethyst (Rock): Sableye, Carbink, Gigalith, Boldore, Crustle.
 
-#### 💎 Mining & Excavation
+    Tumblestone (Steel): Aron, Aggron, Magnemite, Lucario, Bronzong, Steelix, Excadrill, Copperajah, Metagross, Bastiodon, Gigalith, Probopass, Rhyperior, Scizor, Perrserker.
 
-* Amethyst Harvesters (Rock Type): Sableye, Carbink, Gigalith, Boldore, Crustle.
-* Tumblestone Harvesters (Steel Type): Aron, Aggron, Magnemite, Lucario, Bronzong. _(Automatically replants nodes!)_
-* Archeologists (Ground Type): Baltoy, Sandslash, Claydol, Flygon, Mudsdale. Finds rare treasures from the earth every 80 seconds.
+    Archeology (Ground): Baltoy, Sandslash, Claydol, Flygon, Mudsdale, Excadrill, Golurk, Runerigus, Sigilyph, Armaldo.
 
-#### 🍯 Specialty Items
+🌋 Fluid & Environmental Generators
 
-* Honey Collection: Combee, Vespiquen, Ribombee, and Teddiursa.
-  * _Note: The Combee line generates Honey every 120 seconds!_
-* Item Pickup: Any Pokémon with the **Pick-up** ability can find Ancient items, Poké Balls, Evolution Stones, and EXP candies every 120 seconds.&#x20;
-* Ground Gathering (Psychic Type): Alakazam, Metagross, Orbeetle, and Abra will pick up items dropped on the floor.
+    Lava: Camerupt, Magmar, Slugma, Coalossal, Centiskorch, Torkoal, Magcargo, Magmortar, Heatran, Turtonator, Groudon, Iron-Moth.
 
-***
+    Water: Squirtle, Totodile, Mudkip, Piplup, Lapras, Wailmer, Ducklett, Wooper, Dewgong, Seel, Horsea, Staryu, Slowpoke, Tentacool, Shellder.
 
-### ⚡ Energy & Utilities
+    Snow: Snover, Abomasnow, Cryogonal, Vulpix-Alolan, Frosmoth, Glaceon.
 
-* Lava Generation (Fire Type): Camerupt, Magmar, Coalossal, etc. (90s Cooldown).
-* Water Generation (Water Type): Lapras, Wailmer, Wooper, Dewgong, etc. (90s Cooldown).
-* Fuel Production (Fire Type): Torkoal, Magcargo, Rapidash, Chandelure. Generates furnace fuel every 80 seconds.
-* Brewing Fuel (Dragon Type): Turtonator, Druddigon, Noivern, Flygon, Haxorus. Provides Blaze Powder/Fuel to brewing stands.
+⚙️ Industrial Utilities & Logistics
 
-***
+    Furnace Fuel: Torkoal, Magcargo, Darmanitan, Rapidash, Chandelure.
 
-### 🚑 Support & Exploration
+    Brewing Fuel: Turtonator, Druddigon, Noivern, Flygon, Haxorus.
 
-#### 🏥 The Healing Circle
+    Irrigation: Squirtle, Totodile, Oshawott, Froakie, Vaporeon, Marill, Politoed, Pelipper, Quagsire, Swampert, Ludicolo, Milotic, Gastrodon, Azumarill, Cloyster.
 
-Pokémon like Chansey, Blissey, Audino, and Comfey act as field medics.
+    Floor Cleaning: Alakazam, Metagross, Reuniclus, Orbeetle, Abra, Gardevoir, Sigilyph, Beheeyem, Claydol, Espathra, Chimecho, Natu, Elgyem, Bronzong, Slowking.
 
-* If they know moves like _Wish, Softboiled, or Refresh_, they provide a Regeneration effect to nearby players.
-* The Chansey line will automatically heal players in their vicinity.
+🚑 Support & Exploration
 
-#### 🗺️ Aerial Scouting
+    Field Medics: Chansey, Audino, Comfey, Blissey, Hatenna, Hattrem, Cresselia, Alcremie, Miltank, Alomomola, Toxapex, Clefable, Togekiss, Milotic, Florges, Vaporeon, Clawitzer.
 
-Flying Types (Corviknight, Pidgeot, Altaria, Talonflame, Noctowl) can be sent out to find structures. Every 80 seconds, they may locate:
+    Aerial Scouts: Corviknight, Noctowl, Talonflame, Altaria, Pidgeot, Staraptor, Kilowattrel, Mandibuzz, Swellow, Dragonite, Ninjask, Togekiss.
 
-* Mineshops, Shipwrecks, Ruins, and Fossils.
-* Hidden "Gimmi" Towers and Treasure locations.
+    Fishing Loot: Wishiwashi, Feebas, Inkay, Dhelmise, Bruxish, Shellder, Cloyster, Staryu, Starmie, Corsola, Lanturn, Relicanth, Wimpod, Clamperl, Luvdisc, Octillery, Whiscash, Basculin, Gorebyss.
 
-***
-
-### 🚒 Safety & Environment
-
-* Extinguishers (Water Type): Blastoise, Swampert, Quagsire, and Ludicolo will automatically douse fires in a 1-block radius around them.
-* Snow Generation (Ice Type): Snover, Abomasnow, Frosmoth, and Alolan Vulpix generate snow every 90 seconds.\
-  \
-  \
-  More Information and Examples [https://docs.accieo.com/cobbleworkers/getting-started.html](https://docs.accieo.com/cobbleworkers/getting-started.html)
-
+    Fire Safety: Mudkip, Piplup, Oshawott, Froakie, Blastoise, Feraligatr, Empoleon, Samurott, Greninja, Golduck, Poliwrath, Kingler, Seadra, Gyarados, Mantine.
