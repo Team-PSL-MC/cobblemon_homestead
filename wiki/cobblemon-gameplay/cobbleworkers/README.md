@@ -14,16 +14,16 @@ To begin automating your base, you will need the Pasture Block from the Cobblemo
 🌾 Farming & Botanical Harvesting
 
 These workers handle the growth and collection of natural resources.
-Role	Pokémon Workers	Key Features
-Apricorns	Scyther, Beedrill, Leavanny, Parasect, Heracross, Pinsir, Scizor, Volcarona, Ninjask, Galvantula, Trevenant, Scolipede, Golisopod, Vikavolt, Centiskorch, Kleavor, Shuckle	Auto-harvests ripe Apricorns.
-Crops	Leavanny, Parasect, Torterra, Venusaur, Victreebel, Meganium, Gogoat, Eldegoss, Sunflora, Roserade, Ludicolo, Breloom, Sceptile, Serperior, Leafeon, Scyther	Harvests and replants crops.
-Berries	Torterra, Venusaur, Scyther, Beedrill, Munchlax, Greedent, Skwovet, Cherrim, Bounsweet, Snover, Vileplume, Bellossom, Whimsicott, Tropius, Florges, Shuckle	Keeps your berry pouches full.
-Mints	Sylveon, Gardevoir, Togekiss, Mawile, Florges, Grimmsnarl, Impidimp, Morgrem, Ribombee, Hatterene, Primarina, Shiinotic, Whimsicott, Slurpuff, Aromatisse	Harvests Nature Mints (Fairy).
-Nether Wart	Misdreavus, Banette, Trevenant, Spiritomb, Mismagius, Chandelure, Cofagrigus, Runerigus, Dhelmise, Decidueye, Phantump, Gourgeist, Sableye, Dusknoir, Lampent	Replants in the Nether.
-Honey	Combee, Vespiquen, Ribombee, Beedrill, Teddiursa	Generates honey every 120s.
+Task	Required Type	Pokémon Workers
+Apricorns	Bug	Scyther, Beedrill, Leavanny, Parasect, Heracross, Pinsir, Scizor, Volcarona, Ninjask, Galvantula, Trevenant, Scolipede, Golisopod, Vikavolt, Centiskorch, Kleavor, Shuckle
+Crops	Grass	Leavanny, Parasect, Torterra, Venusaur, Victreebel, Meganium, Gogoat, Eldegoss, Sunflora, Roserade, Ludicolo, Breloom, Sceptile, Serperior, Leafeon, Scyther
+Berries	Grass	Torterra, Venusaur, Scyther, Beedrill, Munchlax, Greedent, Skwovet, Cherrim, Bounsweet, Snover, Vileplume, Bellossom, Whimsicott, Tropius, Florges, Shuckle
+Mints	Fairy	Sylveon, Gardevoir, Togekiss, Mawile, Florges, Grimmsnarl, Impidimp, Morgrem, Ribombee, Hatterene, Primarina, Shiinotic, Whimsicott, Slurpuff, Aromatisse
+Nether Wart	Ghost	Misdreavus, Banette, Trevenant, Spiritomb, Mismagius, Chandelure, Cofagrigus, Runerigus, Dhelmise, Decidueye, Phantump, Gourgeist, Sableye, Dusknoir, Lampent
+Honey	None	Combee, Vespiquen, Ribombee, Beedrill, Teddiursa (Generates every 120s)
 ⛏️ Mining & Resource Generation
 
-Heavy-duty workers for mineral extraction and environmental generation.
+Heavy-duty workers for mineral extraction and environmental production.
 💎 Specialized Mining
 
     Amethyst (Rock): Sableye, Carbink, Gigalith, Boldore, Crustle.
@@ -42,13 +42,13 @@ Heavy-duty workers for mineral extraction and environmental generation.
 
 ⚙️ Industrial Utilities & Logistics
 
-    Furnace Fuel: Torkoal, Magcargo, Darmanitan, Rapidash, Chandelure.
+    Furnace Fuel (Fire): Torkoal, Magcargo, Darmanitan, Rapidash, Chandelure.
 
-    Brewing Fuel: Turtonator, Druddigon, Noivern, Flygon, Haxorus.
+    Brewing Fuel (Dragon): Turtonator, Druddigon, Noivern, Flygon, Haxorus.
 
-    Irrigation: Squirtle, Totodile, Oshawott, Froakie, Vaporeon, Marill, Politoed, Pelipper, Quagsire, Swampert, Ludicolo, Milotic, Gastrodon, Azumarill, Cloyster.
+    Irrigation (Water): Squirtle, Totodile, Oshawott, Froakie, Vaporeon, Marill, Politoed, Pelipper, Quagsire, Swampert, Ludicolo, Milotic, Gastrodon, Azumarill, Cloyster.
 
-    Floor Cleaning: Alakazam, Metagross, Reuniclus, Orbeetle, Abra, Gardevoir, Sigilyph, Beheeyem, Claydol, Espathra, Chimecho, Natu, Elgyem, Bronzong, Slowking.
+    Floor Cleaning (Psychic): Alakazam, Metagross, Reuniclus, Orbeetle, Abra, Gardevoir, Sigilyph, Beheeyem, Claydol, Espathra, Chimecho, Natu, Elgyem, Bronzong, Slowking.
 
 🚑 Support & Exploration
 
@@ -59,3 +59,16 @@ Heavy-duty workers for mineral extraction and environmental generation.
     Fishing Loot: Wishiwashi, Feebas, Inkay, Dhelmise, Bruxish, Shellder, Cloyster, Staryu, Starmie, Corsola, Lanturn, Relicanth, Wimpod, Clamperl, Luvdisc, Octillery, Whiscash, Basculin, Gorebyss.
 
     Fire Safety: Mudkip, Piplup, Oshawott, Froakie, Blastoise, Feraligatr, Empoleon, Samurott, Greninja, Golduck, Poliwrath, Kingler, Seadra, Gyarados, Mantine.
+
+🌟 Quick-Reference: High-Overlap Pokémon
+
+Catch these Pokémon to cover the most jobs with the fewest team slots:
+Pokémon	Roles Covered
+Scyther	Apricorns, Crops, Berries
+Beedrill	Apricorns, Berries, Honey
+Togekiss	Mints, Healing, Scouts
+Florges	Berries, Mints, Healing
+Trevenant	Apricorns, Nether Wart
+Centiskorch	Apricorns, Lava
+Metagross	Tumblestone, Floor Cleaning
+Vaporeon	Irrigation, Healing
