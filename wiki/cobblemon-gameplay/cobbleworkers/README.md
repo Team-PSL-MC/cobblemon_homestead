@@ -1,91 +1,117 @@
-🛠️ The Ultimate Cobbleworkers Guide
+# 🛠️ The Ultimate Cobbleworkers Guide
 
 In Cobblemon Homestead, your Pokémon are the backbone of your infrastructure. This guide covers how to set up your workforce and lists every worker species.
-🚀 Getting Started
 
-To begin automating your base, you will need the Pasture Block from the Cobblemon mod.
+---
 
-    Place a Pasture Block: This defines the area where your Pokémon will work.
+## 🚀 Getting Started
 
-    Assign Workers: Only Pokémon inside the Pasture Block will perform tasks.
+To begin automating your base, you will need the **Pasture Block** from the Cobblemon mod.
 
-    Storage: Pokémon will automatically deposit all harvested materials into any valid inventories (chests, barrels, etc.) located nearby.
+1. **Place a Pasture Block**  
+   This defines the area where your Pokémon will work.
 
-🌾 Farming & Botanical Harvesting
+2. **Assign Workers**  
+   Only Pokémon inside the Pasture Block will perform tasks.
+
+3. **Storage**  
+   Pokémon will automatically deposit all harvested materials into any valid inventories (chests, barrels, etc.) located nearby.
+
+---
+
+# 🌾 Farming & Botanical Harvesting
 
 Workers in this category handle the lifecycle of natural resources.
 
-    Apricorns (Bug Type)
-    Scyther, Beedrill, Leavanny, Parasect, Heracross, Pinsir, Scizor, Volcarona, Ninjask, Galvantula, Trevenant, Scolipede, Golisopod, Vikavolt, Centiskorch, Kleavor, Shuckle
+### Apricorns *(Bug Type)*
+Scyther, Beedrill, Leavanny, Parasect, Heracross, Pinsir, Scizor, Volcarona, Ninjask, Galvantula, Trevenant, Scolipede, Golisopod, Vikavolt, Centiskorch, Kleavor, Shuckle
 
-    Crops (Grass Type)
-    Leavanny, Parasect, Torterra, Venusaur, Victreebel, Meganium, Gogoat, Eldegoss, Sunflora, Roserade, Ludicolo, Breloom, Sceptile, Serperior, Leafeon, Scyther
+### Crops *(Grass Type)*
+Leavanny, Parasect, Torterra, Venusaur, Victreebel, Meganium, Gogoat, Eldegoss, Sunflora, Roserade, Ludicolo, Breloom, Sceptile, Serperior, Leafeon, Scyther
 
-    Berries (Grass Type)
-    Torterra, Venusaur, Scyther, Beedrill, Munchlax, Greedent, Skwovet, Cherrim, Bounsweet, Snover, Vileplume, Bellossom, Whimsicott, Tropius, Florges, Shuckle
+### Berries *(Grass Type)*
+Torterra, Venusaur, Scyther, Beedrill, Munchlax, Greedent, Skwovet, Cherrim, Bounsweet, Snover, Vileplume, Bellossom, Whimsicott, Tropius, Florges, Shuckle
 
-    Mints (Fairy Type)
-    Sylveon, Gardevoir, Togekiss, Mawile, Florges, Grimmsnarl, Impidimp, Morgrem, Ribombee, Hatterene, Primarina, Shiinotic, Whimsicott, Slurpuff, Aromatisse
+### Mints *(Fairy Type)*
+Sylveon, Gardevoir, Togekiss, Mawile, Florges, Grimmsnarl, Impidimp, Morgrem, Ribombee, Hatterene, Primarina, Shiinotic, Whimsicott, Slurpuff, Aromatisse
 
-    Nether Wart (Ghost Type)
-    Misdreavus, Banette, Trevenant, Spiritomb, Mismagius, Chandelure, Cofagrigus, Runerigus, Dhelmise, Decidueye, Phantump, Gourgeist, Sableye, Dusknoir, Lampent
+### Nether Wart *(Ghost Type)*
+Misdreavus, Banette, Trevenant, Spiritomb, Mismagius, Chandelure, Cofagrigus, Runerigus, Dhelmise, Decidueye, Phantump, Gourgeist, Sableye, Dusknoir, Lampent
 
-    Honey (No Type Required)
-    Combee, Vespiquen, Ribombee, Beedrill, Teddiursa
+### Honey *(No Type Required)*
+Combee, Vespiquen, Ribombee, Beedrill, Teddiursa
 
-⛏️ Mining & Resource Generation
-💎 Specialized Mining
+---
 
-    Amethyst (Rock): Sableye, Carbink, Gigalith, Boldore, Crustle.
+# ⛏️ Mining & Resource Generation
 
-    Tumblestone (Steel): Aron, Aggron, Magnemite, Lucario, Bronzong, Steelix, Excadrill, Copperajah, Metagross, Bastiodon, Gigalith, Probopass, Rhyperior, Scizor, Perrserker.
+## 💎 Specialized Mining
 
-    Archeology (Ground): Baltoy, Sandslash, Claydol, Flygon, Mudsdale, Excadrill, Golurk, Runerigus, Sigilyph, Armaldo.
+### Amethyst *(Rock)*
+Sableye, Carbink, Gigalith, Boldore, Crustle
 
-🌋 Fluid & Environmental
+### Tumblestone *(Steel)*
+Aron, Aggron, Magnemite, Lucario, Bronzong, Steelix, Excadrill, Copperajah, Metagross, Bastiodon, Gigalith, Probopass, Rhyperior, Scizor, Perrserker
 
-    Lava: Camerupt, Magmar, Slugma, Coalossal, Centiskorch, Torkoal, Magcargo, Magmortar, Heatran, Turtonator, Groudon, Iron-Moth.
+### Archeology *(Ground)*
+Baltoy, Sandslash, Claydol, Flygon, Mudsdale, Excadrill, Golurk, Runerigus, Sigilyph, Armaldo
 
-    Water: Squirtle, Totodile, Mudkip, Piplup, Lapras, Wailmer, Ducklett, Wooper, Dewgong, Seel, Horsea, Staryu, Slowpoke, Tentacool, Shellder.
+---
 
-    Snow: Snover, Abomasnow, Cryogonal, Vulpix-Alolan, Frosmoth, Glaceon.
+# 🌋 Fluid & Environmental
 
-⚙️ Industrial Utilities & Logistics
+### Lava
+Camerupt, Magmar, Slugma, Coalossal, Centiskorch, Torkoal, Magcargo, Magmortar, Heatran, Turtonator, Groudon, Iron-Moth
 
-    Furnace Fuel: Torkoal, Magcargo, Darmanitan, Rapidash, Chandelure.
+### Water
+Squirtle, Totodile, Mudkip, Piplup, Lapras, Wailmer, Ducklett, Wooper, Dewgong, Seel, Horsea, Staryu, Slowpoke, Tentacool, Shellder
 
-    Brewing Fuel: Turtonator, Druddigon, Noivern, Flygon, Haxorus.
+### Snow
+Snover, Abomasnow, Cryogonal, Vulpix-Alolan, Frosmoth, Glaceon
 
-    Irrigation: Squirtle, Totodile, Oshawott, Froakie, Vaporeon, Marill, Politoed, Pelipper, Quagsire, Swampert, Ludicolo, Milotic, Gastrodon, Azumarill, Cloyster.
+---
 
-    Floor Cleaning: Alakazam, Metagross, Reuniclus, Orbeetle, Abra, Gardevoir, Sigilyph, Beheeyem, Claydol, Espathra, Chimecho, Natu, Elgyem, Bronzong, Slowking.
+# ⚙️ Industrial Utilities & Logistics
 
-🚑 Support & Exploration
+### Furnace Fuel
+Torkoal, Magcargo, Darmanitan, Rapidash, Chandelure
 
-    Field Medics: Chansey, Audino, Comfey, Blissey, Hatenna, Hattrem, Cresselia, Alcremie, Miltank, Alomomola, Toxapex, Clefable, Togekiss, Milotic, Florges, Vaporeon, Clawitzer.
+### Brewing Fuel
+Turtonator, Druddigon, Noivern, Flygon, Haxorus
 
-    Aerial Scouts: Corviknight, Noctowl, Talonflame, Altaria, Pidgeot, Staraptor, Kilowattrel, Mandibuzz, Swellow, Dragonite, Ninjask, Togekiss.
+### Irrigation
+Squirtle, Totodile, Oshawott, Froakie, Vaporeon, Marill, Politoed, Pelipper, Quagsire, Swampert, Ludicolo, Milotic, Gastrodon, Azumarill, Cloyster
 
-    Fishing Loot: Wishiwashi, Feebas, Inkay, Dhelmise, Bruxish, Shellder, Cloyster, Staryu, Starmie, Corsola, Lanturn, Relicanth, Wimpod, Clamperl, Luvdisc, Octillery, Whiscash, Basculin, Gorebyss.
+### Floor Cleaning
+Alakazam, Metagross, Reuniclus, Orbeetle, Abra, Gardevoir, Sigilyph, Beheeyem, Claydol, Espathra, Chimecho, Natu, Elgyem, Bronzong, Slowking
 
-    Fire Safety: Mudkip, Piplup, Oshawott, Froakie, Blastoise, Feraligatr, Empoleon, Samurott, Greninja, Golduck, Poliwrath, Kingler, Seadra, Gyarados, Mantine.
+---
 
-🌟 Quick-Reference: High-Overlap Pokémon
+# 🚑 Support & Exploration
 
-The best choices for a 6-slot worker team.
+### Field Medics
+Chansey, Audino, Comfey, Blissey, Hatenna, Hattrem, Cresselia, Alcremie, Miltank, Alomomola, Toxapex, Clefable, Togekiss, Milotic, Florges, Vaporeon, Clawitzer
 
-    Scyther: Apricorns, Crops, Berries
+### Aerial Scouts
+Corviknight, Noctowl, Talonflame, Altaria, Pidgeot, Staraptor, Kilowattrel, Mandibuzz, Swellow, Dragonite, Ninjask, Togekiss
 
-    Beedrill: Apricorns, Berries, Honey
+### Fishing Loot
+Wishiwashi, Feebas, Inkay, Dhelmise, Bruxish, Shellder, Cloyster, Staryu, Starmie, Corsola, Lanturn, Relicanth, Wimpod, Clamperl, Luvdisc, Octillery, Whiscash, Basculin, Gorebyss
 
-    Togekiss: Mints, Healing, Scouts
+### Fire Safety
+Mudkip, Piplup, Oshawott, Froakie, Blastoise, Feraligatr, Empoleon, Samurott, Greninja, Golduck, Poliwrath, Kingler, Seadra, Gyarados, Mantine
 
-    Florges: Berries, Mints, Healing
+---
 
-    Trevenant: Apricorns, Nether Wart
+# 🌟 Quick-Reference: High-Overlap Pokémon
 
-    Centiskorch: Apricorns, Lava
+**The best choices for a 6-slot worker team.**
 
-    Metagross: Tumblestone, Floor Cleaning
-
-    Vaporeon: Irrigation, Healing
+- **Scyther:** Apricorns, Crops, Berries  
+- **Beedrill:** Apricorns, Berries, Honey  
+- **Togekiss:** Mints, Healing, Scouts  
+- **Florges:** Berries, Mints, Healing  
+- **Trevenant:** Apricorns, Nether Wart  
+- **Centiskorch:** Apricorns, Lava  
+- **Metagross:** Tumblestone, Floor Cleaning  
+- **Vaporeon:** Irrigation, Healing
