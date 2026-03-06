@@ -32,16 +32,16 @@
 | 116 | **Horsea** | Eternal Starlight | Spiral Kelp Forest<br>Lush Shallow Sea | Any<br>Any | Any<br>Any | **Common**<br>**Common** |
 | 117 | **Seadra** | Eternal Starlight | Spiral Kelp Forest<br>Lush Shallow Sea | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
 | 118 | **Goldeen** | Eternal Starlight | Starlit Sea<br>Shimmer River | Any<br>Any | Any<br>Any | **Common**<br>**Common** |
-| 119 | **Seaking** | Eternal Starlight | Lush Shallow Sea<br>Starlit Sea<br>Shimmer River | Any<br>Any<br>Any | Any<br>Any<br>Any | **Common**<br>**Uncommon**<br>**Uncommon** |
+| 119 | **Seaking** | Eternal Starlight | Starlit Sea<br>Shimmer River<br>Lush Shallow Sea | Any<br>Any<br>Any | Any<br>Any<br>Any | **Uncommon**<br>**Uncommon**<br>**Common** |
 | 120 | **Staryu** | Eternal Starlight | Starlit Sea<br>Shimmer River | Any<br>Any | Any<br>Any | **Common**<br>**Common** |
 | 121 | **Starmie** | Eternal Starlight | Starlit Sea<br>Ether River<br>Shimmer River | Any<br>Any<br>Any | Any<br>Any<br>Any | **Rare**<br>**Rare**<br>**Rare** |
 | 126 | **Magmar** | Eternal Starlight | Scarlet Forest | Any | Any | **Uncommon** |
 | 130 | **Gyarados** | Eternal Starlight | The Abyss<br>Starlit Sea | Any<br>Any | Any<br>Any | **Uncommon**<br>**Rare** |
-| 131 | **Lapras** | Eternal Starlight | Starlight Permafrost Forest<br>Starlit Sea | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
+| 131 | **Lapras** | Eternal Starlight | Starlit Sea<br>Starlight Permafrost Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
 | 136 | **Flareon** | Eternal Starlight | Scarlet Forest | Any | Any | **Rare** |
 | 147 | **Dratini** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Rare** |
 | 148 | **Dragonair** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Ultra-Rare** |
 | 149 | **Dragonite** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-02-23 21:37:31 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*

@@ -14,4 +14,4 @@
 | 980 | **Clodsire** | Eternal Starlight | Dark Swamp | Any | Any | **Uncommon** |
 
 ---
-*Last Updated: 2026-02-23 21:37:31 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*

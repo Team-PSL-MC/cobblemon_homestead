@@ -35,8 +35,8 @@
 | 361 | **Snorunt** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Common** |
 | 362 | **Glalie** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Uncommon** |
 | 366 | **Clamperl** | Eternal Starlight | Lush Shallow Sea | Any | Any | **Uncommon** |
-| 367 | **Huntail** | Eternal Starlight | Lush Shallow Sea<br>The Abyss<br>Starlit Sea | Any<br>Any<br>Any | Any<br>Any<br>Any | **Rare**<br>**Uncommon**<br>**Rare** |
-| 368 | **Gorebyss** | Eternal Starlight | Lush Shallow Sea<br>The Abyss<br>Starlit Sea | Any<br>Any<br>Any | Any<br>Any<br>Any | **Rare**<br>**Uncommon**<br>**Rare** |
+| 367 | **Huntail** | Eternal Starlight | The Abyss<br>Starlit Sea<br>Lush Shallow Sea | Any<br>Any<br>Any | Any<br>Any<br>Any | **Uncommon**<br>**Rare**<br>**Rare** |
+| 368 | **Gorebyss** | Eternal Starlight | The Abyss<br>Starlit Sea<br>Lush Shallow Sea | Any<br>Any<br>Any | Any<br>Any<br>Any | **Uncommon**<br>**Rare**<br>**Rare** |
 | 369 | **Relicanth** | Eternal Starlight | The Abyss<br>Starlit Sea | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
 | 370 | **Luvdisc** | Eternal Starlight | Lush Shallow Sea | Any | Any | **Common** |
 | 371 | **Bagon** | Eternal Starlight | Scarlet Forest | Any | Any | **Rare** |
@@ -44,4 +44,4 @@
 | 373 | **Salamence** | Eternal Starlight | Scarlet Forest | Any | Any | **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-02-23 21:37:31 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*

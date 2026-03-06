@@ -11,12 +11,12 @@
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
 | 724 | **Decidueye** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
 | 730 | **Primarina** | Eternal Starlight | Spiral Kelp Forest<br>Ether River | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
-| 746 | **Wishiwashi** | Eternal Starlight | Lush Shallow Sea<br>Starlit Sea | Any<br>Any | Any<br>Any | **Common**<br>**Common** |
+| 746 | **Wishiwashi** | Eternal Starlight | Starlit Sea<br>Lush Shallow Sea | Any<br>Any | Any<br>Any | **Common**<br>**Common** |
 | 747 | **Mareanie** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Common** |
 | 748 | **Toxapex** | Eternal Starlight | Spiral Kelp Forest<br>Dark Swamp | Any<br>Any | Any<br>Any | **Uncommon**<br>**Rare** |
 | 756 | **Shiinotic** | Eternal Starlight | Torreya Forest<br>Crystallized Desert | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
 | 757 | **Salandit** | Eternal Starlight | Scarlet Forest | Any | Any | **Common** |
-| 758 | **Salazzle** | Eternal Starlight | Scarlet Forest<br>Dark Swamp | Any<br>Any | Any<br>Any | **Uncommon**<br>**Rare** |
+| 758 | **Salazzle** | Eternal Starlight | Dark Swamp<br>Scarlet Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Uncommon** |
 | 769 | **Sandygast** | Eternal Starlight | Crystallized Desert | Any | Any | **Common** |
 | 770 | **Palossand** | Eternal Starlight | Crystallized Desert | Any | Any | **Uncommon** |
 | 771 | **Pyukumuku** | Eternal Starlight | Lush Shallow Sea | Any | Any | **Uncommon** |
@@ -28,4 +28,4 @@
 | 781 | **Dhelmise** | Eternal Starlight | The Abyss | Any | Any | **Rare** |
 
 ---
-*Last Updated: 2026-02-23 21:37:31 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*

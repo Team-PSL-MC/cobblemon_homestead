@@ -25,8 +25,8 @@
 | 582 | **Vanillite** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Common** |
 | 583 | **Vanillish** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Common** |
 | 584 | **Vanilluxe** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Uncommon** |
-| 592 | **Frillish** | Eternal Starlight | Lush Shallow Sea<br>The Abyss | Any<br>Any | Any<br>Any | **Uncommon**<br>**Common** |
-| 593 | **Jellicent** | Eternal Starlight | Lush Shallow Sea<br>The Abyss | Any<br>Any | Any<br>Any | **Rare**<br>**Uncommon** |
+| 592 | **Frillish** | Eternal Starlight | The Abyss<br>Lush Shallow Sea | Any<br>Any | Any<br>Any | **Common**<br>**Uncommon** |
+| 593 | **Jellicent** | Eternal Starlight | The Abyss<br>Lush Shallow Sea | Any<br>Any | Any<br>Any | **Uncommon**<br>**Rare** |
 | 594 | **Alomomola** | Eternal Starlight | Spiral Kelp Forest<br>Ether River | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
 | 604 | **Eelektross** | Eternal Starlight | The Abyss | Any | Any | **Rare** |
 | 609 | **Chandelure** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
@@ -42,7 +42,7 @@
 | 634 | **Zweilous** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
 | 635 | **Hydreigon** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Ultra-Rare**<br>**Ultra-Rare** |
 | 636 | **Larvesta** | Eternal Starlight | Scarlet Forest | Any | Any | **Rare** |
-| 637 | **Volcarona** | Eternal Starlight | Torreya Forest<br>Scarlet Forest | Any<br>Any | Any<br>Any | **Ultra-Rare**<br>**Ultra-Rare** |
+| 637 | **Volcarona** | Eternal Starlight | Scarlet Forest<br>Torreya Forest | Any<br>Any | Any<br>Any | **Ultra-Rare**<br>**Ultra-Rare** |
 
 ---
-*Last Updated: 2026-02-23 21:37:31 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*
