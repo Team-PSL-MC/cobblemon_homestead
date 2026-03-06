@@ -1,21 +1,33 @@
-# 🌲 Kalos Spawns (650-721)
+# 🌲 Kalos Spawns
 
 ### 🗺️ National Pokédex Navigation
 
-[1-151](kanto_spawns.md) | [152-251](johto_spawns.md) | [252-386](hoenn_spawns.md) | [387-493](sinnoh_spawns.md) | [494-649](unova_spawns.md) | **650-721** | [722-809](alola_spawns.md) | [810-905](galar_spawns.md) | [906-1025](paldea_spawns.md)
-
-### 📑 Resources & Downloads
-
-* [📥 **Download Homestead Custom Spawns (CSV)**](https://github.com/Team-PSL-MC/cobblemon_homestead/blob/main/full_spawn_list.csv)
-* [📊 Default Cobblemon Spawns (Official)](https://docs.google.com/spreadsheets/d/1DJT7Hd0ldgVUjJbN0kYQFAyNBP6JGG_Clkipax98x-g/edit?gid=0#gid=0)
-* [🎒 Cobblemon Drops (Official)](https://docs.google.com/spreadsheets/d/1EG8-VxLukiGWonM7e9J_DH0ZAVdkWo3W64bP2Allie6koo/edit?gid=0#gid=0)
+[Legendaries](legendaries.md) | [1-151](kanto_spawns.md) | [152-251](johto_spawns.md) | [252-386](hoenn_spawns.md) | [387-493](sinnoh_spawns.md) | [494-649](unova_spawns.md) | **650-721** | [722-809](alola_spawns.md) | [810-905](galar_spawns.md) | [906-1025](paldea_spawns.md)
 
 
 ---
 
-| # | Pokémon | Location, Time & Rarity |
-| :--- | :--- | :--- |
-| 708 | **Phantump** | • eternal_starlight:torreya_forest (Any) — **Common**<br>• twilight_forest:dark_forest (Night, Midnight) — **Common** |
+| # | Pokémon | World | Location | Time | Season | Rarity |
+| :--- | :--- | :--- | :--- | :--- | :--- | :--- |
+| 658 | **Greninja** | Eternal Starlight | Starlight Dense Forest | Any | Any | **Rare** |
+| 663 | **Talonflame** | Eternal Starlight | Starlight Dense Forest | Any | Any | **Uncommon** |
+| 686 | **Inkay** | Eternal Starlight | Starlight Forest | Any | Any | **Common** |
+| 687 | **Malamar** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Uncommon**<br>**Uncommon** |
+| 691 | **Dragalge** | Eternal Starlight | The Abyss | Any | Any | **Rare** |
+| 699 | **Aurorus** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Rare** |
+| 700 | **Sylveon** | Eternal Starlight | Spiral Kelp Forest<br>Ether River | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
+| 702 | **Dedenne** | Eternal Starlight | Crystallized Desert | Any | Any | **Common** |
+| 703 | **Carbink** | Eternal Starlight | Crystallized Desert | Any | Any | **Uncommon** |
+| 704 | **Goomy** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Uncommon** |
+| 705 | **Sliggoo** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Rare** |
+| 706 | **Goodra** | Eternal Starlight | Spiral Kelp Forest | Any | Any | **Ultra-Rare** |
+| 708 | **Phantump** | Eternal Starlight | Torreya Forest | Any | Any | **Common** |
+| 709 | **Trevenant** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
+| 712 | **Bergmite** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Common** |
+| 713 | **Avalugg** | Eternal Starlight | Starlight Permafrost Forest | Any | Any | **Uncommon** |
+| 714 | **Noibat** | Eternal Starlight | Starlight Forest | Any | Any | **Common** |
+| 715 | **Noivern** | Eternal Starlight | Starlight Forest<br>Starlight Dense Forest | Any<br>Any | Any<br>Any | **Rare**<br>**Rare** |
+| 719 | **Diancie** | Eternal Starlight | Crystallized Desert | Any | Any | **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-02-12 17:31:02 UTC*
+*Last Updated: 2026-03-06 21:23:38 UTC*

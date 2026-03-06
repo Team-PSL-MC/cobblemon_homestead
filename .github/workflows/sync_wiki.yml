@@ -1,11 +1,13 @@
 name: Homestead Tools
 
 on:
-  push:
-    branches: [ main ]
-  workflow_dispatch: # Allows you to trigger the Data Pack build manually
+  release:
+    types: [published] # Triggers only when you create/publish a GitHub Release
+  workflow_dispatch:   # Allows manual trigger for testing
+
 permissions:
   contents: write
+
 jobs:
   build:
     runs-on: ubuntu-latest
@@ -20,42 +22,36 @@ jobs:
       - name: 🔍 Validate JSON
         run: python scripts/validate_json.py
 
-      - name: 📝 Update Wiki Pages
-        run: python scripts/update_spawns.py
+      - name: 📝 Update Wiki & CSV
+        run: |
+          python scripts/gen_legendaries.py
+          python scripts/gen_regional.py
+          # Note: Ensure one of your scripts or a third one generates the full_spawn_list.csv
 
       - name: 🚀 Commit Wiki Changes
         run: |
           git config --global user.name "Homestead-Bot"
           git config --global user.email "bot@homestead.com"
-          # Adds all new gen_spawns.md files and the CSV
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
-          git commit -m "docs: sync regional spawn tables" || echo "No changes"
-          git push
+          # Only commit if there are actually changes to avoid workflow errors
+          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: sync regional & legendary spawn tables" && git push)
 
-      - name: 🚀 Create GitHub Release
-        if: github.event_name == 'workflow_dispatch'
+      - name: 🚀 Create/Update Release Assets
         uses: softprops/action-gh-release@v2
+        if: github.event_name == 'release' || github.ref_type == 'tag'
         with:
-          tag_name: v${{ env.DP_VERSION }}
-          name: Homestead Data Pack ${{ env.DP_VERSION }}
-          body_path: version_summary.txt
+          # Use the tag from the release event, or the tag that was pushed
+          tag_name: ${{ github.event.release.tag_name || github.ref_name }}
           files: |
             Homestead-DP-*.zip
             full_spawn_list.csv
-
-      - name: 🚀 Create GitHub Release
-        if: github.event_name == 'workflow_dispatch'
-        uses: softprops/action-gh-release@v2
-        with:
-          tag_name: v${{ env.DP_VERSION }}
-          name: Homestead Data Pack ${{ env.DP_VERSION }}
           body: |
             ## 🛠️ Automated Data Pack Build
             This release contains the latest spawn logic and legendary updates.
-            **Included Files:**
-            - Updated Legendaries
-            - Updated Standard Spawns
-            - Modded Machine Spawns
-          files: Homestead-DP-*.zip
+            
+            **Included Wiki Updates:**
+            - Updated Legendaries Table
+            - Updated Regional Spawn Tables
+            - Generated full_spawn_list.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

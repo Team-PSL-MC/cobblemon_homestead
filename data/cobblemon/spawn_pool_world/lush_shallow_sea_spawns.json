@@ -1,0 +1,353 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "corsola-lush-shallow-sea-1",
+            "pokemon": "corsola",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "15-45",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "lumineon-lush-shallow-sea-1",
+            "pokemon": "lumineon",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "31-50",
+            "weight": 5.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "finneon-lush-shallow-sea-1",
+            "pokemon": "finneon",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "shellos-lush-shallow-sea-1",
+            "pokemon": "shellos",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-29",
+            "weight": 8.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "gastrodon-lush-shallow-sea-1",
+            "pokemon": "gastrodon",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "30-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "chinchou-lush-shallow-sea-1",
+            "pokemon": "chinchou",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-26",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "lanturn-lush-shallow-sea-1",
+            "pokemon": "lanturn",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "27-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "frillish-lush-shallow-sea-1",
+            "pokemon": "frillish",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "10-39",
+            "weight": 6.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "jellicent-lush-shallow-sea-1",
+            "pokemon": "jellicent",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "40-55",
+            "weight": 3.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "remoraid-lush-shallow-sea-1",
+            "pokemon": "remoraid",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-24",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "octillery-lush-shallow-sea-1",
+            "pokemon": "octillery",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "25-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "clamperl-lush-shallow-sea-1",
+            "pokemon": "clamperl",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "15-40",
+            "weight": 6.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "gorebyss-lush-shallow-sea-1",
+            "pokemon": "gorebyss",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "30-55",
+            "weight": 2.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "huntail-lush-shallow-sea-1",
+            "pokemon": "huntail",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "30-55",
+            "weight": 2.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "luvdisc-lush-shallow-sea-1",
+            "pokemon": "luvdisc",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-40",
+            "weight": 7.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "wishiwashi-lush-shallow-sea-1",
+            "pokemon": "wishiwashi",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "15-45",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "pyukumuku-lush-shallow-sea-1",
+            "pokemon": "pyukumuku",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "15-45",
+            "weight": 5.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "bruxish-lush-shallow-sea-1",
+            "pokemon": "bruxish",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "20-50",
+            "weight": 5.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "horsea-lush-shallow-sea-1",
+            "pokemon": "horsea",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-31",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "seadra-lush-shallow-sea-1",
+            "pokemon": "seadra",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "32-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "kingdra-lush-shallow-sea-1",
+            "pokemon": "kingdra",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "35-60",
+            "weight": 2.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "seaking-lush-shallow-sea-1",
+            "pokemon": "seaking",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "33-50",
+            "weight": 5.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        },
+        {
+            "id": "grapploct-lush-shallow-sea-1",
+            "pokemon": "grapploct",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "35-55",
+            "weight": 4.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:lush_shallow_sea"]
+            }
+        }
+
+    ]
+}

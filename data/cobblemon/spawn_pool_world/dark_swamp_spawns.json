@@ -1,0 +1,382 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "grimer-dark-swamp-1",
+            "pokemon": "grimer",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "8-37",
+            "weight": 8.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "muk-dark-swamp-1",
+            "pokemon": "muk",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "38-55",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "gulpin-dark-swamp-1",
+            "pokemon": "gulpin",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "5-25",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "swalot-dark-swamp-1",
+            "pokemon": "swalot",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "26-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "trubbish-dark-swamp-1",
+            "pokemon": "trubbish",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "8-35",
+            "weight": 8.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "garbodor-dark-swamp-1",
+            "pokemon": "garbodor",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "36-55",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "stunky-dark-swamp-1",
+            "pokemon": "stunky",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "8-33",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "skuntank-dark-swamp-1",
+            "pokemon": "skuntank",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "34-50",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "croagunk-dark-swamp-1",
+            "pokemon": "croagunk",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "8-36",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "toxicroak-dark-swamp-1",
+            "pokemon": "toxicroak",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-55",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "koffing-dark-swamp-1",
+            "pokemon": "koffing",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "common",
+            "level": "10-34",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "weezing-dark-swamp-1",
+            "pokemon": "weezing",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "35-50",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "tentacool-dark-swamp-1",
+            "pokemon": "tentacool",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "5-29",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "tentacruel-dark-swamp-1",
+            "pokemon": "tentacruel",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "30-55",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "gastrodon-dark-swamp-1",
+            "pokemon": "gastrodon",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "30-50",
+            "weight": 5.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "drapion-dark-swamp-1",
+            "pokemon": "drapion",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "40-60",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "carvanha-dark-swamp-1",
+            "pokemon": "carvanha",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-29",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "sharpedo-dark-swamp-1",
+            "pokemon": "sharpedo",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "30-55",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "stunfisk-dark-swamp-1",
+            "pokemon": "stunfisk",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "15-45",
+            "weight": 6.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "toxapex-dark-swamp-1",
+            "pokemon": "toxapex",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "38-60",
+            "weight": 3.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "salazzle-dark-swamp-1",
+            "pokemon": "salazzle",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "33-55",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "clodsire-dark-swamp-1",
+            "pokemon": "clodsire",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "20-50",
+            "weight": 5.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "banette-dark-swamp-1",
+            "pokemon": "banette",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "37-55",
+            "weight": 4.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "drifblim-dark-swamp-1",
+            "pokemon": "drifblim",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "uncommon",
+            "level": "28-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        },
+        {
+            "id": "shedinja-dark-swamp-1",
+            "pokemon": "shedinja",
+            "presets": ["natural", "wild"],
+            "type": "pokemon",
+            "context": "grounded",
+            "bucket": "rare",
+            "level": "20-45",
+            "weight": 2.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 7,
+                "biomes": ["eternal_starlight:dark_swamp"]
+            }
+        }
+    ]
+}

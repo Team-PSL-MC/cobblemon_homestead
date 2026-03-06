@@ -1,0 +1,187 @@
+{
+    "enabled": true,
+    "neededInstalledMods": [],
+    "neededUninstalledMods": [],
+    "spawns": [
+        {
+            "id": "staryu-shimmer-river-1",
+            "pokemon": "staryu",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 8.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "starmie-shimmer-river-1",
+            "pokemon": "starmie",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "rare",
+            "level": "30-55",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "goldeen-shimmer-river-1",
+            "pokemon": "goldeen",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "8-32",
+            "weight": 8.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "seaking-shimmer-river-1",
+            "pokemon": "seaking",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "33-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "chinchou-shimmer-river-1",
+            "pokemon": "chinchou",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-26",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "lanturn-shimmer-river-1",
+            "pokemon": "lanturn",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "27-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 0,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "feebas-shimmer-river-1",
+            "pokemon": "feebas",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "10-35",
+            "weight": 6.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "milotic-shimmer-river-1",
+            "pokemon": "milotic",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "ultra-rare",
+            "level": "35-60",
+            "weight": 2.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "finneon-shimmer-river-1",
+            "pokemon": "finneon",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-30",
+            "weight": 7.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "lumineon-shimmer-river-1",
+            "pokemon": "lumineon",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "31-50",
+            "weight": 4.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "arrokuda-shimmer-river-1",
+            "pokemon": "arrokuda",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "common",
+            "level": "10-25",
+            "weight": 7.00,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        },
+        {
+            "id": "barraskewda-shimmer-river-1",
+            "pokemon": "barraskewda",
+            "presets": ["water"],
+            "type": "pokemon",
+            "context": "submerged",
+            "bucket": "uncommon",
+            "level": "26-50",
+            "weight": 3.50,
+            "condition": {
+                "minSkyLight": 8,
+                "maxSkyLight": 15,
+                "biomes": ["eternal_starlight:shimmer_river"]
+            }
+        }
+    ]
+}
