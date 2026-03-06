@@ -1,9 +1,12 @@
 name: Homestead Tools Release
 
 on:
+  push:
+    branches:
+      - main  # Trigger on every push to main for GitBook sync
   release:
-    types: [published]
-  workflow_dispatch:
+    types: [published] # Trigger when a formal release is created
+  workflow_dispatch:   # Manual trigger
 
 permissions:
   contents: write
@@ -15,7 +18,6 @@ jobs:
       - name: 🛰️ Checkout Repo
         uses: actions/checkout@v4
         with:
-          # Fetch all history so the bot can push back to the branch
           fetch-depth: 0 
 
       - name: 🐍 Set up Python
@@ -28,32 +30,31 @@ jobs:
           python scripts/validate_json.py
           python scripts/gen_legendaries.py
           python scripts/gen_regional.py
-          # Ensure these scripts output directly to your GitBook-synced folders
-          # e.g., docs/legendaries.md
 
       - name: 📦 Package Datapack
         run: |
-          # Creates a zip of the data folder and manifest
-          zip -r "Homestead-DP-${{ github.event.release.tag_name || 'manual' }}.zip" data/ pack.mcmeta pack.png
+          # Use the tag name if available, otherwise use 'latest' for the branch push
+          VERSION="${{ github.event.release.tag_name || 'latest' }}"
+          zip -r "Homestead-DP-$VERSION.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook (via Git Push)
+        # We don't want the bot to push if the workflow was triggered by a Release 
+        # (to avoid loops), only on standard pushes or manual runs.
+        if: github.event_name != 'release'
         run: |
           git config user.name "Homestead-Bot"
           git config user.email "bot@homestead.com"
-          
-          # Add the generated markdown and CSV
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
-          
-          # Only commit if GitBook actually has something new to see
           if ! git diff --cached --quiet; then
-            git commit -m "docs: automated sync for release ${{ github.event.release.tag_name }}"
+            git commit -m "docs: automated sync [skip ci]"
             git push origin HEAD:${{ github.event.repository.default_branch }}
           else
-            echo "No changes to sync to GitBook."
+            echo "No changes to sync."
           fi
 
       - name: 🚀 Upload Assets to Release
         uses: softprops/action-gh-release@v2
+        # ONLY run this step if it's an actual Release event
         if: github.event_name == 'release'
         with:
           files: |
