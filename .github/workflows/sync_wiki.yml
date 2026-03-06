@@ -1,57 +1,63 @@
-name: Homestead Tools
+name: Homestead Tools Release
 
 on:
   release:
-    types: [published] # Triggers only when you create/publish a GitHub Release
-  workflow_dispatch:   # Allows manual trigger for testing
+    types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 🛰️ Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          # Fetch all history so the bot can push back to the branch
+          fetch-depth: 0 
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
-      - name: 🔍 Validate JSON
-        run: python scripts/validate_json.py
-
-      - name: 📝 Update Wiki & CSV
+      - name: 🔍 Validate & Generate
         run: |
+          python scripts/validate_json.py
           python scripts/gen_legendaries.py
           python scripts/gen_regional.py
-          # Note: Ensure one of your scripts or a third one generates the full_spawn_list.csv
+          # Ensure these scripts output directly to your GitBook-synced folders
+          # e.g., docs/legendaries.md
 
-      - name: 🚀 Commit Wiki Changes
+      - name: 📦 Package Datapack
         run: |
-          git config --global user.name "Homestead-Bot"
-          git config --global user.email "bot@homestead.com"
-          git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
-          # Only commit if there are actually changes to avoid workflow errors
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: sync regional & legendary spawn tables" && git push)
+          # Creates a zip of the data folder and manifest
+          zip -r "Homestead-DP-${{ github.event.release.tag_name || 'manual' }}.zip" data/ pack.mcmeta pack.png
 
-      - name: 🚀 Create/Update Release Assets
+      - name: 🚀 Sync to GitBook (via Git Push)
+        run: |
+          git config user.name "Homestead-Bot"
+          git config user.email "bot@homestead.com"
+          
+          # Add the generated markdown and CSV
+          git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
+          
+          # Only commit if GitBook actually has something new to see
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: automated sync for release ${{ github.event.release.tag_name }}"
+            git push origin HEAD:${{ github.event.repository.default_branch }}
+          else
+            echo "No changes to sync to GitBook."
+          fi
+
+      - name: 🚀 Upload Assets to Release
         uses: softprops/action-gh-release@v2
-        if: github.event_name == 'release' || github.ref_type == 'tag'
+        if: github.event_name == 'release'
         with:
-          # Use the tag from the release event, or the tag that was pushed
-          tag_name: ${{ github.event.release.tag_name || github.ref_name }}
           files: |
             Homestead-DP-*.zip
             full_spawn_list.csv
-          body: |
-            ## 🛠️ Automated Data Pack Build
-            This release contains the latest spawn logic and legendary updates.
-            
-            **Included Wiki Updates:**
-            - Updated Legendaries Table
-            - Updated Regional Spawn Tables
-            - Generated full_spawn_list.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
