@@ -3,10 +3,13 @@ name: Homestead Tools Release
 on:
   push:
     branches:
-      - main  # Trigger on every push to main for GitBook sync
+      - main
+    paths:
+      - 'data/cobblemon/**'
+      - 'raiddens/**'
   release:
-    types: [published] # Trigger when a formal release is created
-  workflow_dispatch:   # Manual trigger
+    types: [published]
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -33,28 +36,24 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          # Use the tag name if available, otherwise use 'latest' for the branch push
           VERSION="${{ github.event.release.tag_name || 'latest' }}"
           zip -r "Homestead-DP-$VERSION.zip" data/ pack.mcmeta pack.png
 
-      - name: 🚀 Sync to GitBook (via Git Push)
-        # We don't want the bot to push if the workflow was triggered by a Release 
-        # (to avoid loops), only on standard pushes or manual runs.
+      - name: 🚀 Sync to GitBook
         if: github.event_name != 'release'
         run: |
           git config user.name "Homestead-Bot"
           git config user.email "bot@homestead.com"
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
           if ! git diff --cached --quiet; then
-            git commit -m "docs: automated sync [skip ci]"
+            git commit -m "docs: automated sync (data change) [skip ci]"
             git push origin HEAD:${{ github.event.repository.default_branch }}
           else
-            echo "No changes to sync."
+            echo "No relevant documentation changes detected."
           fi
 
       - name: 🚀 Upload Assets to Release
         uses: softprops/action-gh-release@v2
-        # ONLY run this step if it's an actual Release event
         if: github.event_name == 'release'
         with:
           files: |
