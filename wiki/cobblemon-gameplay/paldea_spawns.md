@@ -9,9 +9,6 @@
 
 | # | Pokémon | World | Location | Time | Season | Rarity |
 | :--- | :--- | :--- | :--- | :--- | :--- | :--- |
-| 936 | **Armarouge** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
-| 937 | **Ceruledge** | Eternal Starlight | Torreya Forest | Any | Any | **Rare** |
-| 980 | **Clodsire** | Eternal Starlight | Dark Swamp | Any | Any | **Uncommon** |
 
 ---
-*Last Updated: 2026-03-06 21:23:38 UTC*
+*Last Updated: 2026-03-06 21:44:17 UTC*

@@ -1,57 +1,69 @@
-name: Homestead Tools
+name: Homestead Tools Rolling Release
 
 on:
-  release:
-    types: [published] # Triggers only when you create/publish a GitHub Release
-  workflow_dispatch:   # Allows manual trigger for testing
+  push:
+    branches:
+      - main
+    paths:
+      - 'data/cobblemon/**'
+      - 'raiddens/**'
+  workflow_dispatch:
 
 permissions:
   contents: write
 
 jobs:
-  build:
+  build-and-sync:
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - name: 🛰️ Checkout Repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 
 
-      - name: Set up Python
+      - name: 🐍 Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.x'
+          python-version: '3.11'
 
-      - name: 🔍 Validate JSON
-        run: python scripts/validate_json.py
-
-      - name: 📝 Update Wiki & CSV
+      - name: 🔍 Validate & Generate
         run: |
+          python scripts/validate_json.py
           python scripts/gen_legendaries.py
           python scripts/gen_regional.py
-          # Note: Ensure one of your scripts or a third one generates the full_spawn_list.csv
 
-      - name: 🚀 Commit Wiki Changes
+      - name: 📦 Package Datapack
         run: |
-          git config --global user.name "Homestead-Bot"
-          git config --global user.email "bot@homestead.com"
-          git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
-          # Only commit if there are actually changes to avoid workflow errors
-          git diff --quiet && git diff --staged --quiet || (git commit -m "docs: sync regional & legendary spawn tables" && git push)
+          # We use a fixed name for the rolling release zip
+          zip -r "Homestead-DP-Latest.zip" data/ pack.mcmeta pack.png
 
-      - name: 🚀 Create/Update Release Assets
+      - name: 🚀 Sync to GitBook
+        run: |
+          git config user.name "Homestead-Bot"
+          git config user.email "bot@homestead.com"
+          git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
+          if ! git diff --cached --quiet; then
+            git commit -m "docs: automated sync (rolling update) [skip ci]"
+            git push origin HEAD:main
+          fi
+
+      - name: 🔄 Update Rolling Release
         uses: softprops/action-gh-release@v2
-        if: github.event_name == 'release' || github.ref_type == 'tag'
         with:
-          # Use the tag from the release event, or the tag that was pushed
-          tag_name: ${{ github.event.release.tag_name || github.ref_name }}
-          files: |
-            Homestead-DP-*.zip
-            full_spawn_list.csv
+          tag_name: latest
+          name: "Latest Build (Rolling)"
           body: |
-            ## 🛠️ Automated Data Pack Build
-            This release contains the latest spawn logic and legendary updates.
+            ## 🔄 Auto-Updated Release
+            This release is automatically updated whenever the data files change.
             
-            **Included Wiki Updates:**
-            - Updated Legendaries Table
-            - Updated Regional Spawn Tables
-            - Generated full_spawn_list.csv
+            **Last Update:** ${{ github.event.head_commit.timestamp }}
+            **Latest Commit:** ${{ github.sha }}
+          draft: false
+          prerelease: false
+          files: |
+            Homestead-DP-Latest.zip
+            full_spawn_list.csv
+          # This is key: it overwrites the existing files on the 'latest' tag
+          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
