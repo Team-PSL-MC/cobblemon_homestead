@@ -14,27 +14,26 @@ permissions:
 
 jobs:
   build-and-release:
+    # PREVENT LOOP: Do not run if the commit was made by the bot itself
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
       - name: 🛰️ Checkout Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 # Needed to see previous tags
+          fetch-depth: 0 
 
       - name: 🔢 Determine Next Version
         id: versioning
         run: |
-          # Fetch all tags from origin
           git fetch --tags
-          # Get the latest tag, default to 0 if none exist
-          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
+          # Look for the highest numeric tag
+          LATEST_TAG=$(git tag -l "[0-9]*" --sort=-v:refname | head -n 1)
           if [ -z "$LATEST_TAG" ]; then
             LATEST_TAG=0
           fi
-          # Increment the number
           NEXT_TAG=$((LATEST_TAG + 1))
           echo "next_tag=$NEXT_TAG" >> $GITHUB_OUTPUT
-          echo "Building Version: $NEXT_TAG"
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -49,30 +48,24 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          # Use the incremented tag for the filename
           zip -r "Homestead-DP-${{ steps.versioning.outputs.next_tag }}.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook
         run: |
-          git config user.name "Homestead-Bot"
-          git config user.email "bot@homestead.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
           if ! git diff --cached --quiet; then
-            git commit -m "docs: sync for v${{ steps.versioning.outputs.next_tag }} [skip ci]"
+            git commit -m "docs: sync for build ${{ steps.versioning.outputs.next_tag }} [skip ci]"
             git push origin HEAD:main
           fi
 
-      - name: 🚀 Create New Version Release
+      - name: 🚀 Create New Release
         uses: softprops/action-gh-release@v2
         with:
           tag_name: ${{ steps.versioning.outputs.next_tag }}
           name: "Build #${{ steps.versioning.outputs.next_tag }}"
-          body: |
-            ## 📦 Build Updates
-            - **Version:** ${{ steps.versioning.outputs.next_tag }}
-            - **Commit:** ${{ github.sha }}
-            
-            This build was automatically triggered by data changes.
+          body: "Automated build for commit ${{ github.sha }}"
           files: |
             Homestead-DP-*.zip
             full_spawn_list.csv
