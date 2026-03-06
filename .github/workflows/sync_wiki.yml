@@ -34,7 +34,6 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          # We use a fixed name for the rolling release zip
           zip -r "Homestead-DP-Latest.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook
@@ -47,6 +46,11 @@ jobs:
             git push origin HEAD:main
           fi
 
+      - name: 🏷️ Force Move 'latest' Tag
+        run: |
+          git tag -f latest
+          git push -f origin latest
+
       - name: 🔄 Update Rolling Release
         uses: softprops/action-gh-release@v2
         with:
@@ -54,8 +58,6 @@ jobs:
           name: "Latest Build (Rolling)"
           body: |
             ## 🔄 Auto-Updated Release
-            This release is automatically updated whenever the data files change.
-            
             **Last Update:** ${{ github.event.head_commit.timestamp }}
             **Latest Commit:** ${{ github.sha }}
           draft: false
@@ -63,7 +65,5 @@ jobs:
           files: |
             Homestead-DP-Latest.zip
             full_spawn_list.csv
-          # This is key: it overwrites the existing files on the 'latest' tag
-          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
