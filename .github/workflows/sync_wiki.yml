@@ -1,4 +1,4 @@
-name: Homestead Tools Rolling Release
+name: Homestead Tools Versioned Release
 
 on:
   push:
@@ -13,13 +13,28 @@ permissions:
   contents: write
 
 jobs:
-  build-and-sync:
+  build-and-release:
     runs-on: ubuntu-latest
     steps:
       - name: 🛰️ Checkout Repo
         uses: actions/checkout@v4
         with:
-          fetch-depth: 0 
+          fetch-depth: 0 # Needed to see previous tags
+
+      - name: 🔢 Determine Next Version
+        id: versioning
+        run: |
+          # Fetch all tags from origin
+          git fetch --tags
+          # Get the latest tag, default to 0 if none exist
+          LATEST_TAG=$(git tag --sort=-v:refname | head -n 1)
+          if [ -z "$LATEST_TAG" ]; then
+            LATEST_TAG=0
+          fi
+          # Increment the number
+          NEXT_TAG=$((LATEST_TAG + 1))
+          echo "next_tag=$NEXT_TAG" >> $GITHUB_OUTPUT
+          echo "Building Version: $NEXT_TAG"
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -34,7 +49,8 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          zip -r "Homestead-DP-Latest.zip" data/ pack.mcmeta pack.png
+          # Use the incremented tag for the filename
+          zip -r "Homestead-DP-${{ steps.versioning.outputs.next_tag }}.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook
         run: |
@@ -42,28 +58,23 @@ jobs:
           git config user.email "bot@homestead.com"
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
           if ! git diff --cached --quiet; then
-            git commit -m "docs: automated sync (rolling update) [skip ci]"
+            git commit -m "docs: sync for v${{ steps.versioning.outputs.next_tag }} [skip ci]"
             git push origin HEAD:main
           fi
 
-      - name: 🏷️ Force Move 'latest' Tag
-        run: |
-          git tag -f latest
-          git push -f origin latest
-
-      - name: 🔄 Update Rolling Release
+      - name: 🚀 Create New Version Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: "Latest Build (Rolling)"
+          tag_name: ${{ steps.versioning.outputs.next_tag }}
+          name: "Build #${{ steps.versioning.outputs.next_tag }}"
           body: |
-            ## 🔄 Auto-Updated Release
-            **Last Update:** ${{ github.event.head_commit.timestamp }}
-            **Latest Commit:** ${{ github.sha }}
-          draft: false
-          prerelease: false
+            ## 📦 Build Updates
+            - **Version:** ${{ steps.versioning.outputs.next_tag }}
+            - **Commit:** ${{ github.sha }}
+            
+            This build was automatically triggered by data changes.
           files: |
-            Homestead-DP-Latest.zip
+            Homestead-DP-*.zip
             full_spawn_list.csv
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
