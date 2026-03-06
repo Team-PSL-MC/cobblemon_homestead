@@ -5,12 +5,12 @@
     {
       "id": "250-hooh",
       "pokemon": "hooh",
-      "presets": [ "natural" ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "ground",
       "bucket": "ultra-rare",
       "level": "70",
-      "weight": 0.2,
+      "weight": 5.5,
       "condition": {
         "biomes": [ "eternal_starlight:scarlet_forest" ],
         "times_of_day": [ "day" ],

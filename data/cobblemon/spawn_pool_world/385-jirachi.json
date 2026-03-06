@@ -4,36 +4,37 @@
   "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "244-entei",
-      "pokemon": "entei",
+      "id": "mythsandlegends-jirachi-1",
+      "pokemon": "jirachi",
       "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
-      "level": "50-60",
+      "level": "5-70",
       "weight": 1.1,
       "condition": {
         "biomes": [
-          "byg:brimstone_caverns"
+          "minecraft:mushroom_fields",
+          "minecraft:windswept_gravelly_hills"
         ],
-        "season": "summer",
-        "key_item": "mythsandlegends:clear_bell"
+        "key_item": "mythsandlegends:bonus_disk"
       }
     },
     {
-      "id": "244-entei-1",
-      "pokemon": "entei",
+      "id": "mythsandlegends-jirachi-2",
+      "pokemon": "jirachi",
       "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
-      "level": "50-60",
-      "weight": 3.1,
+      "level": "5-70",
+      "weight": 1.1,
       "condition": {
         "biomes": [
-          "minecraft:nether_wastes"
+          "#cobblemon:is_magical",
+          "#cobblemon:is_sparse"
         ],
-        "key_item": "mythsandlegends:clear_bell"
+        "key_item": "mythsandlegends:bonus_disk"
       }
     }
   ]

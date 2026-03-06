@@ -6,22 +6,17 @@
     {
       "id": "145-zapdos",
       "pokemon": "zapdos",
-      "presets": [
-        "natural"
-      ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
       "level": "50-60",
-      "weight": 0.1,
+      "weight": 3.0,
       "condition": {
-        "biomes": [
-          "#cobblemon:is_sky",
-          "terralith:howling_peaks"
-        ],
-      "weather": "thunderstorm",
-      "season": "spring",      
-      "key_item": "mythsandlegends:tidal_bell"
+        "biomes": ["terralith:howling_peaks"],
+        "weather": "thunderstorm",
+        "season": "spring",      
+        "key_item": "mythsandlegends:tidal_bell"
       }
     }
   ]

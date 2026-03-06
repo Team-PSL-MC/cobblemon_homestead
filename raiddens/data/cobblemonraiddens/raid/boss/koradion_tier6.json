@@ -2,7 +2,7 @@
     "pokemon": {
         "species": "koraidon",
         "ability": "orichalcumpulse",
-        "level": 90,
+        "level": 75,
         "moves": ["collisioncourse", "flareblitz", "outrage", "drainpunch"]
     },
     "boss": {

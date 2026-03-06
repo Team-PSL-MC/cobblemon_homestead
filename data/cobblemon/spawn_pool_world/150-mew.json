@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "150-mew",
+      "pokemon": "mew",
+      "presets": [],
+      "type": "pokemon",
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "30-70",
+      "weight": 1.3,
+      "condition": {
+        "key_item": "mythsandlegends:old_sea_map",
+        "minX": -1389, "maxX": -1349,
+        "minY": 54,    "maxY": 74,
+        "minZ": 1484,  "maxZ": 1524
+      }
+    }
+  ]
+}

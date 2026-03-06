@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "487_giratina",
+      "pokemon": "giratina",
+      "type": "pokemon",
+      "presets": [],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "80",
+      "weight": 5.0,
+      "condition": {
+        "structures": [
+          "deeperdarker:ancient_temple"
+        ],
+        "key_item": "mythsandlegends:griseous_orb"
+      }
+    }
+  ]
+}

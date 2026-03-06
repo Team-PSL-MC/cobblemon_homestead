@@ -1,0 +1,24 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "649_genesect",
+      "pokemon": "genesect",
+      "type": "pokemon",
+      "presets": [
+        "natural",
+        "wild"
+      ],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "the_bumblezone:hive_pillar"
+        ],
+        "key_item": "mythsandlegends:genesect_drive"
+      }
+    }
+  ]
+}

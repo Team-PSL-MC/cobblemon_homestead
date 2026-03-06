@@ -1,0 +1,27 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "491_darkrai",
+      "pokemon": "darkrai",
+      "type": "pokemon",
+      "presets": [],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "75",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "deeperdarker:echoing_forest"
+        ],
+        "neededBaseBlocks": [
+          "minecraft:sculk",
+          "deeperdarker:echo_soil"
+        ],
+        "moonPhase": 4,
+        "canSeeSky": true,
+        "key_item": "mythsandlegends:member_card"
+      }
+    }
+  ]
+}

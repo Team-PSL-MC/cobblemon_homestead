@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "800_necrozma",
+      "pokemon": "necrozma",
+      "type": "pokemon",
+      "presets": ["natural","wild"],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "75",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "deeperdarker:echoing_forest"
+        ],
+        "neededBaseBlocks": [
+          "minecraft:sculk",
+          "deeperdarker:echo_stone"
+        ],
+        "key_item": "mythsandlegends:necro_prism"
+      }
+    }
+  ]
+}

@@ -1,0 +1,21 @@
+{
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "897_spectrier",
+      "pokemon": "spectrier",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": ["natural","wild"],
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 1.3,
+      "condition": {
+        "biomes": ["twilightforest:dark_forest_center"],
+      "key_item": "mythsandlegends:shaderoot_carrot"  
+      }
+    }
+  ]
+}

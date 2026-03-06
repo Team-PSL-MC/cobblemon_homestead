@@ -1,7 +1,7 @@
 {
     "pokemon": {
         "species": "zygarde",
-        "level": 90,
+        "level": 75,
         "nature": "adamant",
         "ability": "aurabreak",
         "moves": [

@@ -1,0 +1,19 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "640_virizion",
+      "pokemon": "virizion",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": ["natural", "wild"],
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 2.0,
+      "condition": {
+        "biomes": ["twilightforest:enchanted_forest"],
+        "key_item": "mythsandlegends:grassland_blade"
+      }
+    }
+  ]
+}

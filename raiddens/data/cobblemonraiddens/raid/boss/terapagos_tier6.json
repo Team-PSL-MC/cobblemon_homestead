@@ -3,7 +3,7 @@
         "species": "terapagos",
         "form": "stellar",
         "ability": "teraformzero",
-        "level": 90,
+        "level": 75,
         "moves": [
             "terastarstorm",
             "earthpower",
@@ -13,8 +13,8 @@
     },
     "boss": {
         "min_perfect_ivs": 4,
-        "level": 100,
-        "health_multi": 18
+        "level": 90,
+        "health_multi": 15
     },
     "raid_tier": "TIER_SIX",
     "raid_type": "STELLAR",

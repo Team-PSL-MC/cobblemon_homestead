@@ -5,11 +5,12 @@
     {
       "id": "245-suicune",
       "pokemon": "suicune",
-      "presets": ["natural"],
+      "presets": ["natural","wild"],
       "type": "pokemon",
+      "context": "surface",
       "bucket": "ultra-rare",
       "level": "50-60",
-      "weight": 0.1,
+      "weight": 5.1,
       "condition": {
         "biomes": [
           "twilightforest:lake",

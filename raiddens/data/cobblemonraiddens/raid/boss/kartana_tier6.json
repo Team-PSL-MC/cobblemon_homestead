@@ -2,7 +2,7 @@
     "pokemon": {
         "species": "kartana",
         "ability": "beastboost",
-        "level": 90,
+        "level": 75,
         "moves": ["leafblade", "smartstrike", "sacredsword", "knockoff"]
     },
     "boss": {

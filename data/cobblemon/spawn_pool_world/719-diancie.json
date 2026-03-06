@@ -1,0 +1,39 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "719_diancie_starlight",
+      "pokemon": "diancie",
+      "type": "pokemon",
+      "presets": ["natural","wild"],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 5.0,
+      "condition": {
+        "biomes": [
+          "eternal_starlight:crystallized_desert"
+        ],
+        "canSeeSky": true,
+        "key_item": "mythsandlegends:diancies_crown"
+      }
+    },
+    {
+      "id": "719_diancie_bumblezone",
+      "pokemon": "diancie",
+      "type": "pokemon",
+      "presets": ["natural","wild"],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 5.0,
+      "condition": {
+        "structures": [
+          "the_bumblezone:hanging_garden"
+        ],
+        "canSeeSky": true,
+        "key_item": "mythsandlegends:diancies_crown"
+      }
+    }
+  ]
+}

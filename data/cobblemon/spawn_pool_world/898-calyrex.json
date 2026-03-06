@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "898-calyrex",
+      "pokemon": "calyrex",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": [
+        "cobblemon:tf_castle_upper"
+      ],
+      "bucket": "ultra-rare",
+      "level": "70-80",
+      "weight": 1.2,
+      "condition": {
+        "biomes": [
+          "twilightforest:final_plateau"
+        ],
+        "key_item": "mythsandlegends:reins_of_unity"
+      }
+    }
+  ]
+}

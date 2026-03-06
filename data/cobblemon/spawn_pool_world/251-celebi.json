@@ -5,12 +5,12 @@
     {
       "id": "251-celebi",
       "pokemon": "celebi",
-      "presets": [ "natural" ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "ground",
       "bucket": "ultra-rare",
       "level": "30",
-      "weight": 0.1,
+      "weight": 5.2,
       "condition": {
         "biomes": [ 
           "eternal_starlight:starlight_forest",
@@ -25,12 +25,12 @@
     {
       "id": "251-celebi-1",
       "pokemon": "celebi",
-      "presets": [ "natural" ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "ground",
       "bucket": "ultra-rare",
       "level": "30",
-      "weight": 0.05,
+      "weight": 5.5,
       "condition": {
         "biomes": [ 
           "minecraft:flower_forest"

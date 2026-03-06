@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "484_palkia",
+      "pokemon": "palkia",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": ["natural"],
+      "bucket": "ultra-rare",
+      "level": "80",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "minecraft:end_midlands"
+        ],
+        "neededBaseBlocks": [
+          "minecraft:end_stone_bricks",
+          "minecraft:purpur_block"
+        ],
+        "key_item": "mythsandlegends:lustrous_orb"
+      }
+    }
+  ]
+}

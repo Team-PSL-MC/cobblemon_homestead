@@ -1,0 +1,23 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "802_marshadow",
+      "pokemon": "marshadow",
+      "type": "pokemon",
+      "presets": ["natural","wild"],
+      "context": "grounded",
+      "bucket": "ultra-rare",
+      "level": "50-60",
+      "weight": 3.0,
+      "condition": {
+        "structures": [
+          "minecraft:ancient_city"
+        ],
+        "minLightLevel": 0,
+        "maxLightLevel": 4,
+        "key_item": "mythsandlegends:marshadow_hood"
+      }
+    }
+  ]
+}

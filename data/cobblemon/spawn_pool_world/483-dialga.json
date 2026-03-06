@@ -1,0 +1,25 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "483_dialga",
+      "pokemon": "dialga",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": [],
+      "bucket": "ultra-rare",
+      "level": "80",
+      "weight": 2.0,
+      "condition": {
+        "biomes": [
+          "minecraft:end_highlands"
+        ],
+        "neededBaseBlocks": [
+          "minecraft:end_stone_bricks",
+          "minecraft:purpur_block"
+        ],
+        "key_item": "mythsandlegends:adamant_orb"
+      }
+    }
+  ]
+}

@@ -1,7 +1,8 @@
 {
     "pokemon": {
         "species": "zamazenta",
-        "form": "crowned_shield",
+        "form": "crownedshield",
+        "level": 75,
         "ability": "dauntlessshield",
         "nature": "sassy",
         "moves": ["howl", "bodypress", "crunch", "ironhead"]
@@ -9,6 +10,7 @@
     "boss": {
         "level": 90,
         "min_perfect_ivs": 4,
+        "health_multi": 14,
         "held_item": "mythsandlegends:rusted_shield"
     },
     "raid_tier": "TIER_SIX",

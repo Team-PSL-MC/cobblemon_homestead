@@ -1,0 +1,28 @@
+{
+  "enabled": true,
+  "spawns": [
+    {
+      "id": "647_keldeo",
+      "pokemon": "keldeo",
+      "type": "pokemon",
+      "context": "surface",
+      "presets": [],
+      "bucket": "ultra-rare",
+      "level": "50",
+      "weight": 10.0,
+      "condition": {
+        "biomes": [
+          "twilightforest:lake",
+          "twilightforest:river"
+        ],
+        "key_item": "mythsandlegends:sacred_sword",
+        "neededBaseBlocks": ["minecraft:water"],
+        "custom_pokemons_in_team": [
+          { "species": "cobalion", "count": 1 },
+          { "species": "terrakion", "count": 1 },
+          { "species": "virizion", "count": 1 }
+        ]
+      }
+    }
+  ]
+}

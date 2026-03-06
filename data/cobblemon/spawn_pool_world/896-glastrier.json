@@ -1,0 +1,21 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "896_glastrier",
+      "pokemon": "glastrier",
+      "type": "pokemon",
+      "context": "grounded",
+      "presets": [],
+      "bucket": "ultra-rare",
+      "level": "70",
+      "weight": 1.1,
+      "condition": {
+        "biomes": ["twilightforest:glacier"],
+      "key_item": "mythsandlegends:iceroot_carrot"
+      }
+    }
+  ]
+}

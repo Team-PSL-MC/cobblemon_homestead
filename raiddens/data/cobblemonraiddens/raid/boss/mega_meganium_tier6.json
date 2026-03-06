@@ -27,7 +27,7 @@
     "max_cheers": 3,
     "raid_party_size": 1,
     "health_multi": 0,
-    "multiplayer_health_multi": 1.0,
+    "multiplayer_health_multi": 12.0,
     "shiny_rate": 50,
     "currency": 10000,
     "max_catches": -1

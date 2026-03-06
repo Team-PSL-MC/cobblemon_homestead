@@ -1,0 +1,47 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "482-azelf",
+      "pokemon": "azelf",
+      "presets": ["natural","wild"],
+      "type": "pokemon",
+      "context": "surface",
+      "bucket": "ultra-rare",
+      "level": "50",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "minecraft:mangrove_swamp",
+          "minecraft:swamp",
+          "#byg:is_swamp",
+          "#c:swamp",
+          "#forge:is_swamp",
+          "terralith:ice_marsh",
+          "terralith:orchid_swampc"
+        ],
+        "key_item": "mythsandlegends:azelf_fang"
+      }
+    },
+    {
+      "id": "azelf-2",
+      "pokemon": "azelf",
+      "presets": ["natural","wild"],
+      "type": "pokemon",
+      "context": "surface",
+      "bucket": "ultra-rare",
+      "level": "50",
+      "weight": 0.2,
+      "condition": {
+        "biomes": [
+          "#cobblemon:is_river",
+          "#minecraft:is_river",
+          "#cobblemon:is_freshwater"
+        ],
+        "key_item": "mythsandlegends:azelf_fang"
+      }
+    }
+  ]
+} 

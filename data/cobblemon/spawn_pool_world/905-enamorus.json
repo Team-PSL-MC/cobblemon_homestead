@@ -6,12 +6,12 @@
     {
       "id": "905-enamourus",
       "pokemon": "enamourus",
-      "presets": ["natural"],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
       "level": "50-70",
-      "weight": 0.1,
+      "weight": 2.5,
       "condition": {
         "and": [
           { "season": "spring" },

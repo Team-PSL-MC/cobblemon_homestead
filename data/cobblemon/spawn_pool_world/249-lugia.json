@@ -5,14 +5,12 @@
     {
       "id": "249-lugia",
       "pokemon": "lugia",
-      "presets": [
-        "underwater"
-      ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
-      "context": "submerged",
+      "context": "grounded",
       "bucket": "ultra-rare",
       "level": "40-70",
-      "weight": 0.1,
+      "weight": 5.3,
       "condition": {
         "biomes": [
           "byg:blue_abyss"

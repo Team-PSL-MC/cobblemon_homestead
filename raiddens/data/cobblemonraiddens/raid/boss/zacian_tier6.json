@@ -1,13 +1,15 @@
 {
     "pokemon": {
         "species": "zacian",
-        "form": "crowned_sword",
+        "form": "crownedsword",
+        "level": 75,
         "ability": "intrepidsword",
         "moves": ["behemothblade", "playrough", "closecombat", "wildcharge"]
     },
     "boss": {
         "level": 90,
         "min_perfect_ivs": 4,
+        "health_multi": 15,
         "held_item": "mythsandlegends:rusted_sword"
     },
     "raid_tier": "TIER_SIX",

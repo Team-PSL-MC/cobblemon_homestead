@@ -1,0 +1,29 @@
+{
+  "enabled": true,
+  "neededInstalledMods": [],
+  "neededUninstalledMods": [],
+  "spawns": [
+    {
+      "id": "481-mesprit-1",
+      "pokemon": "mesprit",
+      "presets": ["natural","wild"],
+      "type": "pokemon",
+      "context": "surface",
+      "bucket": "ultra-rare",
+      "level": "50",
+      "weight": 0.4,
+      "condition": {
+        "biomes": [
+          "minecraft:mangrove_swamp",
+          "minecraft:swamp",
+          "#byg:is_swamp",
+          "#c:swamp",
+          "#forge:is_swamp",
+          "terralith:ice_marsh",
+          "terralith:orchid_swamp"
+        ],
+        "key_item": "mythsandlegends:mesprit_plume"
+      }
+    }
+  ]
+} 

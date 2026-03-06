@@ -7,14 +7,12 @@
     {
       "id": "494-victini",
       "pokemon": "victini",
-      "presets": [
-        "natural"
-      ],
+      "presets": ["natural","wild"],
       "type": "pokemon",
       "context": "grounded",
       "bucket": "ultra-rare",
       "level": "70-100",
-      "weight": 0.1,
+      "weight": 1.2,
       "condition": {
         "biomes": [
           "the_bumblezone:honey_peaks"
