@@ -49,4 +49,4 @@
 | 905 | **Enamourus** | Overworld | Near Mechanical Harvester | Any | Spring | Reveal Glass | **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-03-06 21:48:24 UTC*
+*Last Updated: 2026-03-06 21:49:23 UTC*
