@@ -1,4 +1,4 @@
-name: Homestead Tools Rolling Release
+name: Homestead Tools Versioned Release
 
 on:
   push:
@@ -13,13 +13,27 @@ permissions:
   contents: write
 
 jobs:
-  build-and-sync:
+  build-and-release:
+    # PREVENT LOOP: Do not run if the commit was made by the bot itself
+    if: github.actor != 'github-actions[bot]' && !contains(github.event.head_commit.message, '[skip ci]')
     runs-on: ubuntu-latest
     steps:
       - name: 🛰️ Checkout Repo
         uses: actions/checkout@v4
         with:
           fetch-depth: 0 
+
+      - name: 🔢 Determine Next Version
+        id: versioning
+        run: |
+          git fetch --tags
+          # Look for the highest numeric tag
+          LATEST_TAG=$(git tag -l "[0-9]*" --sort=-v:refname | head -n 1)
+          if [ -z "$LATEST_TAG" ]; then
+            LATEST_TAG=0
+          fi
+          NEXT_TAG=$((LATEST_TAG + 1))
+          echo "next_tag=$NEXT_TAG" >> $GITHUB_OUTPUT
 
       - name: 🐍 Set up Python
         uses: actions/setup-python@v5
@@ -34,36 +48,26 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          # We use a fixed name for the rolling release zip
-          zip -r "Homestead-DP-Latest.zip" data/ pack.mcmeta pack.png
+          zip -r "Homestead-DP-${{ steps.versioning.outputs.next_tag }}.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook
         run: |
-          git config user.name "Homestead-Bot"
-          git config user.email "bot@homestead.com"
+          git config user.name "github-actions[bot]"
+          git config user.email "github-actions[bot]@users.noreply.github.com"
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
           if ! git diff --cached --quiet; then
-            git commit -m "docs: automated sync (rolling update) [skip ci]"
+            git commit -m "docs: sync for build ${{ steps.versioning.outputs.next_tag }} [skip ci]"
             git push origin HEAD:main
           fi
 
-      - name: 🔄 Update Rolling Release
+      - name: 🚀 Create New Release
         uses: softprops/action-gh-release@v2
         with:
-          tag_name: latest
-          name: "Latest Build (Rolling)"
-          body: |
-            ## 🔄 Auto-Updated Release
-            This release is automatically updated whenever the data files change.
-            
-            **Last Update:** ${{ github.event.head_commit.timestamp }}
-            **Latest Commit:** ${{ github.sha }}
-          draft: false
-          prerelease: false
+          tag_name: ${{ steps.versioning.outputs.next_tag }}
+          name: "Build #${{ steps.versioning.outputs.next_tag }}"
+          body: "Automated build for commit ${{ github.sha }}"
           files: |
-            Homestead-DP-Latest.zip
+            Homestead-DP-*.zip
             full_spawn_list.csv
-          # This is key: it overwrites the existing files on the 'latest' tag
-          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
