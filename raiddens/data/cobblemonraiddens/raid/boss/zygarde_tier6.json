@@ -14,7 +14,7 @@
     "boss": {
         "min_perfect_ivs": 4,
         "level": 90,
-        "held_item": "minecraft:leftovers"
+        "held_item": "cobblemon:leftovers"
     },
     "raid_tier": "TIER_SIX",
     "raid_type": "DRAGON",

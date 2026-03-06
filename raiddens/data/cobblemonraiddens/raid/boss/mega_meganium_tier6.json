@@ -20,5 +20,15 @@
     "raid_tier": "TIER_SIX",
     "raid_type": "GRASS",
     "raid_feature": "MEGA",
-    "loot_table": "cobblemonraiddens:raids/mega_master_loot"
+    "loot_table": "cobblemonraiddens:raids/mega_master_loot",
+    "max_players": 4,
+    "max_clears": 3,
+    "ha_rate": 0.2,
+    "max_cheers": 3,
+    "raid_party_size": 1,
+    "health_multi": 0,
+    "multiplayer_health_multi": 1.0,
+    "shiny_rate": 50,
+    "currency": 10000,
+    "max_catches": -1
 }

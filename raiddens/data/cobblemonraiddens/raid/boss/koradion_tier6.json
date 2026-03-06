@@ -7,7 +7,7 @@
     },
     "boss": {
         "min_perfect_ivs": 4,
-        "level": 100,
+        "level": 90,
         "health_multi": 15
     },
     "raid_tier": "TIER_SIX",

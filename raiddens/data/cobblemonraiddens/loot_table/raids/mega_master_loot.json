@@ -53,7 +53,7 @@
         { "type": "minecraft:item", "name": "mega_showdown:diancite", "weight": 3 },
         { "type": "minecraft:item", "name": "zamega:absolitez", "weight": 4 },
         { "type": "minecraft:item", "name": "zamega:barbaracite", "weight": 4 },
-        { "type": "minecraft:item", "name": "zamega:baxcalibrite", "weight": 4 },|
+        { "type": "minecraft:item", "name": "zamega:baxcalibrite", "weight": 4 },
         { "type": "minecraft:item", "name": "zamega:chandelurite", "weight": 4 },
         { "type": "minecraft:item", "name": "zamega:chesnaughttite", "weight": 4 },
         { "type": "minecraft:item", "name": "zamega:chimechoite", "weight": 4 },
