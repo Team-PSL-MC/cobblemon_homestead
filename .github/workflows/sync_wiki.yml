@@ -1,4 +1,4 @@
-name: Homestead Tools Release
+name: Homestead Tools Rolling Release
 
 on:
   push:
@@ -7,8 +7,6 @@ on:
     paths:
       - 'data/cobblemon/**'
       - 'raiddens/**'
-  release:
-    types: [published]
   workflow_dispatch:
 
 permissions:
@@ -36,28 +34,36 @@ jobs:
 
       - name: 📦 Package Datapack
         run: |
-          VERSION="${{ github.event.release.tag_name || 'latest' }}"
-          zip -r "Homestead-DP-$VERSION.zip" data/ pack.mcmeta pack.png
+          # We use a fixed name for the rolling release zip
+          zip -r "Homestead-DP-Latest.zip" data/ pack.mcmeta pack.png
 
       - name: 🚀 Sync to GitBook
-        if: github.event_name != 'release'
         run: |
           git config user.name "Homestead-Bot"
           git config user.email "bot@homestead.com"
           git add wiki/cobblemon-gameplay/*.md full_spawn_list.csv
           if ! git diff --cached --quiet; then
-            git commit -m "docs: automated sync (data change) [skip ci]"
-            git push origin HEAD:${{ github.event.repository.default_branch }}
-          else
-            echo "No relevant documentation changes detected."
+            git commit -m "docs: automated sync (rolling update) [skip ci]"
+            git push origin HEAD:main
           fi
 
-      - name: 🚀 Upload Assets to Release
+      - name: 🔄 Update Rolling Release
         uses: softprops/action-gh-release@v2
-        if: github.event_name == 'release'
         with:
+          tag_name: latest
+          name: "Latest Build (Rolling)"
+          body: |
+            ## 🔄 Auto-Updated Release
+            This release is automatically updated whenever the data files change.
+            
+            **Last Update:** ${{ github.event.head_commit.timestamp }}
+            **Latest Commit:** ${{ github.sha }}
+          draft: false
+          prerelease: false
           files: |
-            Homestead-DP-*.zip
+            Homestead-DP-Latest.zip
             full_spawn_list.csv
+          # This is key: it overwrites the existing files on the 'latest' tag
+          make_latest: true
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
