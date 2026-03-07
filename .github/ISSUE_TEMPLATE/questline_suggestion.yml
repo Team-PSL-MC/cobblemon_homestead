@@ -1,5 +1,5 @@
 name: Questline Suggestion
-description: Suggest a complete questline with progression, rewards, and optional SNBT/JSON draft files
+description: Suggest a complete questline with progression, rewards, and optional draft JSON/SNBT links
 title: "[Questline Suggestion]: "
 labels: ["quests", "questline"]
 body:
@@ -56,12 +56,12 @@ body:
     validations:
       required: true
 
-  - type: file
-    id: snbt_upload
+  - type: textarea
+    id: snbt_json
     attributes:
-      label: Optional SNBT / Quest Draft
-      description: Upload an SNBT or JSON draft if you want to provide a skeleton questline
-      placeholder: "cobblemon_questline_draft.snbt"
+      label: Optional Draft JSON/SNBT
+      description: Paste your SNBT or JSON draft here, or provide a link to a file
+      placeholder: "Paste your questline SNBT/JSON here or link to a GitHub gist"
     validations:
       required: false
 
