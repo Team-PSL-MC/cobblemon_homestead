@@ -74,22 +74,25 @@ def get_nav_bar(current_label):
     return nav + " | ".join(links) + "\n\n"
 
 def get_conditions(spawn_obj):
+    # Initialize with a 'special' key to track structures/unique blocks
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None, "special": None}
+    
     cond = spawn_obj.get('condition', {})
     
     def scan_cond(c):
         if not isinstance(c, dict): return
         
-        # --- Capture Structures (Special) ---
+        # --- Capture Structures ---
         if 'structures' in c and isinstance(c['structures'], list):
             res["special"] = ", ".join([s.split(':')[-1].replace('_', ' ').title() for s in c['structures']])
             
-        # --- Capture Nearby Blocks (Special) ---
+        # --- Capture neededNearbyBlocks ---
         if 'neededNearbyBlocks' in c:
             blocks = c['neededNearbyBlocks']
             if isinstance(blocks, list):
                 res["special"] = ", ".join([b.split(':')[-1].replace('_', ' ').title() for b in blocks])
         
+        # Standard conditions
         if 'times_of_day' in c: 
             res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
         if 'season' in c: 
@@ -106,12 +109,11 @@ def get_conditions(spawn_obj):
     return res
 
 def generate_special_wiki(special_spawns):
-    """Creates the special.md file from the collected list."""
-    if not special_spawns:
-        return
-
+    """Generates the special.md table."""
+    if not special_spawns: return
+    
     content = "# ✨ Special Spawn Locations\n\n"
-    content += "Pokémon requiring specific structures or nearby blocks.\n\n"
+    content += "This table lists Pokémon that require specific structures or nearby blocks to appear.\n\n"
     content += "| Pokémon | Dimension | Special Requirement | Time | Weather |\n"
     content += "| :--- | :--- | :--- | :--- | :--- |\n"
     
@@ -120,7 +122,7 @@ def generate_special_wiki(special_spawns):
         content += f"| {s['name']} | {s['dim']} | **{s['special']}** | {s['time']} | {s['weather']} |\n"
     
     write_safe_md(os.path.join(WIKI_DIR, 'special.md'), content)
-    
+
     def scan_cond(c):
         if not isinstance(c, dict): return
         if 'times_of_day' in c: 
