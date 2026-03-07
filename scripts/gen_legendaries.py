@@ -1,63 +1,45 @@
-import os
-import json
-from spawn_utils import *
-
 def generate_legendary_wiki():
     grouped_data = {}
+    special_list = [] # <--- 1. CREATE THIS LIST
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S UTC")
 
-    # 1. Collect Data
     for filename in os.listdir(SPAWN_DATA_PATH):
-        # Only process files starting with numbers (Legendaries)
-        if filename.endswith('.json') and filename[0].isdigit():
+        if filename.endswith('.json'): # Removed the [0].isdigit() to catch ALL special spawns
             with open(os.path.join(SPAWN_DATA_PATH, filename), 'r', encoding='utf-8') as f:
                 data = json.load(f)
                 for s in data.get('spawns', []):
                     dex_num, name = parse_spawn_id(s)
                     stats = get_conditions(s)
                     
-                    entry = {
-                        "world": get_dimension(s),
-                        "loc": clean_location(s, stats),
-                        "time": stats['time'],
-                        "season": stats['season'],
-                        "item": stats['item'],
-                        "rarity": s.get('bucket', 'ultra-rare').replace('_', '-').title()
-                    }
+                    # --- 2. ADD TO SPECIAL LIST IF CONDITION EXISTS ---
+                    if stats.get("special"):
+                        special_list.append({
+                            "name": name,
+                            "dim": get_dimension(s),
+                            "special": stats["special"],
+                            "time": stats["time"],
+                            "weather": stats["weather"]
+                        })
 
-                    if name not in grouped_data:
-                        grouped_data[name] = {"dex": dex_num, "name": name, "variants": [entry]}
-                    else:
-                        grouped_data[name]["variants"].append(entry)
+                    # --- 3. ONLY ADD TO LEGENDARY TABLE IF FILENAME STARTS WITH NUMBER ---
+                    if filename[0].isdigit():
+                        entry = {
+                            "world": get_dimension(s),
+                            "loc": clean_location(s, stats),
+                            "time": stats['time'],
+                            "season": stats['season'],
+                            "item": stats['item'],
+                            "rarity": s.get('bucket', 'ultra-rare').replace('_', '-').title()
+                        }
+                        if name not in grouped_data:
+                            grouped_data[name] = {"dex": dex_num, "name": name, "variants": [entry]}
+                        else:
+                            grouped_data[name]["variants"].append(entry)
 
-    # 2. Build Markdown Content
-    content = f"# 💎 Legendary Spawns\n\n{get_nav_bar('legendaries')}\n---\n\n"
+    # ... (Keep your existing legendary table building code) ...
     
-    # Updated Header with "World"
-    content += "| # | Pokémon | World | Location | Time | Season | Key Item | Rarity |\n"
-    content += "| :--- | :--- | :--- | :--- | :--- | :--- | :--- | :--- |\n"
-    
-    # 3. Sort by Pokedex Number and Generate Rows
-    for name in sorted(grouped_data.keys(), key=lambda x: grouped_data[x]['dex']):
-        d = grouped_data[name]
-        
-        # Use <br> to handle multiple spawn sets for the same Pokemon
-        worlds = "<br>".join([v['world'] for v in d['variants']])
-        locs = "<br>".join([v['loc'] for v in d['variants']])
-        times = "<br>".join([v['time'] for v in d['variants']])
-        seasons = "<br>".join([v['season'] for v in d['variants']])
-        rarities = "<br>".join([f"**{v['rarity']}**" for v in d['variants']])
-        
-        # Key item is usually constant for the species, taking from first variant
-        item = d['variants'][0]['item']
-        
-        content += f"| {d['dex']} | **{d['name']}** | {worlds} | {locs} | {times} | {seasons} | {item} | {rarities} |\n"
-    
-    content += f"\n---\n*Last Updated: {timestamp}*"
-    
-    # 4. Write to File
-    write_safe_md(os.path.join(WIKI_DIR, 'legendaries.md'), content)
+    # 4. WRITE THE SPECIAL WIKI AT THE END
+    generate_special_wiki(special_list) 
 
 if __name__ == "__main__":
     generate_legendary_wiki()
-    print("✅ Legendary Wiki updated successfully with World column.")
