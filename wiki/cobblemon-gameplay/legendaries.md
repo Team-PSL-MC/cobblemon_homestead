@@ -42,11 +42,11 @@
 | 719 | **Diancie** | Eternal Starlight<br>Overworld | Crystallized Desert<br>Global | Any<br>Any | Any<br>Any | Diancies Crown | **Ultra-Rare**<br>**Ultra-Rare** |
 | 800 | **Necrozma** | Overworld | Echoing Forest | Any | Any | Necro Prism | **Ultra-Rare** |
 | 802 | **Marshadow** | Overworld | Global | Any | Any | Marshadow Hood | **Ultra-Rare** |
-| 807 | **Zeraora** | Overworld | Near Induction Port | Any | Any | Zeraoras Thunderclaw | **Ultra-Rare** |
+| 807 | **Zeraora** | Overworld | Global | Any | Any | Zeraoras Thunderclaw | **Ultra-Rare** |
 | 896 | **Glastrier** | Twilight Forest | Glacier | Any | Any | Iceroot Carrot | **Ultra-Rare** |
 | 897 | **Spectrier** | Twilight Forest | Dark Forest Center | Any | Any | Shaderoot Carrot | **Ultra-Rare** |
 | 898 | **Calyrex** | Twilight Forest | Final Plateau | Any | Any | Reins Of Unity | **Ultra-Rare** |
-| 905 | **Enamourus** | Overworld | Near Mechanical Harvester | Any | Spring | Reveal Glass | **Ultra-Rare** |
+| 905 | **Enamorus** | Overworld | Global | Any | Spring | Reveal Glass | **Ultra-Rare** |
 
 ---
-*Last Updated: 2026-03-06 21:58:35 UTC*
+*Last Updated: 2026-03-07 00:58:12 UTC*
