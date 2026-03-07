@@ -1,30 +1,25 @@
 {
   "enabled": true,
-  "neededInstalledMods": [],
-  "neededUninstalledMods": [],
   "spawns": [
     {
-      "id": "905-enamourus",
-      "pokemon": "enamourus",
-      "presets": ["natural","wild"],
+      "id": "905_enamorus",
+      "pokemon": "enamorus",
       "type": "pokemon",
       "context": "grounded",
+      "presets": [
+        "natural",
+        "wild"
+      ],
       "bucket": "ultra-rare",
       "level": "50-70",
       "weight": 2.5,
       "condition": {
-        "and": [
-          { "season": "spring" },
-          {
-            "location": {
-              "block": "create:mechanical_harvester",
-              "horizontal_radius": 10
-            }
-          }
-        ]
-      },
+        "season": "spring",
+        "neededNearbyBlocks": [
+          "create:mechanical_harvester"
+        ],
         "key_item": "mythsandlegends:reveal_glass"
       }
-
+    }
   ]
 }
