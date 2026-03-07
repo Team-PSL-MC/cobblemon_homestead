@@ -2,7 +2,7 @@
 [![CurseForge](https://img.shields.io/badge/CurseForge-Download-blue?logo=curseforge&style=flat-square)](https://www.curseforge.com/minecraft/modpacks/cobblemon-homestead) 
 [![Wiki](https://img.shields.io/badge/Wiki-Docs-brightgreen?logo=read-the-docs&style=flat-square)](https://team-psl-mc.github.io/cobblemon_homestead/) 
 [![Contributors](https://img.shields.io/badge/Contributors-See%20list-orange?style=flat-square)](CONTRIBUTORS.md) 
-[![Discord](https://img.shields.io/badge/Discord-Join%20Chat-7289DA?logo=discord&style=flat-square)]([https://discord.gg/YOUR_INVITE_LINK](https://discord.gg/eTzwAZNu6H))
+[![Discord](https://img.shields.io/badge/Discord-Join%20Chat-7289DA?logo=discord&style=flat-square)](https://discord.gg/eTzwAZNu6H)
 
 Welcome to **Cobblemon Homestead**, the server where survival, automation, and Pokémon collide! Explore unique biomes, build your homestead, and master custom Cobblemon mechanics.
 
