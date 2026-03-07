@@ -1,14 +1,62 @@
-# Welcome
+# 🏡 Cobblemon Homestead
 
-### Welcome to the Cobblemon Homestead Wiki!
+Welcome to **Cobblemon Homestead**, the server where survival, automation, and Pokémon collide! Explore unique biomes, build your homestead, and master custom Cobblemon mechanics.
 
-Welcome to the official hub for all things Cobblemon Homestead. Whether you are a seasoned Pokémon Trainer or just starting your journey in the blocky world of Pixelmon, this wiki is designed to help you get started and master our custom features.
+This repository contains server configs, spawn data, questlines, and community contributions.
 
-#### 🧭 Quick Navigation
+---
 
-* \[Installation Guide]: A step-by-step guide on how to join the server, including our required Modpack and Java settings.
-* \[Server Settings]: Details on our specific config tweaks, such as shiny rates, legendary spawn timers, and battle rules.
-* \[Gameplay Guides]: Tips on claiming land, using our custom economy, and leveling up your team.
-* \[Pokémon Spawns]: A comprehensive database of where to find your favorites across our custom biomes.
+## 🔗 Quick Links
 
-> Server IP: pm.gamesservers.io:1030 Discord: \[[Link to Discord](https://discord.gg/eTzwAZNu6H)]
+- [CurseForge Modpack](https://www.curseforge.com/minecraft/modpacks/cobblemon-homestead) – Download the pack and get started quickly.
+- [Wiki](https://team-psl-mc.github.io/cobblemon_homestead/) – Guides, spawn tables, and gameplay tips.
+- [Contributors](CONTRIBUTORS.md) – See the amazing community members helping build the server.
+- [Discord](https://discord.gg/YOUR_INVITE_LINK) – Chat with the team, ask questions, and collaborate.
+
+---
+
+## 📥 Installation & Setup
+
+1. Install the **CurseForge Launcher**.  
+2. Search for **Cobblemon Homestead** in the Minecraft section and click **Install**.  
+3. Launch the pack and follow the recommended settings in the [Wiki Installation Guide](https://team-psl-mc.github.io/cobblemon_homestead/getting-started/installation.html).  
+
+> Recommended RAM: 6–8GB (8–10GB if using shaders)
+
+---
+
+## 🤝 Contributing
+
+We love community contributions! You can help with:
+
+- Updating spawn data  
+- Suggesting or editing raid dens  
+- Creating FTB questlines  
+- Improving the wiki  
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for full instructions on pull requests and contributing.
+
+---
+
+## ⚡ Features
+
+- Custom Cobblemon spawns and events  
+- Cobblemon Trials and Challenges  
+- Radical player-built gyms  
+- Create & Mekanism tech progression  
+- Shadow Hearts and other mod integrations  
+- FTB Quests with progressive rewards  
+
+---
+
+## 📌 Important Notes
+
+- All spawn data and raids are versioned in GitHub:  
+  - Spawns: [spawn_pool_world](https://github.com/Team-PSL-MC/cobblemon_homestead/tree/main/data/cobblemon/spawn_pool_world)  
+  - Raids: [raiddens](https://github.com/Team-PSL-MC/cobblemon_homestead/tree/main/raiddens/data/cobblemonraiddens)  
+
+- Use the GitHub **web editor** for casual contributions — see the [Wiki Easy Contributions Guide](https://team-psl-mc.github.io/cobblemon_homestead/contributing.html)  
+
+---
+
+> Start your adventure today, and help build the Cobblemon Homestead community!
