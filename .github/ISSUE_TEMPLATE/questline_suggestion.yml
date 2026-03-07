@@ -1,0 +1,96 @@
+name: Questline Suggestion
+description: Suggest a complete questline with progression, rewards, and optional SNBT/JSON draft files
+title: "[Questline Suggestion]: "
+labels: ["quests", "questline"]
+body:
+
+  - type: input
+    id: questline_name
+    attributes:
+      label: Questline Name
+      description: Name of the overall questline
+      placeholder: Cobblemon Starter Journey
+    validations:
+      required: true
+
+  - type: dropdown
+    id: category
+    attributes:
+      label: Primary Focus
+      description: Main focus for the questline
+      options:
+        - Cobblemon
+        - Create / Automation
+        - Mekanism / Tech
+        - Exploration
+        - Gyms / Battle Challenges
+        - Economy
+        - Farming
+        - Tutorial
+        - Multi-Theme
+    validations:
+      required: true
+
+  - type: textarea
+    id: questline_description
+    attributes:
+      label: Description
+      description: Overview of what this questline teaches or encourages
+      placeholder: "Guides the player from catching their first Cobblemon to defeating a player-built gym."
+    validations:
+      required: true
+
+  - type: textarea
+    id: questline_flow
+    attributes:
+      label: Quest Flow / Path
+      description: Describe each step, chapter, or milestone. Include prerequisites.
+      placeholder: |
+        Example:
+        Chapter 1: Starter Pokémon
+          - Catch your first Pokémon
+          - Build a Pokéball Storage Box
+        Chapter 2: Early Exploration
+          - Claim your first land
+          - Capture 3 different Pokémon from your region
+    validations:
+      required: true
+
+  - type: file
+    id: snbt_upload
+    attributes:
+      label: Optional SNBT / Quest Draft
+      description: Upload an SNBT or JSON draft if you want to provide a skeleton questline
+      placeholder: "cobblemon_questline_draft.snbt"
+    validations:
+      required: false
+
+  - type: textarea
+    id: rewards
+    attributes:
+      label: Quest Rewards
+      description: Suggest balanced rewards for each chapter or milestone
+      placeholder: |
+        Chapter 1:
+          - 5 Pokéballs
+          - 500 CobbleDollars
+        Chapter 2:
+          - Master Ball
+          - Access to advanced mods
+    validations:
+      required: true
+
+  - type: textarea
+    id: progression_notes
+    attributes:
+      label: Progression / Difficulty Notes
+      description: Explain when this questline should be accessible, expected time, and difficulty
+      placeholder: "Early game, designed for solo or small group play."
+    validations:
+      required: true
+
+  - type: textarea
+    id: additional_notes
+    attributes:
+      label: Additional Notes
+      description: Any extra context or suggestions
