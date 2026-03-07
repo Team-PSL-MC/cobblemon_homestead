@@ -17,10 +17,11 @@ https://github.com/Team-PSL-MC/cobblemon_homestead/tree/main/data/cobblemon/spaw
 Each Pokémon has its own configuration file.
 
 Examples:
+```
 150-mew.json
 twilight_forest_dark_forest.json
 aether_village_spawns.json
-
+```
 
 Click the file for the Pokémon you want to edit.
 
@@ -49,81 +50,86 @@ Example change:
 
 ```json
 "weight": 8
+```
+Try to keep changes balanced and logical with the surrounding ecosystem.
 
-  Try to keep changes balanced and logical with the surrounding ecosystem.
+---
 
-Step 4 — Write a Commit Message
+## Step 4 — Write a Commit Message
 
-Scroll to the bottom of the page.
+Scroll to the bottom of the page.  
 
-Write a short description of your change.
+Write a short description of your change.  
 
-Example:
-
+**Example:**
+```
 Adjusted Litwick spawn weight in Soul Sand Valley
+```
 
 Select:
-
+```
 Create a new branch for this commit
-
+```
 Then click:
 
-Propose changes
+**Propose changes**
 
-Step 5 — Open the Pull Request
+## Step 5 — Open the Pull Request
 
 GitHub will take you to a Pull Request page.
 
 Click:
-
+```
 Create Pull Request
-
+```
 Explain your change.
 
 Example:
-
+```
 Adjusted Litwick spawn weight in Soul Sand Valley.
 
 The previous weight made encounters extremely rare compared to other Ghost-type Pokémon.
 This change should make Litwick encounters more consistent at night.
-Step 6 — Review Process
+```
+---
+
+## Step 6 — Review Process
 
 Server staff will review your pull request and may:
 
-Approve the change
-
-Request adjustments
-
-Ask questions about balance
+- Approve the change  
+- Request adjustments  
+- Ask questions about balance  
 
 Once approved, your change will be merged into the server configuration.
 
-Guidelines for Spawn Changes
+---
 
-Please keep these guidelines in mind when contributing.
+## Guidelines for Spawn Changes
 
-Keep Changes Reasonable
+Please keep these guidelines in mind when contributing:
+
+### Keep Changes Reasonable
 
 Avoid extreme spawn rates or unrealistic biome choices.
 
-Follow Existing Formatting
+### Follow Existing Formatting
 
 Match the structure used in other spawn files.
 
-Test if Possible
+### Test if Possible
 
 If you are able to test the spawn behavior in-game, that helps ensure the change works correctly.
 
-Other Ways to Help
+---
+
+## Other Ways to Help
 
 You can also contribute by:
 
-Suggesting spawn changes through GitHub Issues
+- Suggesting spawn changes through **GitHub Issues**  
+- Helping balance **Raid Dens**  
+- Contributing to **FTB Quests**  
+- Improving the **server wiki**  
 
-Helping balance Raid Dens
-
-Contributing to FTB Quests
-
-Improving the server wiki
-
-Every contribution helps improve Cobblemon Homestead.
+Every contribution helps improve **Cobblemon Homestead**.
