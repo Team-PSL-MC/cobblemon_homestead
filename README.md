@@ -11,7 +11,7 @@ This repository contains server configs, spawn data, questlines, and community c
 - [CurseForge Modpack](https://www.curseforge.com/minecraft/modpacks/cobblemon-homestead) – Download the pack and get started quickly.
 - [Wiki](https://team-psl-mc.github.io/cobblemon_homestead/) – Guides, spawn tables, and gameplay tips.
 - [Contributors](CONTRIBUTORS.md) – See the amazing community members helping build the server.
-- [Discord](https://discord.gg/YOUR_INVITE_LINK) – Chat with the team, ask questions, and collaborate.
+- [Discord](https://discord.gg/eTzwAZNu6H) – Chat with the team, ask questions, and collaborate.
 
 ---
 
@@ -55,7 +55,7 @@ See [CONTRIBUTING.md](CONTRIBUTING.md) for full instructions on pull requests an
   - Spawns: [spawn_pool_world](https://github.com/Team-PSL-MC/cobblemon_homestead/tree/main/data/cobblemon/spawn_pool_world)  
   - Raids: [raiddens](https://github.com/Team-PSL-MC/cobblemon_homestead/tree/main/raiddens/data/cobblemonraiddens)  
 
-- Use the GitHub **web editor** for casual contributions — see the [Wiki Easy Contributions Guide](https://team-psl-mc.github.io/cobblemon_homestead/contributing.html)  
+- Use the GitHub **web editor** for casual contributions — see the [Wiki Easy Contributions Guide]([https://team-psl-mc.github.io/cobblemon_homestead/contributing.html](https://pumpkin-spice-modpacks.gitbook.io/cobblemon/contributing))  
 
 ---
 
