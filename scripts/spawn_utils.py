@@ -74,15 +74,55 @@ def get_nav_bar(current_label):
     return nav + " | ".join(links) + "\n\n"
 
 def get_conditions(spawn_obj):
-    res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None}
-    found_item = (spawn_obj.get('key_item') or spawn_obj.get('needed_item') or spawn_obj.get('custom_absent_required_item'))
+    # Initialize with a 'special' key to track structures/unique blocks
+    res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None, "special": None}
+    
     cond = spawn_obj.get('condition', {})
     
-    if isinstance(cond, dict) and not found_item:
-        found_item = cond.get('key_item') or cond.get('needed_item')
-    if found_item: 
-        res["item"] = str(found_item).split(':')[-1].replace('_', ' ').title()
+    def scan_cond(c):
+        if not isinstance(c, dict): return
+        
+        # --- NEW: Capture Structures ---
+        if 'structures' in c and isinstance(c['structures'], list):
+            res["special"] = ", ".join([s.split(':')[-1].replace('_', ' ').title() for s in c['structures']])
+            
+        # --- NEW: Capture neededNearbyBlocks ---
+        if 'neededNearbyBlocks' in c:
+            blocks = c['neededNearbyBlocks']
+            if isinstance(blocks, list):
+                res["special"] = ", ".join([b.split(':')[-1].replace('_', ' ').title() for b in blocks])
+        
+        # Existing logic for time, season, weather
+        if 'times_of_day' in c: 
+            res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
+        if 'season' in c: 
+            res["season"] = str(c['season']).capitalize()
+        if 'weather' in c: 
+            res["weather"] = c['weather'].split(':')[-1].capitalize()
+            
+        # Check logical nesting (and/or)
+        for logical_key in ['and', 'or']:
+            if logical_key in c and isinstance(c[logical_key], list):
+                for sub_c in c[logical_key]: 
+                    scan_cond(sub_c)
 
+    scan_cond(cond)
+    return res
+
+def generate_special_wiki(special_spawns):
+    """Generates the special.md table."""
+    content = "# ✨ Special Spawn Locations\n\n"
+    content += "This table lists Pokémon that require specific structures or nearby blocks to appear.\n\n"
+    content += "| Pokémon | Dimension | Special Requirement | Time | Weather |\n"
+    content += "| :--- | :--- | :--- | :--- | :--- |\n"
+    
+    # Sort by Name
+    sorted_special = sorted(special_spawns, key=lambda x: x['name'])
+    
+    for s in sorted_special:
+        content += f"| {s['name']} | {s['dim']} | **{s['special']}** | {s['time']} | {s['weather']} |\n"
+    
+    write_safe_md(os.path.join(WIKI_DIR, 'special.md'), content)
     def scan_cond(c):
         if not isinstance(c, dict): return
         if 'times_of_day' in c: 
