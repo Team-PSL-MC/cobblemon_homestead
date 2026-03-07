@@ -1,0 +1,42 @@
+name: Raid Den Suggestion
+description: Suggest a new raid Pokémon or raid balance change
+title: "[Raid Suggestion]: "
+labels: ["raid design"]
+body:
+
+  - type: input
+    id: pokemon
+    attributes:
+      label: Pokémon
+      placeholder: Tyranitar
+    validations:
+      required: true
+
+  - type: dropdown
+    id: difficulty
+    attributes:
+      label: Suggested Raid Difficulty
+      options:
+        - Easy
+        - Medium
+        - Hard
+        - Legendary
+    validations:
+      required: true
+
+  - type: textarea
+    id: rewards
+    attributes:
+      label: Suggested Rewards
+      description: What rewards should the raid give?
+      placeholder: Rare candies, TMs, evolution items
+    validations:
+      required: false
+
+  - type: textarea
+    id: reasoning
+    attributes:
+      label: Why would this make a good raid?
+      placeholder: Fits the theme and provides a challenging fight
+    validations:
+      required: true
