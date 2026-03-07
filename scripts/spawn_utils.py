@@ -74,32 +74,45 @@ def get_nav_bar(current_label):
     return nav + " | ".join(links) + "\n\n"
 
 def get_conditions(spawn_obj):
-    # Initialize with a 'special' key to track structures/unique blocks
+    # Initialize keys
     res = {"item": "None", "time": "Any", "season": "Any", "weather": "Clear", "location": None, "special": None}
     
     cond = spawn_obj.get('condition', {})
-    
+    if not cond:
+        return res
+
+    # Check for items at top level or inside condition
+    found_item = (spawn_obj.get('key_item') or spawn_obj.get('needed_item') or cond.get('key_item') or cond.get('needed_item'))
+    if found_item: 
+        res["item"] = str(found_item).split(':')[-1].replace('_', ' ').title()
+
     def scan_cond(c):
         if not isinstance(c, dict): return
         
-        # --- Capture Structures ---
+        # --- Capture Special Requirements ---
         if 'structures' in c and isinstance(c['structures'], list):
             res["special"] = ", ".join([s.split(':')[-1].replace('_', ' ').title() for s in c['structures']])
             
-        # --- Capture neededNearbyBlocks ---
-        if 'neededNearbyBlocks' in c:
-            blocks = c['neededNearbyBlocks']
-            if isinstance(blocks, list):
-                res["special"] = ", ".join([b.split(':')[-1].replace('_', ' ').title() for b in blocks])
+        if 'neededNearbyBlocks' in c and isinstance(c['neededNearbyBlocks'], list):
+            res["special"] = ", ".join([b.split(':')[-1].replace('_', ' ').title() for b in b])
+
+        # --- Capture Environmental Extras ---
+        if 'moonPhase' in c:
+            phase_map = {0: "Full Moon", 1: "Waning Gibbous", 4: "New Moon"} # Expand as needed
+            res["special"] = (res["special"] + " + " if res["special"] else "") + phase_map.get(c['moonPhase'], f"Moon Phase {c['moonPhase']}")
         
-        # Standard conditions
+        # --- Capture Standard Conditions ---
         if 'times_of_day' in c: 
             res["time"] = ", ".join([t.capitalize() for t in c['times_of_day']])
+        elif 'timeRange' in c:
+            res["time"] = str(c['timeRange']).capitalize()
+
         if 'season' in c: 
             res["season"] = str(c['season']).capitalize()
         if 'weather' in c: 
             res["weather"] = c['weather'].split(':')[-1].capitalize()
-            
+        
+        # Recursive check for nested logic
         for logical_key in ['and', 'or']:
             if logical_key in c and isinstance(c[logical_key], list):
                 for sub_c in c[logical_key]: 
@@ -110,14 +123,17 @@ def get_conditions(spawn_obj):
 
 def generate_special_wiki(special_spawns):
     """Generates the special.md table."""
-    if not special_spawns: return
-    
+    if not special_spawns:
+        return
+
     content = "# ✨ Special Spawn Locations\n\n"
     content += "This table lists Pokémon that require specific structures or nearby blocks to appear.\n\n"
     content += "| Pokémon | Dimension | Special Requirement | Time | Weather |\n"
     content += "| :--- | :--- | :--- | :--- | :--- |\n"
     
+    # Sort by Name
     sorted_special = sorted(special_spawns, key=lambda x: x['name'])
+    
     for s in sorted_special:
         content += f"| {s['name']} | {s['dim']} | **{s['special']}** | {s['time']} | {s['weather']} |\n"
     
